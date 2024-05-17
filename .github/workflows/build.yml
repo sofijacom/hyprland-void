@@ -86,6 +86,12 @@ jobs:
           (
           /hostrepo/xbps-src -j$(nproc) -s -H ~/hostdir pkg xdg-desktop-portal-hyprland
           )
+          
+       - name: Build hypridle
+        run: |
+          (
+          /hostrepo/xbps-src -j$(nproc) -s -H ~/hostdir pkg hypridle
+          ) 
 
       - name: Build hyprlock
         run: |
