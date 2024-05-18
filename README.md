@@ -39,7 +39,7 @@ cat common/shlibs >> ../void-packages/common/shlibs
 cp -r srcpkgs/* ../void-packages/srcpkgs
 ```
 
-6) Build and install packages
+6) Build packages
 
 ```
 cd ../void-packages
@@ -50,7 +50,11 @@ cd ../void-packages
 ./xbps-src pkg hypridle
 ./xbps-src pkg hyprlock
 
+```
 
+7) Install packages
+
+```
 sudo xbps-install -R hostdir/binpkgs hyprland
 sudo xbps-install -R hostdir/binpkgs hyprland-protocols
 sudo xbps-install -R hostdir/binpkgs xdg-desktop-portal-hyprland
