@@ -44,7 +44,20 @@ cp -r srcpkgs/* ../void-packages/srcpkgs
 ```
 cd ../void-packages
 ./xbps-src pkg hyprland
+./xbps-src pkg hyprland-protocols
+./xbps-src pkg xdg-desktop-portal-hyprland
+./xbps-src pkg hyprpaper
+./xbps-src pkg hypridle
+./xbps-src pkg hyprlock
+
+
 sudo xbps-install -R hostdir/binpkgs hyprland
+sudo xbps-install -R hostdir/binpkgs hyprland-protocols
+sudo xbps-install -R hostdir/binpkgs xdg-desktop-portal-hyprland
+sudo xbps-install -R hostdir/binpkgs hyprpaper
+sudo xbps-install -R hostdir/binpkgs hypridle
+sudo xbps-install -R hostdir/binpkgs hyprlock
+
 ```
 
 ### Running
