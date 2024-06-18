@@ -116,10 +116,11 @@ jobs:
         run: (/hostrepo/xbps-src -j$(nproc) -s -H ~/hostdir pkg hyprpaper)
 
 
-      # Retrieve the signing key from the separate private repository
+      # Retrieve the signing key from the separate private repository PEM
       - name: Retrieve private key
         run: |
           openssl genrsa -des3 -out private.pem
+          export PEM_PASSPHRASE=${{ secrets.PRIVATE_PEM_PASSPHRASE }}
             
       # We need to sign the packages with our private key so that they will be accepted by xbps remotely
       # See: https://docs.voidlinux.org/xbps/repositories/signing.html
