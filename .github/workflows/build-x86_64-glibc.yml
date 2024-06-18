@@ -117,11 +117,7 @@ jobs:
 
 
       # Retrieve the signing key from the separate private repository
-     # - name: Retrieve private key
-     #   run: |
-     #     curl -H 'Authorization: token ${{ secrets.PEM_PAT }}' \
-     #       -H 'Accept: application/vnd.github.v3.raw' \
-       - name: Retrieve private key
+      - name: Retrieve private key
          run: |
            git clone https://github.com/${{ env.REPO_OWNER }}/hyprland-void/private.pem
 
@@ -129,7 +125,6 @@ jobs:
       # See: https://docs.voidlinux.org/xbps/repositories/signing.html
       - name: Sign repository
         run: |
-      #    export XBPS_PASSPHRASE=${{ secrets.PRIVATE_PEM_PASSPHRASE }}
           xbps-rindex --privkey ./private.pem --sign --signedby "${{ env.REPO_NAME }}-github-action" ~/hostdir/binpkgs
           xbps-rindex --privkey ./private.pem --sign-pkg ~/hostdir/binpkgs/*.xbps
 
