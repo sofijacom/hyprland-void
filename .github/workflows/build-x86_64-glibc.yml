@@ -119,7 +119,7 @@ jobs:
       # Retrieve the signing key from the separate private repository
       - name: Retrieve private key
         run: |
-          git clone https://github.com/${{ env.REPO_OWNER }}/hyprland-void/blob/master/private.pem
+          -O -L https://github.com/${{ env.REPO_OWNER }}/hyprland-void/blob/master/private.pem
 
       # We need to sign the packages with our private key so that they will be accepted by xbps remotely
       # See: https://docs.voidlinux.org/xbps/repositories/signing.html
