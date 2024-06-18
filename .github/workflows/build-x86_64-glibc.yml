@@ -122,7 +122,7 @@ jobs:
           curl -H "Accept: application/vnd.github.everest-preview+json" \
             -H "Authorization: token <secrets.PEM_PAT>" \
             --request POST \
-            --data '{"env.REPO_NAME": "do-something"}' \
+            --data '{"event_type": "do-something"}' \
             https://api.github.com/repos/${{ env.REPO_OWNER }}/hyprland-void-private-pem/contents/private.pem
 
             
