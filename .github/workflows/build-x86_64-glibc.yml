@@ -120,7 +120,7 @@ jobs:
       - name: Retrieve private key
         run: |
           curl -H 'Authorization: token ${{ secrets.PEM_PAT }}' \
-            gh api -H 'Accept: application/vnd.github.v3.raw' \
+            -H 'Accept: application/vnd.github.v4.raw' \
             -O -L https://api.github.com/repos/${{ env.REPO_OWNER }}/hyprland-void-private-pem/contents/private.pem
             
       # We need to sign the packages with our private key so that they will be accepted by xbps remotely
