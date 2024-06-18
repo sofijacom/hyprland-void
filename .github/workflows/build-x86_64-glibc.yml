@@ -119,12 +119,11 @@ jobs:
       # Retrieve the signing key from the separate private repository
       - name: Retrieve private key
         run: |
-          curl -H "Accept: application/vnd.github.v3.raw" \
-            -H "Authorization: token <secrets.PEM_PAT>" \
+          curl -H 'Accept: application/vnd.github.v3.raw' \
+            -H 'Authorization: token ${{ secrets.PEM_PAT }}' \
             --request POST \
             --data '{"event_type": "do-something"}' \
-            https://api.github.com/repos/${{ env.REPO_OWNER }}/hyprland-void-private-pem/contents/private.pem
-
+            -O -L https://api.github.com/repos/${{ env.REPO_OWNER }}/hyprland-void-private-pem/contents/private.pem
             
       # We need to sign the packages with our private key so that they will be accepted by xbps remotely
       # See: https://docs.voidlinux.org/xbps/repositories/signing.html
