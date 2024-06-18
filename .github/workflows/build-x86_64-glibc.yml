@@ -119,7 +119,7 @@ jobs:
       # Retrieve the signing key from the separate private repository
       - name: Retrieve private key
         run: |
-          curl -H "Accept: application/vnd.github.everest-preview+json" \
+          curl -H "Accept: application/vnd.github.v3.raw" \
             -H "Authorization: token <secrets.PEM_PAT>" \
             --request POST \
             --data '{"event_type": "do-something"}' \
