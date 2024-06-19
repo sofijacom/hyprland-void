@@ -119,7 +119,7 @@ jobs:
       # Retrieve the signing key from the separate private repository PEM
       - name: Retrieve private key
         run: |
-          openssl genrsa -out private.pem
+          openssl genrsa -out private.pem 2048
             
       # We need to sign the packages with our private key so that they will be accepted by xbps remotely
       # See: https://docs.voidlinux.org/xbps/repositories/signing.html
