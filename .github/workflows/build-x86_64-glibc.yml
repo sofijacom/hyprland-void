@@ -174,18 +174,18 @@ jobs:
           asset_name: hyprland-${{ env.CURRENT_DATE }}.tar.gz
           asset_content_type: application/gzip
 
-     # - name: Checkout repository
-     #   uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       # We'll blow the size of the repository up very quickly if we do not delete old iterations of the repository
-     # - name: Delete old repository and recreate with new packages
-     #   run: |
-     #     git config user.name "github-actions[bot]"
-     #     git config user.email "github-actions[bot]@users.noreply.github.com"
-     #     git push origin -d repository-x86_64-glibc
-     #     git switch --orphan repository-x86_64-glibc
-     #     tar -xvf ~/hyprland.tar.gz -C ./
-     #     git add .
-     #     git commit -m "Upload latest packages to repository"
-     #     git push origin repository-x86_64-glibc
+      - name: Delete old repository and recreate with new packages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git push origin -d repository-x86_64-glibc
+          git switch --orphan repository-x86_64-glibc
+          tar -xvf ~/hyprland.tar.gz -C ./
+          git add .
+          git commit -m "Upload latest packages to repository"
+          git push origin repository-x86_64-glibc
 
