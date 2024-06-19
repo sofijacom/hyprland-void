@@ -1,4 +1,4 @@
-## Hyprland for Void Linux
+## *Hyprland for Void Linux*
 
 This repository contains template files and binaries for building or installing [Hyprland](https://github.com/hyprwm/Hyprland) on Void Linux.
 
