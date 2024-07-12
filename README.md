@@ -4,7 +4,7 @@ This repository contains template files and binaries for building or installing 
 
 ### Installation
 
-The easiest way to install Hyprland on Void Linux is using the [repository](https://github.com/Makrennel/hyprland-void/tree/repository-x86_64-glibc) which consists of binaries built automatically using GitHub Actions whenever a new commit is pushed.
+The easiest way to install Hyprland on Void Linux is using the [repository](https://github.com/sofijacom/hyprland-void/tree/repository-x86_64-glibc) which consists of binaries built automatically using GitHub Actions whenever a new commit is pushed.
 
 You can add this repository to xbps's repositories by creating a file such as `/etc/xbps.d/hyprland-void.conf` with the following text:
 
