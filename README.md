@@ -9,7 +9,7 @@ The easiest way to install Hyprland on Void Linux is using the [repository](http
 You can add this repository to xbps's repositories by creating a file such as `/etc/xbps.d/hyprland-void.conf` with the following text:
 
 ```
-repository=https://raw.githubusercontent.com/Makrennel/hyprland-void/repository-x86_64-glibc
+repository=https://raw.githubusercontent.com/sofijacom/hyprland-void/repository-x86_64-glibc
 ```
 
 You should then be able to install hyprland like you would any other program:
