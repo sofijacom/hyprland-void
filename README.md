@@ -81,7 +81,7 @@ cd ..
 3) Clone this repository:
 
 ```
-git clone https://github.com/Makrennel/hyprland-void.git
+git clone https://github.com/sofijacom/hyprland-void.git
 cd hyprland-void
 ```
 
