@@ -1,16 +1,22 @@
 # Template file for 'hyprlang'
 pkgname=hyprlang
-version=0.6.7
-revision=3
+version=0.6.3
+revision=1
 build_style=cmake
-configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
- -DCMAKE_INSTALL_PREFIX:PATH=/usr"
-hostmakedepends="cmake pkgconf"
-makedepends="hyprutils"
+configure_args+=" --no-warn-unused-cli"
+configure_args+=" -DCMAKE_BUILD_TYPE:STRING=Release"
+configure_args+=" -DCMAKE_INSTALL_PREFIX:PATH=/usr"
+hostmakedepends="
+  cmake
+  pkgconf
+"
+makedepends="
+  hyprutils
+"
 short_desc="Official implementation library for the hypr config language"
-maintainer="Encoded14 <linusken@tuta.io>"
+maintainer="Makrennel <makrommel@protonmail.ch>"
 license="LGPL-3.0-only"
 homepage="https://hyprland.org/hyprlang/index.html"
 changelog="https://github.com/hyprwm/hyprlang/releases"
 distfiles="https://github.com/hyprwm/hyprlang/archive/refs/tags/v${version}.tar.gz"
-checksum=e8d54af895ec04fe99553c68d1255dceddb43723ada4a134acdd46bfe1dbf924
+checksum=f5effe017edc7a0036c20c7ecbea4edc2bfdacbc0f791b283bd21ec202384251
