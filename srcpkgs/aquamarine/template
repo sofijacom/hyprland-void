@@ -9,7 +9,7 @@ hostmakedepends="cmake hyprwayland-scanner pkgconf"
 makedepends="hwids hyprutils libdisplay-info-devel libinput-devel
  libseat-devel MesaLib-devel pixman-devel wayland-devel wayland-protocols"
 short_desc="Aquamarine is a very light linux rendering backend library"
-maintainer="Encoded14 <linusken@tuta.io>"
+maintainer="Sofiya <sofiya@v.org>"
 license="LGPL-3.0-only"
 homepage="https://hyprland.org/hyprlang/index.html"
 changelog="https://github.com/hyprwm/aquamarine/releases"

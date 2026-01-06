@@ -9,7 +9,7 @@ hostmakedepends="cmake hyprwayland-scanner pkgconf"
 makedepends="hyprland-protocols hyprlang hyprutils
  hyprwayland-scanner wayland-devel wayland-protocols"
 short_desc="Application to enable a blue-light filter on Hyprland"
-maintainer="Encoded14 <linusken@tuta.io>"
+maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
 homepage="https://github.com/hyprwm/hyprsunset"
 distfiles="https://github.com/hyprwm/hyprsunset/archive/refs/tags/v${version}.tar.gz"

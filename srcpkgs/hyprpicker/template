@@ -7,7 +7,7 @@ hostmakedepends="cmake pkg-config hyprwayland-scanner wayland-protocols"
 makedepends="wayland-devel cairo-devel pango-devel
  libjpeg-turbo-devel libglvnd-devel hyprutils wlroots-devel"
 short_desc="Wlroots-compatible Wayland color picker that does not suck"
-maintainer="Encoded14 <linusken@tuta.io>"
+maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
 homepage="https://github.com/hyprwm/hyprpicker"
 changelog="https://github.com/hyprwm/hyprpicker/releases"

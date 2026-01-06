@@ -9,7 +9,7 @@ makedepends="cairo-devel pango-devel file-devel hyprutils
  libjpeg-turbo-devel libjxl-devel libspng librsvg-devel
  libwebp-devel pixman-devel"
 short_desc="Hyprland graphics resources and utilities"
-maintainer="Encoded14 <linusken@tuta.io>"
+maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
 homepage="https://github.com/hyprwm/hyprgraphics"
 distfiles="https://github.com/hyprwm/hyprgraphics/archive/refs/tags/v${version}.tar.gz"

@@ -9,7 +9,7 @@ makedepends="cairo-devel elogind-devel file-devel hyprgraphics hyprlang
  hyprutils libdrm-devel libjpeg-turbo-devel libwebp-devel libxkbcommon-devel
  MesaLib-devel pam-devel pango-devel sdbus-cpp wayland-devel wayland-protocols"
 short_desc="Hyprland's GPU-accelerated screen locking utility"
-maintainer="Encoded14 <linusken@tuta.io>"
+maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
 homepage="https://github.com/hyprwm/hyprlock"
 changelog="https://github.com/hyprwm/${pkgname}/releases"
