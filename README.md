@@ -33,7 +33,7 @@ Currently this repository provides binary packages for:
 | package | in stock |
 |:--------|:-----------------|
 | x86_64-glibc               | :heavy_check_mark: |
-| x86_64-musl                | :heavy_check_mark: |
+| x86_64-musl                | :x: |
 | aarch64-glibc              | :heavy_check_mark: |
 | aarch64-musl               | :heavy_check_mark: |
 
