@@ -42,6 +42,7 @@ makedepends="
   libxcb-devel
   libXcursor-devel
   libxkbcommon-devel
+  muparser-devel
   pango-devel
   re2-devel
   tomlplusplus
