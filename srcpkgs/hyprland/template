@@ -13,6 +13,7 @@ othermakedepends="
   gcc
   glslang
   hyprwayland-scanner
+  hyprwire
   jq
   make
   meson
@@ -32,6 +33,7 @@ makedepends="
   hyprgraphics
   hyprlang
   hyprutils
+  hyprwire
   libdisplay-info-devel
   libdrm-devel
   libgbm-devel
