@@ -19,6 +19,7 @@ othermakedepends="
   ninja
   pkgconf
   wayland-devel
+  xxd
 "
 hostmakedepends=$othermakedepends
 makedepends="
