@@ -19,6 +19,7 @@ othermakedepends="
   ninja
   pkgconf
   wayland-devel
+  python3
   xxd
 "
 hostmakedepends=$othermakedepends
