@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        arch: [ x86_64, aarch64, x86_64-musl ]
+        arch: [ x86_64, aarch64, x86_64-musl, aarch64-musl ]
        # arch: [ x86_64, x86_64-musl, aarch64, aarch64-musl ]
     env:
       REPO_OWNER: "${{ github.repository_owner }}"

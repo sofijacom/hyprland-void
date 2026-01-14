@@ -1,11 +1,10 @@
 # Template file for 'libspng'
-
 pkgname=libspng
 version=0.7.4
 revision=1
 build_style=meson
 hostmakedepends="pkgconf"
-makedepends="zlib-devel"
+makedepends="zlib-devel cross-x86_64-linux-musl"
 short_desc="Simple, modern libpng alternative"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-2-Clause"
