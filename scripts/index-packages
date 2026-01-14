@@ -8,7 +8,6 @@ COMMAND="
   cp /work/hostdir/binpkgs/aquamarine*.xbps /work/packages
   cp /work/hostdir/binpkgs/glaze*.xbps /work/packages
   cp /work/hostdir/binpkgs/hypr*.xbps /work/packages
-  cp /work/hostdir/binpkgs/libspng*.xbps /work/packages
   cp /work/hostdir/binpkgs/sdbus-cpp*.xbps /work/packages
   cp /work/hostdir/binpkgs/tomlplusplus*.xbps /work/packages
   cp /work/hostdir/binpkgs/xdg-desktop-portal-hyprland*.xbps /work/packages
