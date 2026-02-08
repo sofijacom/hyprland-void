@@ -6,7 +6,7 @@ build_style=cmake
 configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
  -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 hostmakedepends="cmake pkgconf"
-makedepends="cairo-devel hyprlang librsvg-devel libzip-devel tomlplusplus"
+makedepends="cairo-devel hyprlang librsvg-devel libzip-devel tomlplusplus-devel"
 short_desc="Hyprland cursor format, library and utilities"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"

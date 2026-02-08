@@ -47,7 +47,7 @@ makedepends="
   muparser-devel
   pango-devel
   re2-devel
-  tomlplusplus
+  tomlplusplus-devel
   wayland-devel
   wayland-protocols
   xcb-util-errors-devel
