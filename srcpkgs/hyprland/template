@@ -97,3 +97,4 @@ hyprland-devel_package() {
     vmove usr/share/pkgconfig
   }
 }
+
