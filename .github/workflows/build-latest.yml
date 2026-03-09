@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir -p /etc/xbps.d && cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
           sed -i 's|repo-default|repo-ci|g' /etc/xbps.d/*-repository-*.conf
-          xbps-install -Syu xbps && xbps-install -yu && xbps-install -y sudo bash grep curl git kotlin-bin
+          xbps-install -Syu xbps && xbps-install -yu && xbps-install -y sudo bash grep curl git kotlin-bin cross-x86_64-linux-musl
           useradd -G xbuilder -M builder
 
       - name: Clone hyprland-void repo
