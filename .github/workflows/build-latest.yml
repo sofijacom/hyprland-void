@@ -25,7 +25,7 @@ jobs:
       REPO_NAME: "${{ github.event.repository.name }}"
       TARGET_ARCH: "${{ matrix.arch }}"
       SCRIPT_DIR: "/work/${{ github.event.repository.name }}/scripts"
-      BUILD_ARGS: ""
+      BUILD_ARGS: "${{ matrix.arch }}"
 
     steps:
       - name: Prepare container and create a non-root user
