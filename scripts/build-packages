@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
-
-BUILD="sudo -Eu builder /work/void-packages/xbps-src $BUILD_ARGS -j$(nproc) -s -H /work/hostdir pkg"
+# $BUILD_ARGS
+BUILD="sudo -Eu builder /work/void-packages/xbps-src -A $BUILD_ARGS -j$(nproc) -s -H /work/hostdir pkg"
 
 COMMAND="
   while IFS= read -r package; do
