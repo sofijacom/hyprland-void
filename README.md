@@ -1,5 +1,8 @@
 ## Hyprland for Void Linux
 
+[![Hyprland Linux](https://img.shields.io/badge/Hyprland-blueviolet?style=plastic&logo=hyprland&logoColor=white)](#)
+[![Void Linux](https://img.shields.io/badge/Void_Linux-%23458161.svg?style=plastic&logo=voidlinux&logoColor=white)](#)
+
 This repository contains template files and binaries for building or installing [Hyprland](https://github.com/hyprwm/Hyprland) on Void Linux.
 
 ### Installation
