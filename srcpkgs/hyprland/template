@@ -23,6 +23,7 @@ othermakedepends="
   wayland-devel
   python3
   xxd
+  xorgproto
 "
 hostmakedepends=$othermakedepends
 makedepends="
