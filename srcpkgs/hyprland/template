@@ -24,6 +24,7 @@ othermakedepends="
   python3
   xxd
   xorgproto
+  git
 "
 hostmakedepends=$othermakedepends
 makedepends="
