@@ -4,9 +4,9 @@ pkgname=hyprland
 version=0.54.3
 revision=1
 build_style=cmake
-#configure_args+=" --no-warn-unused-cli"
-#configure_args+=" -DCMAKE_BUILD_TYPE:STRING=Release"
-#configure_args+=" -DCMAKE_INSTALL_PREFIX:PATH=/usr"
+configure_args+=" --no-warn-unused-cli"
+configure_args+=" -DCMAKE_BUILD_TYPE:STRING=Release"
+configure_args+=" -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 configure_args+=" -DNO_SYSTEMD:BOOL=true"
 othermakedepends="
   cmake
@@ -65,7 +65,7 @@ homepage="https://hyprland.org/"
 changelog="https://github.com/hyprwm/Hyprland/releases"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
 checksum="3c20a191a6f23af75f9a8db636d690c6adc95931447f9d69fb20884ec04c63ee"
-make_check=no # cant run in sandbox
+# make_check=no # cant run in sandbox
 
 if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
   configure_args+=" -DCMAKE_CXX_FLAGS=\"-lexecinfo\""
