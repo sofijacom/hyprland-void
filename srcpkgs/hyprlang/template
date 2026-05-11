@@ -2,7 +2,7 @@
 
 pkgname=hyprlang
 version=0.6.8
-revision=4
+revision=1
 build_style=cmake
 configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
  -DCMAKE_INSTALL_PREFIX:PATH=/usr"
