@@ -2,7 +2,7 @@
 
 pkgname=hyprtoolkit
 version=0.5.3
-revision=2
+revision=1
 build_style=cmake
 configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
  -DCMAKE_INSTALL_PREFIX:PATH=/usr -DDISABLE_TESTS=ON"
