@@ -1,4 +1,5 @@
 # Template file for 'hyprutils'
+
 pkgname=hyprutils
 version=0.11.0
 revision=1

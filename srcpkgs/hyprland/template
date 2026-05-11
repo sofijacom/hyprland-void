@@ -1,5 +1,4 @@
 # Template file for 'hyprland'
-
 pkgname=hyprland
 version=0.55.0
 revision=1

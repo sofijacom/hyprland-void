@@ -1,4 +1,5 @@
 # Template file for 'aquamarine'
+
 pkgname=aquamarine
 version=0.10.0
 revision=2
