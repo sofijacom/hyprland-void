@@ -1,6 +1,6 @@
 # Template file for 'hyprland'
 pkgname=hyprland
-version=0.54.3
+version=0.55.0
 revision=1
 build_style=cmake
 configure_args+=" --no-warn-unused-cli"
@@ -56,6 +56,10 @@ makedepends="
   xcb-util-renderutil-devel
   xcb-util-wm-devel
   xorg-server-xwayland
+  glslang-devel
+  lcms2-devel
+  lua55-devel
+  SPIRV-Tools-devel
 "
 short_desc="Dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 maintainer="Sofiya <sofiya@v.org>"
@@ -64,7 +68,7 @@ homepage="https://hyprland.org/"
 changelog="https://github.com/hyprwm/Hyprland/releases"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
 checksum="3c20a191a6f23af75f9a8db636d690c6adc95931447f9d69fb20884ec04c63ee"
-# make_check=no # cant run in sandbox
+make_check=no # cant run in sandbox
 
 if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
   configure_args+=" -DCMAKE_CXX_FLAGS=\"-lexecinfo\""
@@ -73,7 +77,7 @@ if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
 fi
 
 pre_configure() {
-	xxd -i example/hyprland.conf > src/config/example_config_data.h
+	xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
 }
 
 post_install() {
