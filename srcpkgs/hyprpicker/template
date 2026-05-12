@@ -1,5 +1,4 @@
 # Template file for 'hyprpicker'
-
 pkgname=hyprpicker
 version=0.4.7
 revision=1

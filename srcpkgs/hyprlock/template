@@ -1,5 +1,4 @@
 # Template file for 'hyprlock'
-
 pkgname=hyprlock
 version=0.9.5
 revision=5

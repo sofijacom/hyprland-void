@@ -1,5 +1,4 @@
 # Template file for 'hyprcursor'
-
 pkgname=hyprcursor
 version=0.1.13
 revision=1

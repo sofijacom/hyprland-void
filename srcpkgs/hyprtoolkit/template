@@ -1,5 +1,4 @@
 # Template file for 'hyprtoolkit'
-
 pkgname=hyprtoolkit
 version=0.5.4
 revision=1

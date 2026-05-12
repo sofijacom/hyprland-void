@@ -1,5 +1,4 @@
 # Template file for 'hyprgraphics'
-
 pkgname=hyprgraphics
 version=0.5.1
 revision=1

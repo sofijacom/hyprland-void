@@ -1,5 +1,4 @@
 # Template file for 'sdbus-cpp'
-
 pkgname=sdbus-cpp
 version=2.2.1
 revision=1

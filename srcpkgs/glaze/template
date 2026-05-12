@@ -1,5 +1,4 @@
 # Template file for 'glaze'
-
 pkgname=glaze
 version=7.6.0
 revision=1

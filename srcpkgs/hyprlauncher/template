@@ -1,4 +1,5 @@
 # Template file for 'hyprlauncher'
+
 pkgname=hyprlauncher
 version=0.1.6
 revision=1
