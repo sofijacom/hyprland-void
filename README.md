@@ -57,12 +57,15 @@ There are packages in this repository which may be of interest for:
 - hyprpaper
 - hyprpicker
 - hyprcursor
+- hyprshot
 - hyprlauncher
+- hyprsunset
 - hyprmoncfg
 - hyprpwcenter
 - hyprshade
 - hyprshutdown
 - hyprsysteminfo
+- hyprpolkitagent
 - xdg-desktop-portal-hyprland
 
 ### Common Remarks
