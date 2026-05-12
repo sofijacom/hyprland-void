@@ -55,6 +55,14 @@ There are packages in this repository which may be of interest for:
 - hypridle
 - hyprlock
 - hyprpaper
+- hyprpicker
+- hyprcursor
+- hyprlauncher
+- hyprmoncfg
+- hyprpwcenter
+- hyprshade
+- hyprshutdown
+- hyprsysteminfo
 - xdg-desktop-portal-hyprland
 
 ### Common Remarks
