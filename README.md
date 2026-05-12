@@ -38,10 +38,10 @@ Currently this repository provides binary packages for:
 
 | package | in stock |
 |:--------|:-----------------|
-| x86_64-glibc               | :heavy_check_mark: |
-| x86_64-musl                | :x: |
-| aarch64-glibc              | :heavy_check_mark: |
-| aarch64-musl               | :heavy_check_mark: |
+| x86_64-glibc               | ✔️ |
+| x86_64-musl                | ❌ |
+| aarch64-glibc              | ✔️ |
+| aarch64-musl               | ✔️ |
 
 Change the end of the url in `/etc/xbps.d/hyprland-void.conf` as appropriate with the above options.
 
