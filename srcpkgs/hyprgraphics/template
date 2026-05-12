@@ -7,8 +7,8 @@ build_style=cmake
 configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 hostmakedepends="cmake pkgconf"
 makedepends="cairo-devel pango-devel file-devel hyprutils
- libjpeg-turbo-devel libjxl-devel libspng librsvg-devel
- libwebp-devel pixman-devel"
+ libdrm-devel libglvnd-devel libjpeg-turbo-devel libjxl-devel libpng-devel
+ libspng librsvg-devel libwebp-devel pixman-devel"
 short_desc="Hyprland graphics resources and utilities"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
