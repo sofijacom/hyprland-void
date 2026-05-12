@@ -58,6 +58,7 @@ makedepends="
   xcb-util-renderutil-devel
   xcb-util-wm-devel
   xorg-server-xwayland
+  hyprland-protocols
   glslang-devel
   lcms2-devel
   lua55-devel

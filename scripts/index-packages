@@ -12,6 +12,7 @@ COMMAND="
   cp /work/hostdir/binpkgs/sdbus-cpp*.xbps /work/packages
   cp /work/hostdir/binpkgs/tomlplusplus*.xbps /work/packages
   cp /work/hostdir/binpkgs/xdg-desktop-portal-hyprland*.xbps /work/packages
+  cp /work/hostdir/binpkgs/lua55*.xbps /work/packages
 
   cd /work/packages
   xbps-rindex -a *
