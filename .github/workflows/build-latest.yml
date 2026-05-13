@@ -13,7 +13,7 @@ jobs:
 
     container:
       image: ghcr.io/void-linux/void-${{ matrix.config.libc }}-full:20250227R1
-      options: --privileged --cap-add=SYS_ADMIN --security-opt apparmor=unconfined
+      options: --platform linux/amd64 --privileged
 
     strategy:
       matrix:
