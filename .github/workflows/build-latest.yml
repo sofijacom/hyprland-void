@@ -13,7 +13,7 @@ jobs:
 
     container:
       image: ghcr.io/void-linux/void-glibc-full:20250227R1
-      options: --platform linux/amd64 --privileged
+      options: --privileged --cap-add=SYS_ADMIN --security-opt apparmor=unconfined # --platform linux/amd64 --privileged
 
     strategy:
       matrix:
@@ -33,9 +33,10 @@ jobs:
       - name: Prepare container and create a non-root user
         run: |
           mkdir -p /etc/xbps.d && cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
-          sed -i 's|repo-default|repo-ci|g' /etc/xbps.d/*-repository-*.conf
-          xbps-install -Syu xbps && xbps-install -yu && xbps-install -y sudo bash grep curl git kotlin-bin
-          useradd -G xbuilder -M builder
+          env -u XBPS_TARGET_ARCH xbps-install -Syu xbps
+          env -u XBPS_TARGET_ARCH xbps-install -yu
+          env -u XBPS_TARGET_ARCH xbps-install -y sudo bash grep curl git jq github-cli xtools zip unzip nodejs kotlin-bin
+          useradd -G xbuilder -M builder -s $(which bash)
 
       - name: Clone hyprland-void repo
         run: |
