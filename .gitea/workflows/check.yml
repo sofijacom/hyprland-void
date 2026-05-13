@@ -1,0 +1,72 @@
+name: Check build
+
+on:
+  pull_request:
+    paths:
+      - 'srcpkgs/**'
+  push:
+    branches:
+      - 'ci-**'
+    paths:
+      - 'srcpkgs/**'
+
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ gitea.workflow }}-${{ gitea.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build packages
+    runs-on: ubuntu-latest-void
+
+    container:
+      image: ghcr.io/void-linux/void-${{ matrix.config.libc }}-full:20250616R1
+      options: --privileged --cap-add=SYS_ADMIN --security-opt apparmor=unconfined
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - { arch: x86_64, libc: glibc }
+          - { arch: x86_64-musl, libc: musl }
+          - { arch: aarch64, libc: glibc }
+          - { arch: aarch64-musl, libc: musl }
+    env:
+      REPO_OWNER: "${{ gitea.repository_owner }}"
+      REPO_ORG: "void"
+      REPO_NAME: "${{ gitea.event.repository.name }}"
+      GITEA_SERVER_URL: "${{ gitea.server_url }}"
+      TARGET_ARCH: "${{ matrix.config.arch }}"
+      SCRIPT_DIR: "/work/${{ gitea.event.repository.name }}/scripts"
+      BUILD_ARGS: ""
+
+    steps:
+      - name: Prepare container and create a non-root user
+        run: |
+          mkdir -p /etc/xbps.d && cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
+          sed -i 's|repo-default|repo-ci|g' /etc/xbps.d/*-repository-*.conf
+          xbps-install -Syu xbps && xbps-install -yu && xbps-install -y sudo bash curl git nodejs
+          useradd -G xbuilder -M builder
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copy to work directory
+        run: |
+          mkdir -p /work
+          cp -r $(pwd) /work/$REPO_NAME
+          ls -la /work/$REPO_NAME
+
+      - name: Set environment
+        run: $SCRIPT_DIR/set-environment
+
+      - name: Automatically generate a build order
+        run: $SCRIPT_DIR/generate-build-order.js
+
+      - name: Prepare void-packages
+        run: $SCRIPT_DIR/clone-and-prepare
+
+      - name: Build packages
+        run: $SCRIPT_DIR/build-packages

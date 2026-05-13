@@ -9,11 +9,11 @@ on:
 jobs:
   build:
     name: Build Hyprland
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-void
 
     container:
-      image: ghcr.io/void-linux/void-glibc-full:20250227R1
-      options: --privileged --cap-add=SYS_ADMIN --security-opt apparmor=unconfined # --platform linux/amd64 --privileged
+      image: ghcr.io/void-linux/void-${{ matrix.config.libc }}-full:20250227R1
+      options: --privileged --cap-add=SYS_ADMIN --security-opt apparmor=unconfined
 
     strategy:
       matrix:
@@ -23,29 +23,36 @@ jobs:
           - { arch: aarch64, libc: glibc }
           - { arch: aarch64-musl, libc: musl }
     env:
-      REPO_OWNER: "${{ github.repository_owner }}"
-      REPO_NAME: "${{ github.event.repository.name }}"
+      REPO_OWNER: "${{ gitea.repository_owner }}"
+      REPO_ORG: "void"
+      REPO_NAME: "${{ gitea.event.repository.name }}"
+      GITEA_SERVER_URL: "${{ gitea.server_url }}"
       TARGET_ARCH: "${{ matrix.config.arch }}"
-      SCRIPT_DIR: "/work/${{ github.event.repository.name }}/scripts"
+      SCRIPT_DIR: "/work/${{ gitea.event.repository.name }}/scripts"
       BUILD_ARGS: ""
 
     steps:
       - name: Prepare container and create a non-root user
         run: |
           mkdir -p /etc/xbps.d && cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
-          env -u XBPS_TARGET_ARCH xbps-install -Syu xbps
-          env -u XBPS_TARGET_ARCH xbps-install -yu
-          env -u XBPS_TARGET_ARCH xbps-install -y sudo bash grep curl git jq github-cli xtools zip unzip nodejs kotlin-bin
-          useradd -G xbuilder -M builder -s $(which bash)
+          sed -i 's|repo-default|repo-ci|g' /etc/xbps.d/*-repository-*.conf
+          xbps-install -Syu xbps && xbps-install -yu && xbps-install -y sudo bash curl git nodejs
+          useradd -G xbuilder -M builder
 
-      - name: Clone hyprland-void repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copy to work directory
         run: |
-          mkdir /work && cd /work
-          git clone https://github.com/$REPO_OWNER/$REPO_NAME.git
-          $SCRIPT_DIR/set-environment
+          mkdir -p /work
+          cp -r $(pwd) /work/$REPO_NAME
+          ls -la /work/$REPO_NAME
+
+      - name: Set environment
+        run: $SCRIPT_DIR/set-environment
 
       - name: Automatically generate a build order
-        run: $SCRIPT_DIR/generate-build-order.kts
+        run: $SCRIPT_DIR/generate-build-order.js
 
       - name: Prepare void-packages
         run: $SCRIPT_DIR/clone-and-prepare
