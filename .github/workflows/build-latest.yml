@@ -9,25 +9,20 @@ on:
 jobs:
   build:
     name: Build Hyprland
-    runs-on: ubuntu-latest-void
+    runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/void-linux/void-${{ matrix.config.libc }}-full:20250227R1
+      image: ghcr.io/void-linux/void-glibc-full:20250227R1
       options: --platform linux/amd64 --privileged
 
     strategy:
       matrix:
-        config:
-          - { arch: x86_64, libc: glibc }
-          - { arch: x86_64-musl, libc: musl }
-          - { arch: aarch64, libc: glibc }
-          - { arch: aarch64-musl, libc: musl }
+        arch: [ x86_64, x86_64-musl, aarch64, aarch64-musl ]
+       # arch: [ x86_64, x86_64-musl, aarch64, aarch64-musl ]
     env:
       REPO_OWNER: "${{ github.repository_owner }}"
-      REPO_ORG: "void"
       REPO_NAME: "${{ github.event.repository.name }}"
-      GITHUB_SERVER_URL: "${{ github.server_url }}"
-      TARGET_ARCH: "${{ matrix.config.arch }}"
+      TARGET_ARCH: "${{ matrix.arch }}"
       SCRIPT_DIR: "/work/${{ github.event.repository.name }}/scripts"
       BUILD_ARGS: ""
 
@@ -36,23 +31,17 @@ jobs:
         run: |
           mkdir -p /etc/xbps.d && cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
           sed -i 's|repo-default|repo-ci|g' /etc/xbps.d/*-repository-*.conf
-          xbps-install -Syu xbps && xbps-install -yu && xbps-install -y sudo bash curl git nodejs
+          xbps-install -Syu xbps && xbps-install -yu && xbps-install -y sudo bash grep curl git nodejs kotlin-bin
           useradd -G xbuilder -M builder
 
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Copy to work directory
+      - name: Clone hyprland-void repo
         run: |
-          mkdir -p /work
-          cp -r $(pwd) /work/$REPO_NAME
-          ls -la /work/$REPO_NAME
-
-      - name: Set environment
-        run: $SCRIPT_DIR/set-environment
+          mkdir /work && cd /work
+          git clone https://github.com/$REPO_OWNER/$REPO_NAME.git
+          $SCRIPT_DIR/set-environment
 
       - name: Automatically generate a build order
-        run: $SCRIPT_DIR/generate-build-order.js
+        run: $SCRIPT_DIR/generate-build-order.kts
 
       - name: Prepare void-packages
         run: $SCRIPT_DIR/clone-and-prepare

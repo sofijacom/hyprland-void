@@ -13,60 +13,131 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ gitea.workflow }}-${{ gitea.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build packages
-    runs-on: ubuntu-latest-void
+  # Lint changed templates.
+  xlint:
+    name: Lint templates
+    runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/void-linux/void-${{ matrix.config.libc }}-full:20250616R1
-      options: --privileged --cap-add=SYS_ADMIN --security-opt apparmor=unconfined
+      image: 'ghcr.io/void-linux/void-buildroot-musl:20231230R1'
+      env:
+        PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
+        LICENSE_LIST: common/travis/license.lst
+
+    steps:
+      - name: Prepare container
+        run: |
+          # switch to repo-ci mirror
+          mkdir -p /etc/xbps.d && cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
+          sed -i 's|repo-default|repo-ci|g' /etc/xbps.d/*-repository-*.conf
+          # Sync and upgrade once, assume error comes from xbps update
+          xbps-install -Syu || xbps-install -yu xbps
+          # Upgrade again (in case there was a xbps update)
+          xbps-install -yu
+          # install tools needed for lints
+          xbps-install -y grep curl git
+      - name: Clone and checkout
+        uses: classabbyamp/treeless-checkout-action@v1
+      - name: Create hostrepo and prepare masterdir
+        run: |
+         ln -s "$(pwd)" /hostrepo &&
+         common/travis/set_mirror.sh &&
+         common/travis/prepare.sh &&
+         common/travis/fetch-xtools.sh
+      - run: common/travis/changed_templates.sh
+      - name: Run lints
+        run: |
+          rv=0
+          common/travis/xlint.sh || rv=1
+          common/travis/verify-update-check.sh || rv=1
+          exit $rv
+
+  # Build changed packages.
+  build:
+    name: Build packages
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.pull_request.title, '[ci skip]') && !contains(github.event.pull_request.body, '[ci skip]')"
+
+    container:
+      image: ghcr.io/void-linux/void-buildroot-${{ matrix.config.libc }}:20231230R1
+      options: --platform ${{ matrix.config.platform }}
+      env:
+        PATH: '/usr/libexec/chroot-git:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
+        ARCH: '${{ matrix.config.arch }}'
+        BOOTSTRAP: '${{ matrix.config.host }}'
+        TEST: '${{ matrix.config.test }}'
+        HOSTREPO: /hostrepo
 
     strategy:
       fail-fast: false
       matrix:
         config:
-          - { arch: x86_64, libc: glibc }
-          - { arch: x86_64-musl, libc: musl }
-          - { arch: aarch64, libc: glibc }
-          - { arch: aarch64-musl, libc: musl }
-    env:
-      REPO_OWNER: "${{ gitea.repository_owner }}"
-      REPO_ORG: "void"
-      REPO_NAME: "${{ gitea.event.repository.name }}"
-      GITEA_SERVER_URL: "${{ gitea.server_url }}"
-      TARGET_ARCH: "${{ matrix.config.arch }}"
-      SCRIPT_DIR: "/work/${{ gitea.event.repository.name }}/scripts"
-      BUILD_ARGS: ""
+          - { arch: x86_64,       host: x86_64,      libc: glibc, platform: linux/amd64, test: 1 }
+          - { arch: aarch64,      host: x86_64,      libc: glibc, platform: linux/amd64, test: 0 }
+          - { arch: x86_64-musl,  host: x86_64-musl, libc: musl,  platform: linux/amd64, test: 1 }
+          - { arch: aarch64-musl, host: x86_64-musl, libc: musl,  platform: linux/amd64, test: 0 }
 
     steps:
-      - name: Prepare container and create a non-root user
+      - name: Prepare container
         run: |
+          # switch to repo-ci mirror
           mkdir -p /etc/xbps.d && cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
           sed -i 's|repo-default|repo-ci|g' /etc/xbps.d/*-repository-*.conf
-          xbps-install -Syu xbps && xbps-install -yu && xbps-install -y sudo bash curl git nodejs
-          useradd -G xbuilder -M builder
+          # Sync and upgrade once, assume error comes from xbps update
+          xbps-install -Syu || xbps-install -yu xbps
+          # Upgrade again (in case there was a xbps update)
+          xbps-install -yu
 
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Copy to work directory
+      - name: Clone and checkout
+        uses: classabbyamp/treeless-checkout-action@v1
+      - name: Create hostrepo and prepare masterdir
         run: |
-          mkdir -p /work
-          cp -r $(pwd) /work/$REPO_NAME
-          ls -la /work/$REPO_NAME
+         ln -s "$(pwd)" /hostrepo &&
+         common/travis/set_mirror.sh &&
+         common/travis/prepare.sh &&
+         common/travis/fetch-xtools.sh
+      - run: common/travis/changed_templates.sh
 
-      - name: Set environment
-        run: $SCRIPT_DIR/set-environment
+      - name: Build and check packages
+        run: |
+          (
+          here="$(pwd)"
+          cd /
+          "$here/common/travis/build.sh" "$BOOTSTRAP" "$ARCH" "$TEST"
+          )
 
-      - name: Automatically generate a build order
-        run: $SCRIPT_DIR/generate-build-order.js
+      - name: Show files
+        run: |
+          (
+          here="$(pwd)"
+          cd /
+          "$here/common/travis/show_files.sh" "$BOOTSTRAP" "$ARCH"
+          )
 
-      - name: Prepare void-packages
-        run: $SCRIPT_DIR/clone-and-prepare
+      - name: Compare to previous
+        run: |
+          (
+          here="$(pwd)"
+          cd /
+          "$here/common/travis/xpkgdiff.sh" "$BOOTSTRAP" "$ARCH"
+          )
 
-      - name: Build packages
-        run: $SCRIPT_DIR/build-packages
+      - name: Check file conflicts
+        if: matrix.config.arch == 'x86_64' # the arch indexed in xlocate
+        run: |
+          if [ -s /tmp/templates ]; then
+              xlocate -S &&
+              common/scripts/lint-conflicts $HOME/hostdir/binpkgs
+          fi
+
+      - name: Verify repository state
+        run: |
+          (
+          here="$(pwd)"
+          cd /
+          "$here/common/travis/check-install.sh" "$BOOTSTRAP" "$ARCH"
+          )
