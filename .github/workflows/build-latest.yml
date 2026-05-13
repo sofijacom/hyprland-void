@@ -33,10 +33,7 @@ jobs:
           sed -i 's|repo-default|repo-ci|g' /etc/xbps.d/*-repository-*.conf
           xbps-install -Syu xbps && xbps-install -yu && xbps-install -y sudo bash grep curl git nodejs kotlin-bin
           useradd -G xbuilder -M builder
-
-      - name: Clone and checkout
-        uses: classabbyamp/treeless-checkout-action@v1
-        
+ 
       - name: Clone hyprland-void repo
         run: |
           mkdir /work && cd /work
