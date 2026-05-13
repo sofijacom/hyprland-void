@@ -63,8 +63,8 @@ jobs:
     if: "!contains(github.event.pull_request.title, '[ci skip]') && !contains(github.event.pull_request.body, '[ci skip]')"
 
     container:
-      image: ghcr.io/void-linux/void-${{ matrix.config.libc }}-full:20250616R1
-      options: --privileged --cap-add=SYS_ADMIN --security-opt apparmor=unconfined
+      image: ghcr.io/void-linux/void-buildroot-${{ matrix.config.libc }}:20231230R1
+      options: --platform ${{ matrix.config.platform }}
       env:
         PATH: '/usr/libexec/chroot-git:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
         ARCH: '${{ matrix.config.arch }}'
