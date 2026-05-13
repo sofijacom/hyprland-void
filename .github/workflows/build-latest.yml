@@ -23,12 +23,12 @@ jobs:
           - { arch: aarch64, libc: glibc }
           - { arch: aarch64-musl, libc: musl }
     env:
-      REPO_OWNER: "${{ gitea.repository_owner }}"
+      REPO_OWNER: "${{ github.repository_owner }}"
       REPO_ORG: "void"
-      REPO_NAME: "${{ gitea.event.repository.name }}"
-      GITEA_SERVER_URL: "${{ gitea.server_url }}"
+      REPO_NAME: "${{ github.event.repository.name }}"
+      GITHUB_SERVER_URL: "${{ github.server_url }}"
       TARGET_ARCH: "${{ matrix.config.arch }}"
-      SCRIPT_DIR: "/work/${{ gitea.event.repository.name }}/scripts"
+      SCRIPT_DIR: "/work/${{ github.event.repository.name }}/scripts"
       BUILD_ARGS: ""
 
     steps:
