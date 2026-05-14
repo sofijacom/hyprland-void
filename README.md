@@ -69,7 +69,7 @@ There are packages in this repository which may be of interest for:
 - hyprpolkitagent
 - xdg-desktop-portal-hyprland
 
-# Available packages
+### Available packages
 | package | source | version |
 |:--------|:-------|:-----------------|
 | aquamarine                          | https://github.com/hyprwm/aquamarine                   | 0.11.0 |
