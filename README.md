@@ -69,8 +69,9 @@ There are packages in this repository which may be of interest for:
 - hyprpolkitagent
 - xdg-desktop-portal-hyprland
 
-### Available packages
-| package | source | version |
+# Available packages 
+
+| package | source | version          |
 |:--------|:-------|:-----------------|
 | aquamarine                          | https://github.com/hyprwm/aquamarine                   | 0.11.0 |
 | glaze                               | https://github.com/stephenberry/glaze                  | 7.6.0 |
@@ -105,6 +106,7 @@ There are packages in this repository which may be of interest for:
 | sdbus-cpp                           | https://github.com/Kistler-Group/sdbus-cpp             | 2.2.1 |
 | tomlplusplus                        | https://marzer.github.io/tomlplusplus                  | 3.4.0 |
 | xdg-desktop-portal-hyprland         | https://github.com/hyprwm/xdg-desktop-portal-hyprland  | 1.3.12 |
+
 
 ### Common Remarks
 #### "Why is this so out of date"?
