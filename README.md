@@ -69,6 +69,43 @@ There are packages in this repository which may be of interest for:
 - hyprpolkitagent
 - xdg-desktop-portal-hyprland
 
+# Available packages
+| package | source | version |
+|:--------|:-------|:-----------------|
+| aquamarine                          | https://github.com/hyprwm/aquamarine/releases          | 0.11.0 |
+| glaze                               | https://github.com/stephenberry/glaze                  | 7.6.0 |
+| hyprcursor                          | https://github.com/hyprwm/hyprcursor                   | 0.1.13 |
+| hyprgraphics                        | https://github.com/hyprwm/hyprgraphics                 | 0.5.1 |
+| hypridle                            | https://github.com/hyprwm/hypridle                     | 0.1.7 |
+| hyprland-guiutils                   | https://github.com/hyprwm/hyprland-guiutils            | 0.2.1 |
+| hyprland-protocols                  | https://github.com/hyprwm/hyprland-protocols           | 0.7.0 |
+| hyprland-qt-support                 | https://github.com/hyprwm/hyprland-qt-support          | 0.1.0 |
+| hyprland                            | https://github.com/hyprwm/Hyprland                     | 0.55.0 |
+| hyprland-devel                      | https://github.com/hyprwm/Hyprland                     | 0.55.0 |
+| hyprlang                            | https://github.com/hyprwm/hyprlang                     | 0.6.8 |
+| hyprlauncher                        | https://github.com/hyprwm/hyprlauncher                 | 0.1.6 |
+| hyprlock                            | https://github.com/hyprwm/hyprlock                     | 0.9.5 |
+| hyprmoncfg                          | https://github.com/crmne/hyprmoncfg                    | 1.4.2 |
+| hyprpaper                           | https://github.com/hyprwm/hyprpaper                    | 0.8.4 |
+| hyprpicker                          | https://github.com/hyprwm/hyprpicker                   | 0.4.7 |
+| hyprpolkitagent                     | https://github.com/hyprwm/hyprpolkitagent              | 0.1.3 |
+| hyprpwcenter                        | https://github.com/hyprwm/hyprpwcenter                 | 0.1.2 |
+| hyprshade                           | https://github.com/loqusion/hyprshade                  | 4.0.1 |
+| hyprshot                            | https://github.com/Gustash/Hyprshot                    | 1.3.0 |
+| hyprshutdown                        | https://github.com/hyprwm/hyprshutdown                 | 0.1.0 |
+| hyprsunset                          | https://github.com/hyprwm/hyprsunset                   | 0.3.3 |
+| hyprsysteminfo                      | https://github.com/hyprwm/hyprsysteminfo               | 0.1.3 |
+| hyprtoolkit                         | https://github.com/hyprwm/hyprtoolkit                  | 0.5.4 |
+| hyprutils                           | https://github.com/hyprwm/hyprutils                    | 0.13.1 |
+| hyprwayland-scanner                 | https://github.com/hyprwm/hyprwayland-scanner          | 0.4.6 |
+| hyprwire                            | https://github.com/hyprwm/hyprwire                     | 0.3.1 |
+| libspng                             | https://libspng.org/                                   | 0.7.4 |
+| lua55                               | https://www.lua.org                                    | 5.5.0 |
+| lua55-devel                         | https://www.lua.org                                    | 5.5.0 |
+| sdbus-cpp                           | https://github.com/Kistler-Group/sdbus-cpp             | 2.2.1 |
+| tomlplusplus                        | https://marzer.github.io/tomlplusplus/                 | 3.4.0 |
+| xdg-desktop-portal-hyprland         | https://github.com/hyprwm/xdg-desktop-portal-hyprland  | 1.3.12 |
+
 ### Common Remarks
 #### "Why is this so out of date"?
 
