@@ -9,7 +9,7 @@ COMMAND="
     && echo \"BUILD_ARGS=$BUILD_ARGS -a $TARGET_ARCH\" >> \"$GITHUB_ENV\" \
     || true
 
-  [ \"$TARGET_ARCH\" != \"x86_64-musl\" ] \
+  [ \"x86_64-musl\" != \"x86_64\" ] \
     && echo \"BUILD_ARGS=$BUILD_ARGS -A $TARGET_ARCH\" >> \"$GITHUB_ENV\" \
     || true
 "
