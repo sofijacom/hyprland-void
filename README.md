@@ -72,7 +72,7 @@ There are packages in this repository which may be of interest for:
 # Available packages
 | package | source | version |
 |:--------|:-------|:-----------------|
-| aquamarine                          | https://github.com/hyprwm/aquamarine/releases          | 0.11.0 |
+| aquamarine                          | https://github.com/hyprwm/aquamarine                   | 0.11.0 |
 | glaze                               | https://github.com/stephenberry/glaze                  | 7.6.0 |
 | hyprcursor                          | https://github.com/hyprwm/hyprcursor                   | 0.1.13 |
 | hyprgraphics                        | https://github.com/hyprwm/hyprgraphics                 | 0.5.1 |
@@ -103,7 +103,7 @@ There are packages in this repository which may be of interest for:
 | lua55                               | https://www.lua.org                                    | 5.5.0 |
 | lua55-devel                         | https://www.lua.org                                    | 5.5.0 |
 | sdbus-cpp                           | https://github.com/Kistler-Group/sdbus-cpp             | 2.2.1 |
-| tomlplusplus                        | https://marzer.github.io/tomlplusplus/                 | 3.4.0 |
+| tomlplusplus                        | https://marzer.github.io/tomlplusplus                  | 3.4.0 |
 | xdg-desktop-portal-hyprland         | https://github.com/hyprwm/xdg-desktop-portal-hyprland  | 1.3.12 |
 
 ### Common Remarks
