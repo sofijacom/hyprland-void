@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: 'ghcr.io/void-linux/void-buildroot-musl' # :20250214R1
+      image: 'ghcr.io/void-linux/void-buildroot-musl'
       env:
         PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
         LICENSE_LIST: common/travis/license.lst
@@ -63,7 +63,7 @@ jobs:
     if: "!contains(github.event.pull_request.title, '[ci skip]') && !contains(github.event.pull_request.body, '[ci skip]')"
 
     container:
-      image: ghcr.io/void-linux/void-buildroot-${{ matrix.config.libc }}-full # :20231230R1
+      image: ghcr.io/void-linux/void-buildroot-${{ matrix.config.libc }}-full
       options: --platform ${{ matrix.config.platform }} --privileged
       env:
         PATH: '/usr/libexec/chroot-git:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
