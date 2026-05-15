@@ -4,7 +4,6 @@
 [![Void Linux](https://img.shields.io/badge/Void_Linux-%23458161.svg?style=badge&logo=voidlinux&logoColor=white)](#)
 [![GitHub release (with filter)](https://img.shields.io/github/v/release/sofijacom/hyprland-void?style=badge&logo=hyprland&label=Hyprland&colorA=363a4f&colorB=purple)](#)
 [![Auto Assign](https://github.com/sofijacom/hyprland-void/actions/workflows/build-latest.yml/badge.svg)](https://github.com/sofijacom/hyprland-void/actions/workflows/build-latest.yml)
-[![GitHub last commit (branch)](https://img.shields.io/github/last-commit/sofijacom/hyprland-void/main?style=badge&label=Last%20Commit&logo=github&colorA=363a4f&colorB=purple)](#)
 [![Repo size](https://img.shields.io/github/repo-size/sofijacom/hyprland-void?style=badge&logo=protondrive&logoColor=fff&colorA=363a4f&colorB=blue)](#)
 <!--[![Build](https://img.shields.io/github/actions/workflow/status/sofijacom/hyprland-void/build-latest.yml?style=badge&label=BUILD&logo=githubactions&logoColor=white&colorA=363a4f&colorB)](https://github.com/sofijacom/hyprland-void/actions) -->
 
