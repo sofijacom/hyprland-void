@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: 'ghcr.io/void-linux/void-buildroot-musl'
+      image: 'ghcr.io/void-linux/void-buildroot-musl' # :78c7c8e
       env:
         PATH: '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/bin:/tmp/bin'
         LICENSE_LIST: common/travis/license.lst
