@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/void-linux/void-glibc-full
+      image: ghcr.io/void-linux/void-glibc-full # :20260501r1
       options: --platform linux/amd64 --privileged
 
     strategy:
