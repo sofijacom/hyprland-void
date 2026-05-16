@@ -3,19 +3,19 @@
   
   <br><br/>
 
-  [![Hyprland Linux](https://img.shields.io/badge/Hyprland-blueviolet?style=badge&logo=hyprland&logoColor=white)](#)
-  [![Void Linux](https://img.shields.io/badge/Void_Linux-%23458161.svg?style=badge&logo=voidlinux&logoColor=white)](#)
-  [![GitHub release (with filter)](https://img.shields.io/github/v/release/sofijacom/hyprland-void?style=badge&logo=hyprland&label=Hyprland&colorA=363a4f&colorB=purple)](#)
-  [![Auto Assign](https://github.com/sofijacom/hyprland-void/actions/workflows/build-latest.yml/badge.svg)](https://github.com/sofijacom/hyprland-void/actions/workflows/build-latest.yml)
-  [![Repo size](https://img.shields.io/github/repo-size/sofijacom/hyprland-void?style=badge&logo=protondrive&logoColor=fff&colorA=363a4f&colorB=blue)](#)
+[![Hyprland Linux](https://img.shields.io/badge/Hyprland-blueviolet?style=badge&logo=hyprland&logoColor=white)](#)
+[![Void Linux](https://img.shields.io/badge/Void_Linux-%23458161.svg?style=badge&logo=voidlinux&logoColor=white)](#)
+[![GitHub release (with filter)](https://img.shields.io/github/v/release/sofijacom/hyprland-void?style=badge&logo=hyprland&label=Hyprland&colorA=363a4f&colorB=purple)](#)
+[![Auto Assign](https://github.com/sofijacom/hyprland-void/actions/workflows/build-latest.yml/badge.svg)](https://github.com/sofijacom/hyprland-void/actions/workflows/build-latest.yml)
+[![Repo size](https://img.shields.io/github/repo-size/sofijacom/hyprland-void?style=badge&logo=protondrive&logoColor=fff&colorA=363a4f&colorB=blue)](#)
 
-  [![x85_64-glibc](https://img.shields.io/badge/x86__64-glibc-478061?style=plastic&colorA=363a4f&colorB)](#)
-  &nbsp;
-  [![x86_64-musl](https://img.shields.io/badge/x86__64-musl-478061?style=plastic&colorA=363a4f&colorB)](#)
-  &nbsp;
-  [![x85_64-glibc](https://img.shields.io/badge/aarch64-glibc-478061?style=plastic&colorA=363a4f&colorB)](#)
-  &nbsp;
-  [![x86_64-musl](https://img.shields.io/badge/aarch64-musl-478061?style=plastic&colorA=363a4f&colorB)](#)
+[![x85_64-glibc](https://img.shields.io/badge/x86__64-glibc-478061?style=plastic&colorA=363a4f&colorB)](#)
+&nbsp;
+[![x86_64-musl](https://img.shields.io/badge/x86__64-musl-478061?style=plastic&colorA=363a4f&colorB)](#)
+&nbsp;
+[![x85_64-glibc](https://img.shields.io/badge/aarch64-glibc-478061?style=plastic&colorA=363a4f&colorB)](#)
+&nbsp;
+[![x86_64-musl](https://img.shields.io/badge/aarch64-musl-478061?style=plastic&colorA=363a4f&colorB)](#)
 </div>
 
 This repository contains template files and binaries for building or installing [Hyprland](https://github.com/hyprwm/Hyprland) on Void Linux.
