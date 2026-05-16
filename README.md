@@ -7,10 +7,12 @@
 [![Repo size](https://img.shields.io/github/repo-size/sofijacom/hyprland-void?style=badge&logo=protondrive&logoColor=fff&colorA=363a4f&colorB=blue)](#)
 
 [![x85_64-glibc](https://img.shields.io/badge/x86__64-glibc-478061?style=plastic&colorA=363a4f&colorB)](#)
+&nbsp;
 [![x86_64-musl](https://img.shields.io/badge/x86__64-musl-478061?style=plastic&colorA=363a4f&colorB)](#)
+&nbsp;
 [![x85_64-glibc](https://img.shields.io/badge/aarch64-glibc-478061?style=plastic&colorA=363a4f&colorB)](#)
-[![x86_64-musl](https://img.shields.io/badge/aarch64-musl-478061?style=plastic&colorA=363a4f&colorB)](#) 
-<!--[![Build](https://img.shields.io/github/actions/workflow/status/sofijacom/hyprland-void/build-latest.yml?style=badge&label=BUILD&logo=githubactions&logoColor=white&colorA=363a4f&colorB)](https://github.com/sofijacom/hyprland-void/actions) -->
+&nbsp;
+[![x86_64-musl](https://img.shields.io/badge/aarch64-musl-478061?style=plastic&colorA=363a4f&colorB)](#)
 
 This repository contains template files and binaries for building or installing [Hyprland](https://github.com/hyprwm/Hyprland) on Void Linux.
 
