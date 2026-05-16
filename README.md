@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="650" height="auto" alt="void-linux" src="https://github.com/sofijacom/hyprland-void/blob/master/img/HyprlandforVoidLinux-1.gif" />
+  <img width="650" height="auto" alt="void-linux" src="https://github.com/sofijacom/hyprland-void/blob/master/img/HyprlandforVoidLinux-2.gif" />
 <br><br/>
 
 [![Hyprland Linux](https://img.shields.io/badge/Hyprland-purple?style=badge&logo=hyprland&logoColor=white)](#)
