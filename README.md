@@ -2,7 +2,7 @@
 
 <div align="center">
   
-<img width="600" height="auto" alt="void-linux" src="https://github.com/sofijacom/hyprland-void/blob/master/img/HyprlandforVoidLinux-1.gif" />
+<img width="700" height="auto" alt="void-linux" src="https://github.com/sofijacom/hyprland-void/blob/master/img/HyprlandforVoidLinux-1.gif" />
 
 <br><br/>
 
