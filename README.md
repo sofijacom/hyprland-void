@@ -1,6 +1,6 @@
 <div align="center" markdown="1">
   <a>
-  <img width="650" height="auto" alt="void-linux" src="https://github.com/sofijacom/hyprland-void/blob/master/img/HyprlandforVoidLinux-2.gif" />
+  <img width="650" height="auto" alt="void-linux" src="https://github.com/sofijacom/hyprland-void/blob/master/img/HyprlandforVoidLinux-2.gif?raw=true" />
   </a>
   <br><br/>
 
