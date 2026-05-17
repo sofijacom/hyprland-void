@@ -1,5 +1,5 @@
 <div align="center" markdown="1">
-  <a>
+  <a href="">
   <img width="650" height="auto" alt="void-linux" src="https://github.com/sofijacom/hyprland-void/blob/master/img/HyprlandforVoidLinux-2.gif" />
   </a>
   <br><br/>
