@@ -21,8 +21,6 @@
 <!-- ## 【 Unofficial package repository 】-->
 </div>
 
-##
-
 This repository contains template files and binaries for building or installing [Hyprland](https://github.com/hyprwm/Hyprland) on Void Linux.
 
 ### Installation
