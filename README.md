@@ -114,7 +114,7 @@ There are packages in this repository which may be of interest for:
 | hyprutils                   | https://github.com/hyprwm/hyprutils                    | ![Version](https://img.shields.io/badge/version-0.13.1-blue) |
 | hyprwayland-scanner         | https://github.com/hyprwm/hyprwayland-scanner          | ![Version](https://img.shields.io/badge/version-0.4.6-blue) |
 | hyprwire                    | https://github.com/hyprwm/hyprwire                     | ![Version](https://img.shields.io/badge/version-0.3.1-blue) |
-| libspng                     | https://libspng.org/                                   | ![Version](https://img.shields.io/badge/version-0.7.4-blue) |
+| libspng                     | https://github.com/randy408/libspng                    | ![Version](https://img.shields.io/badge/version-0.7.4-blue) |
 | lua55                       | https://www.lua.org                                    | ![Version](https://img.shields.io/badge/version-5.5.0-blue) |
 | lua55-devel                 | https://www.lua.org                                    | ![Version](https://img.shields.io/badge/version-5.5.0-blue) |
 | sdbus-cpp                   | https://github.com/Kistler-Group/sdbus-cpp             | ![Version](https://img.shields.io/badge/version-2.2.1-blue) |
