@@ -85,8 +85,8 @@ There are packages in this repository which may be of interest for:
 
 ### Available packages 
 
-| package | source | version  |
-|:--------|:-------|:---------|
+| package | source | version  | latest version |
+|:--------|:-------|:---------|:---------------|
 | aquamarine                  | https://github.com/hyprwm/aquamarine                   | ![Version](https://img.shields.io/badge/version-0.11.0-blue) |
 | glaze                       | https://github.com/stephenberry/glaze                  | ![Version](https://img.shields.io/badge/version-7.6.0-blue) |
 | hyprcursor                  | https://github.com/hyprwm/hyprcursor                   | ![Version](https://img.shields.io/badge/version-0.1.13-blue) |
@@ -106,8 +106,8 @@ There are packages in this repository which may be of interest for:
 | hyprpolkitagent             | https://github.com/hyprwm/hyprpolkitagent              | ![Version](https://img.shields.io/badge/version-0.1.3-blue) |
 | hyprpwcenter                | https://github.com/hyprwm/hyprpwcenter                 | ![Version](https://img.shields.io/badge/version-0.1.2-blue) |
 | hyprshade                   | https://github.com/loqusion/hyprshade                  | ![Version](https://img.shields.io/badge/version-4.0.1-blue) |
-| hyprshot                    | https://github.com/Gustash/Hyprshot                    | ![Version](https://img.shields.io/badge/version-1.3.0-blue) |
-| hyprshutdown                | https://github.com/hyprwm/hyprshutdown                 | ![Version](https://img.shields.io/badge/version-0.1.0-blue) |
+| hyprshot                    | https://github.com/Gustash/Hyprshot                    | ![Version](https://img.shields.io/badge/version-1.3.0-blue) | ![release](https://img.shields.io/github/v/release/Gustash/hyprshot?color=purple)
+| hyprshutdown                | https://github.com/hyprwm/hyprshutdown                 | ![Version](https://img.shields.io/badge/version-0.1.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprshutdown?color=purple)|
 | hyprsunset                  | https://github.com/hyprwm/hyprsunset                   | ![Version](https://img.shields.io/badge/version-0.3.3-blue) |
 | hyprsysteminfo              | https://github.com/hyprwm/hyprsysteminfo               | ![Version](https://img.shields.io/badge/version-0.1.3-blue) |
 | hyprtoolkit                 | https://github.com/hyprwm/hyprtoolkit                  | ![Version](https://img.shields.io/badge/version-0.5.4-blue) |
