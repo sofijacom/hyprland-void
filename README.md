@@ -107,7 +107,7 @@ There are packages in this repository which may be of interest for:
 | hyprpwcenter                | https://github.com/hyprwm/hyprpwcenter                 | ![Version](https://img.shields.io/badge/version-0.1.2-blue) |
 | hyprshade                   | https://github.com/loqusion/hyprshade                  | ![Version](https://img.shields.io/badge/version-4.0.1-blue) |
 | hyprshot                    | https://github.com/Gustash/Hyprshot                    | ![Version](https://img.shields.io/badge/version-1.3.0-blue) | ![release](https://img.shields.io/github/v/release/Gustash/hyprshot?color=purple)
-| hyprshutdown                | https://github.com/hyprwm/hyprshutdown                 | ![Version](https://img.shields.io/badge/version-0.1.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprshutdown?color=purple)|
+| hyprshutdown                | https://github.com/hyprwm/hyprshutdown                 | ![Version](https://img.shields.io/badge/version-0.1.0-blue) | ![Version](https://img.shields.io/github/v/v/hyprwm/hyprshutdown?color=purple)|
 | hyprsunset                  | https://github.com/hyprwm/hyprsunset                   | ![Version](https://img.shields.io/badge/version-0.3.3-blue) |
 | hyprsysteminfo              | https://github.com/hyprwm/hyprsysteminfo               | ![Version](https://img.shields.io/badge/version-0.1.3-blue) |
 | hyprtoolkit                 | https://github.com/hyprwm/hyprtoolkit                  | ![Version](https://img.shields.io/badge/version-0.5.4-blue) |
