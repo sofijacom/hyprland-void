@@ -87,39 +87,39 @@ There are packages in this repository which may be of interest for:
 
 | package | source | version  | latest version |
 |:--------|:-------|:---------|:---------------|
-| aquamarine                  | https://github.com/hyprwm/aquamarine                   | ![Version](https://img.shields.io/badge/version-0.11.0-blue) |
-| glaze                       | https://github.com/stephenberry/glaze                  | ![Version](https://img.shields.io/badge/version-7.6.0-blue) |
-| hyprcursor                  | https://github.com/hyprwm/hyprcursor                   | ![Version](https://img.shields.io/badge/version-0.1.13-blue) |
-| hyprgraphics                | https://github.com/hyprwm/hyprgraphics                 | ![Version](https://img.shields.io/badge/version-0.5.1-blue) |
-| hypridle                    | https://github.com/hyprwm/hypridle                     | ![Version](https://img.shields.io/badge/version-0.1.7-blue) |
-| hyprland-guiutils           | https://github.com/hyprwm/hyprland-guiutils            | ![Version](https://img.shields.io/badge/version-0.2.1-blue) |
-| hyprland-protocols          | https://github.com/hyprwm/hyprland-protocols           | ![Version](https://img.shields.io/badge/version-0.7.0-blue) |
-| hyprland-qt-support         | https://github.com/hyprwm/hyprland-qt-support          | ![Version](https://img.shields.io/badge/version-0.1.0-blue) |
-| hyprland                    | https://github.com/hyprwm/Hyprland                     | ![Version](https://img.shields.io/badge/version-0.55.2-blue) |
-| hyprland-devel              | https://github.com/hyprwm/Hyprland                     | ![Version](https://img.shields.io/badge/version-0.55.2-blue) |
-| hyprlang                    | https://github.com/hyprwm/hyprlang                     | ![Version](https://img.shields.io/badge/version-0.6.8-blue) |
-| hyprlauncher                | https://github.com/hyprwm/hyprlauncher                 | ![Version](https://img.shields.io/badge/version-0.1.6-blue) |
-| hyprlock                    | https://github.com/hyprwm/hyprlock                     | ![Version](https://img.shields.io/badge/version-0.9.5-blue) |
-| hyprmoncfg                  | https://github.com/crmne/hyprmoncfg                    | ![Version](https://img.shields.io/badge/version-1.4.2-blue) |
-| hyprpaper                   | https://github.com/hyprwm/hyprpaper                    | ![Version](https://img.shields.io/badge/version-0.8.4-blue) |
-| hyprpicker                  | https://github.com/hyprwm/hyprpicker                   | ![Version](https://img.shields.io/badge/version-0.4.7-blue) |
-| hyprpolkitagent             | https://github.com/hyprwm/hyprpolkitagent              | ![Version](https://img.shields.io/badge/version-0.1.3-blue) |
-| hyprpwcenter                | https://github.com/hyprwm/hyprpwcenter                 | ![Version](https://img.shields.io/badge/version-0.1.2-blue) |
-| hyprshade                   | https://github.com/loqusion/hyprshade                  | ![Version](https://img.shields.io/badge/version-4.0.1-blue) |
+| aquamarine                  | https://github.com/hyprwm/aquamarine                   | ![Version](https://img.shields.io/badge/version-0.11.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/aquamarine?color=purple)|
+| glaze                       | https://github.com/stephenberry/glaze                  | ![Version](https://img.shields.io/badge/version-7.6.0-blue) | ![Version](https://img.shields.io/github/v/release/stephenberry/glaze?color=purple)|
+| hyprcursor                  | https://github.com/hyprwm/hyprcursor                   | ![Version](https://img.shields.io/badge/version-0.1.13-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprcursor?color=purple)|
+| hyprgraphics                | https://github.com/hyprwm/hyprgraphics                 | ![Version](https://img.shields.io/badge/version-0.5.1-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprgraphics?color=purple)|
+| hypridle                    | https://github.com/hyprwm/hypridle                     | ![Version](https://img.shields.io/badge/version-0.1.7-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hypridle?color=purple)|
+| hyprland-guiutils           | https://github.com/hyprwm/hyprland-guiutils            | ![Version](https://img.shields.io/badge/version-0.2.1-blue) | ![Version](https://img.shields.io/github/v/release/hyprland-guiutils?color=purple)|
+| hyprland-protocols          | https://github.com/hyprwm/hyprland-protocols           | ![Version](https://img.shields.io/badge/version-0.7.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprland-protocols?color=purple)|
+| hyprland-qt-support         | https://github.com/hyprwm/hyprland-qt-support          | ![Version](https://img.shields.io/badge/version-0.1.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprland-qt-support?color=purple)|
+| hyprland                    | https://github.com/hyprwm/Hyprland                     | ![Version](https://img.shields.io/badge/version-0.55.2-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/Hyprland?color=purple)|
+| hyprland-devel              | https://github.com/hyprwm/Hyprland                     | ![Version](https://img.shields.io/badge/version-0.55.2-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/Hyprland?color=purple)|
+| hyprlang                    | https://github.com/hyprwm/hyprlang                     | ![Version](https://img.shields.io/badge/version-0.6.8-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprlang?color=purple)|
+| hyprlauncher                | https://github.com/hyprwm/hyprlauncher                 | ![Version](https://img.shields.io/badge/version-0.1.6-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprlauncher?color=purple)|
+| hyprlock                    | https://github.com/hyprwm/hyprlock                     | ![Version](https://img.shields.io/badge/version-0.9.5-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprlock?color=purple)|
+| hyprmoncfg                  | https://github.com/crmne/hyprmoncfg                    | ![Version](https://img.shields.io/badge/version-1.4.2-blue) | ![Version](https://img.shields.io/github/v/release/crmne/hyprmoncfg?color=purple)|
+| hyprpaper                   | https://github.com/hyprwm/hyprpaper                    | ![Version](https://img.shields.io/badge/version-0.8.4-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpaper?color=purple)|
+| hyprpicker                  | https://github.com/hyprwm/hyprpicker                   | ![Version](https://img.shields.io/badge/version-0.4.7-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpicker?color=purple)|
+| hyprpolkitagent             | https://github.com/hyprwm/hyprpolkitagent              | ![Version](https://img.shields.io/badge/version-0.1.3-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpolkitagent?color=purple)|
+| hyprpwcenter                | https://github.com/hyprwm/hyprpwcenter                 | ![Version](https://img.shields.io/badge/version-0.1.2-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpwcenter?color=purple)|
+| hyprshade                   | https://github.com/loqusion/hyprshade                  | ![Version](https://img.shields.io/badge/version-4.0.1-blue) | ![Version](https://img.shields.io/github/v/release/loqusion/hyprshade?color=purple)|
 | hyprshot                    | https://github.com/Gustash/Hyprshot                    | ![Version](https://img.shields.io/badge/version-1.3.0-blue) | ![release](https://img.shields.io/github/v/release/Gustash/hyprshot?color=purple)
 | hyprshutdown                | https://github.com/hyprwm/hyprshutdown                 | ![Version](https://img.shields.io/badge/version-0.1.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprshutdown?color=purple)|
-| hyprsunset                  | https://github.com/hyprwm/hyprsunset                   | ![Version](https://img.shields.io/badge/version-0.3.3-blue) |
-| hyprsysteminfo              | https://github.com/hyprwm/hyprsysteminfo               | ![Version](https://img.shields.io/badge/version-0.1.3-blue) |
-| hyprtoolkit                 | https://github.com/hyprwm/hyprtoolkit                  | ![Version](https://img.shields.io/badge/version-0.5.4-blue) |
-| hyprutils                   | https://github.com/hyprwm/hyprutils                    | ![Version](https://img.shields.io/badge/version-0.13.1-blue) |
-| hyprwayland-scanner         | https://github.com/hyprwm/hyprwayland-scanner          | ![Version](https://img.shields.io/badge/version-0.4.6-blue) |
-| hyprwire                    | https://github.com/hyprwm/hyprwire                     | ![Version](https://img.shields.io/badge/version-0.3.1-blue) |
-| libspng                     | https://github.com/randy408/libspng                    | ![Version](https://img.shields.io/badge/version-0.7.4-blue) |
-| lua55                       | https://www.lua.org                                    | ![Version](https://img.shields.io/badge/version-5.5.0-blue) |
-| lua55-devel                 | https://www.lua.org                                    | ![Version](https://img.shields.io/badge/version-5.5.0-blue) |
-| sdbus-cpp                   | https://github.com/Kistler-Group/sdbus-cpp             | ![Version](https://img.shields.io/badge/version-2.3.0-blue) |
-| tomlplusplus                | https://marzer.github.io/tomlplusplus                  | ![Version](https://img.shields.io/badge/version-3.4.0-blue) |
-| xdg-desktop-portal-hyprland | https://github.com/hyprwm/xdg-desktop-portal-hyprland  | ![Version](https://img.shields.io/badge/version-1.3.12-blue) |
+| hyprsunset                  | https://github.com/hyprwm/hyprsunset                   | ![Version](https://img.shields.io/badge/version-0.3.3-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprsunset?color=purple)|
+| hyprsysteminfo              | https://github.com/hyprwm/hyprsysteminfo               | ![Version](https://img.shields.io/badge/version-0.1.3-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprsysteminfo?color=purple)|
+| hyprtoolkit                 | https://github.com/hyprwm/hyprtoolkit                  | ![Version](https://img.shields.io/badge/version-0.5.4-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprtoolkit?color=purple)|
+| hyprutils                   | https://github.com/hyprwm/hyprutils                    | ![Version](https://img.shields.io/badge/version-0.13.1-blue | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprutils?color=purple)|
+| hyprwayland-scanner         | https://github.com/hyprwm/hyprwayland-scanner          | ![Version](https://img.shields.io/badge/version-0.4.6-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprwayland-scanner?color=purple)|
+| hyprwire                    | https://github.com/hyprwm/hyprwire                     | ![Version](https://img.shields.io/badge/version-0.3.1-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprwire?color=purple)|
+| libspng                     | https://github.com/randy408/libspng                    | ![Version](https://img.shields.io/badge/version-0.7.4-blue  | ![Version](https://img.shields.io/github/v/release/randy408/libspng?color=purple)|
+| lua55                       | https://www.lua.org                                    | ![Version](https://img.shields.io/badge/version-5.5.0-blue) | ![Version](https://img.shields.io/github/v/release/?color=purple)|
+| lua55-devel                 | https://www.lua.org                                    | ![Version](https://img.shields.io/badge/version-5.5.0-blue) | ![Version](https://img.shields.io/github/v/release/?color=purple)|
+| sdbus-cpp                   | https://github.com/Kistler-Group/sdbus-cpp             | ![Version](https://img.shields.io/badge/version-2.3.0-blue) | ![Version](https://img.shields.io/github/v/release/Kistler-Group/sdbus-cpp?color=purple)|
+| tomlplusplus                | https://marzer.github.io/tomlplusplus                  | ![Version](https://img.shields.io/badge/version-3.4.0-blue) | ![Version](https://img.shields.io/github/v/release/?color=purple)|
+| xdg-desktop-portal-hyprland | https://github.com/hyprwm/xdg-desktop-portal-hyprland  | ![Version](https://img.shields.io/badge/version-1.3.12-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/xdg-desktop-portal-hyprland?color=purple)|
 
 
 ### Common Remarks
