@@ -118,7 +118,7 @@ There are packages in this repository which may be of interest for:
 | lua55                       | https://www.lua.org                                    | ![Version](https://img.shields.io/badge/version-5.5.0-blue) | |
 | lua55-devel                 | https://www.lua.org                                    | ![Version](https://img.shields.io/badge/version-5.5.0-blue) | |
 | sdbus-cpp                   | https://github.com/Kistler-Group/sdbus-cpp             | ![Version](https://img.shields.io/badge/version-2.3.0-blue) | ![Version](https://img.shields.io/github/v/release/Kistler-Group/sdbus-cpp?color=purple)|
-| tomlplusplus                | https://marzer.github.io/tomlplusplus                  | ![Version](https://img.shields.io/badge/version-3.4.0-blue) | |
+| tomlplusplus                | https://github.com/marzer/tomlplusplus                 | ![Version](https://img.shields.io/badge/version-3.4.0-blue) | ![Version](https://img.shields.io/github/v/release/marzer/tomlplusplus?color=purple)|
 | xdg-desktop-portal-hyprland | https://github.com/hyprwm/xdg-desktop-portal-hyprland  | ![Version](https://img.shields.io/badge/version-1.3.12-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/xdg-desktop-portal-hyprland?color=purple)|
 
 
