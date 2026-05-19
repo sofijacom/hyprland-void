@@ -95,8 +95,8 @@ There are packages in this repository which may be of interest for:
 | hyprland-guiutils           | https://github.com/hyprwm/hyprland-guiutils            | ![Version](https://img.shields.io/badge/version-0.2.1-blue) |
 | hyprland-protocols          | https://github.com/hyprwm/hyprland-protocols           | ![Version](https://img.shields.io/badge/version-0.7.0-blue) |
 | hyprland-qt-support         | https://github.com/hyprwm/hyprland-qt-support          | ![Version](https://img.shields.io/badge/version-0.1.0-blue) |
-| hyprland                    | https://github.com/hyprwm/Hyprland                     | ![Version](https://img.shields.io/badge/version-0.55.0-blue) |
-| hyprland-devel              | https://github.com/hyprwm/Hyprland                     | ![Version](https://img.shields.io/badge/version-0.55.0-blue) |
+| hyprland                    | https://github.com/hyprwm/Hyprland                     | ![Version](https://img.shields.io/badge/version-0.55.2-blue) |
+| hyprland-devel              | https://github.com/hyprwm/Hyprland                     | ![Version](https://img.shields.io/badge/version-0.55.2-blue) |
 | hyprlang                    | https://github.com/hyprwm/hyprlang                     | ![Version](https://img.shields.io/badge/version-0.6.8-blue) |
 | hyprlauncher                | https://github.com/hyprwm/hyprlauncher                 | ![Version](https://img.shields.io/badge/version-0.1.6-blue) |
 | hyprlock                    | https://github.com/hyprwm/hyprlock                     | ![Version](https://img.shields.io/badge/version-0.9.5-blue) |
@@ -117,7 +117,7 @@ There are packages in this repository which may be of interest for:
 | libspng                     | https://github.com/randy408/libspng                    | ![Version](https://img.shields.io/badge/version-0.7.4-blue) |
 | lua55                       | https://www.lua.org                                    | ![Version](https://img.shields.io/badge/version-5.5.0-blue) |
 | lua55-devel                 | https://www.lua.org                                    | ![Version](https://img.shields.io/badge/version-5.5.0-blue) |
-| sdbus-cpp                   | https://github.com/Kistler-Group/sdbus-cpp             | ![Version](https://img.shields.io/badge/version-2.2.1-blue) |
+| sdbus-cpp                   | https://github.com/Kistler-Group/sdbus-cpp             | ![Version](https://img.shields.io/badge/version-2.3.0-blue) |
 | tomlplusplus                | https://marzer.github.io/tomlplusplus                  | ![Version](https://img.shields.io/badge/version-3.4.0-blue) |
 | xdg-desktop-portal-hyprland | https://github.com/hyprwm/xdg-desktop-portal-hyprland  | ![Version](https://img.shields.io/badge/version-1.3.12-blue) |
 
