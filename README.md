@@ -85,8 +85,8 @@ There are packages in this repository which may be of interest for:
 
 ### Available packages 
 
-| package | source | version  | latest version |
-|:--------|:-------|:---------|:---------------|
+| package | source | version  | new release |
+|:--------|:-------|:---------|:------------|
 | aquamarine                  | https://github.com/hyprwm/aquamarine                   | ![Version](https://img.shields.io/badge/version-0.11.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/aquamarine?color=purple)|
 | glaze                       | https://github.com/stephenberry/glaze                  | ![Version](https://img.shields.io/badge/version-7.6.0-blue) | ![Version](https://img.shields.io/github/v/release/stephenberry/glaze?color=purple)|
 | hyprcursor                  | https://github.com/hyprwm/hyprcursor                   | ![Version](https://img.shields.io/badge/version-0.1.13-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprcursor?color=purple)|
