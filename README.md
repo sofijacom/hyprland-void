@@ -117,7 +117,7 @@ There are packages in this repository which may be of interest for:
 | libspng                     | https://github.com/randy408/libspng                    | ![Version](https://img.shields.io/badge/version-0.7.4-blue) | ![Version](https://img.shields.io/github/v/release/randy408/libspng?color=purple)|
 | lua55                       | https://github.com/lua/lua                             | ![Version](https://img.shields.io/badge/version-5.5.0-blue) | ![Version](https://img.shields.io/github/v/release/lua/lua?color=purple)|
 | lua55-devel                 | https://www.lua.org                                    | ![Version](https://img.shields.io/badge/version-5.5.0-blue) | ![Version](https://img.shields.io/github/v/release/lua/lua?color=purple)|
-| sdbus-cpp                   | https://github.com/Kistler-Group/sdbus-cpp             | ![Version](https://img.shields.io/badge/version-2.3.0-blue) | ![Version](https://img.shields.io/github/v/release/Kistler-Group/sdbus-cpp?color=purple)|
+| sdbus-cpp                   | https://github.com/Kistler-Group/sdbus-cpp             | ![Version](https://img.shields.io/badge/version-2.3.1-blue) | ![Version](https://img.shields.io/github/v/release/Kistler-Group/sdbus-cpp?color=purple)|
 | tomlplusplus                | https://github.com/marzer/tomlplusplus                 | ![Version](https://img.shields.io/badge/version-3.4.0-blue) | ![Version](https://img.shields.io/github/v/release/marzer/tomlplusplus?color=purple)|
 | xdg-desktop-portal-hyprland | https://github.com/hyprwm/xdg-desktop-portal-hyprland  | ![Version](https://img.shields.io/badge/version-1.3.12-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/xdg-desktop-portal-hyprland?color=purple)|
 
