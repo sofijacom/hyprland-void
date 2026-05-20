@@ -3,7 +3,7 @@ pkgname=hyprsysteminfo
 version=0.2.0
 revision=1
 build_style=cmake
-configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr"
+# configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 hostmakedepends="cmake pkgconf qt6-base qt6-declarative-devel"
 makedepends="hyprland-qt-support hyprutils hyprtoolkit glaze pciutils-devel pixman-devel libdrm-devel qt6-base-devel qt6-base-private-devel
  qt6-declarative-devel qt6-declarative-private-devel qt6-tools-devel
