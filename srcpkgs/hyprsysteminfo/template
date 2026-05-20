@@ -1,13 +1,14 @@
 # Template file for 'hyprsysteminfo'
+
 pkgname=hyprsysteminfo
 version=0.2.0
 revision=1
 build_style=cmake
-# configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr"
-hostmakedepends="cmake pkgconf qt6-base qt6-declarative-devel"
-makedepends="hyprland-qt-support hyprutils hyprtoolkit glaze pciutils-devel pixman-devel libdrm-devel qt6-base-devel qt6-base-private-devel
+configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++"
+hostmakedepends="cmake pkgconf qt6-base qt6-declarative-devel clang"
+makedepends="hyprland-qt-support hyprutils qt6-base-devel qt6-base-private-devel
  qt6-declarative-devel qt6-declarative-private-devel qt6-tools-devel
- qt6-wayland-devel qt6-wayland-private-devel"
+ qt6-wayland-devel qt6-wayland-private-devel glaze hyprtoolkit pciutils-devel"
 short_desc="Tiny application to display information about the running system"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
