@@ -1,6 +1,6 @@
 # Template file for 'glaze'
 pkgname=glaze
-version=7.6.0
+version=7.7.0
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING:BOOL=OFF -DCMAKE_BUILD_TYPE:STRING=Release \
@@ -11,7 +11,7 @@ maintainer="Sofiya <sofiya@v.org>"
 license="MIT"
 homepage="https://github.com/stephenberry/glaze"
 distfiles="https://github.com/stephenberry/glaze/archive/refs/tags/v${version}.tar.gz"
-checksum=839cd7bd2bda4db1a4e973f18851c2ecdccf82c75512453f68b2389d43a3e8ad
+checksum=fe6a201b2690ee7605dac88f77cf8c4a72a455bb9c61d43aa1f4fc791cdf5a00
 
 post_install() {
 	vlicense LICENSE
