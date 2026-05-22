@@ -6,7 +6,7 @@ build_style=cmake
 configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
  -DNO_SYSTEMD:BOOL=true"
 hostmakedepends="cmake hyprwayland-scanner pkgconf"
-makedepends="elogind-devel hyprlang hyprland-protocols sdbus-cpp>=2.3.1 wayland-devel 
+makedepends="elogind-devel hyprlang hyprland-protocols sdbus-cpp wayland-devel 
  wayland-protocols"
 short_desc="Hyprland's idle daemon"
 maintainer="Sofiya <sofiya@v.org>"
