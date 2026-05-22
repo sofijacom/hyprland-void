@@ -16,9 +16,9 @@ checksum=013458c5119155b053d9fbb5dcaaf6d42ced6affab354b656016ac17ddb6efa6
 
 do_install() {
     vmkdir usr/share/applications
-    vinstall "${FILESDIR}/hyprmoncfg.desktop" 644 ${DESTDIR}/usr/share/applications/hyprmoncfg.desktop
+    vinstall "${FILESDIR}/hyprmoncfg.desktop" 644 usr/share/applications/hyprmoncfg.desktop
     vmkdir usr/share/icons/hicolor/scalable/apps
-    vinstall "${FILESDIR}/hyprmoncfg.svg" 644 ${DESTDIR}/usr/share/icons/hicolor/scalable/apps/hyprmoncfg.svg
+    vinstall "${FILESDIR}/hyprmoncfg.svg" 644 usr/share/icons/hicolor/scalable/apps/hyprmoncfg.svg
 }
 
 post_install() {
