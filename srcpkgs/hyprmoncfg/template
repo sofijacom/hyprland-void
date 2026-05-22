@@ -14,13 +14,10 @@ homepage="https://github.com/crmne/hyprmoncfg/"
 distfiles="https://github.com/crmne/hyprmoncfg/archive/v${version}.tar.gz"
 checksum=013458c5119155b053d9fbb5dcaaf6d42ced6affab354b656016ac17ddb6efa6
 
-do_install() {
+post_install() {
     vmkdir usr/share/applications
     vinstall "${FILESDIR}/hyprmoncfg.desktop" 644 usr/share/applications/
     vmkdir usr/share/icons/hicolor/scalable/apps
     vinstall "${FILESDIR}/hyprmoncfg.svg" 644 usr/share/icons/hicolor/scalable/apps/
-}
-
-post_install() {
 	vlicense LICENSE
 }
