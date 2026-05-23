@@ -9,7 +9,7 @@ makedepends="hyprutils hyprwire hyprlang hyprtoolkit wayland-devel pixman-devel 
  icu-devel fontconfig-devel libqalculate-devel cairo-devel libxkbcommon-devel pango-devel"
 depends="wl-clipboard"
 short_desc="Multipurpose and versatile launcher / picker for Hyprland"
-maintainer="Nizarjh <chel773@tutamail.com>"
+maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
 homepage="https://github.com/hyprwm/hyprlauncher"
 distfiles="https://github.com/hyprwm/${pkgname}/archive/refs/tags/v${version}.tar.gz"
