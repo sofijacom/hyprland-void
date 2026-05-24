@@ -2,8 +2,8 @@
   <a>
   <img width="650" height="auto" alt="void-linux" src="https://github.com/sofijacom/hyprland-void/blob/master/img/HyprlandforVoidLinux-2.gif?raw=true" />
   </a>
-  <br><br><br/>
-
+  
+<br><br/>
 
 [![Hyprland Linux](https://img.shields.io/badge/Hyprland-blueviolet?style=badge&logo=hyprland&logoColor=white)](#)
 [![Void Linux](https://img.shields.io/badge/Void_Linux-%23458161.svg?style=badge&logo=voidlinux&logoColor=white)](#)
@@ -20,7 +20,10 @@
 [![x86_64-musl](https://img.shields.io/badge/aarch64-musl-478061?style=plastic&colorA=363a4f&colorB)](#)
 
 ## 【 `Unofficial package repository` 】
+
 </div>
+
+<br>
 
 This repository contains template files and binaries for building or installing [Hyprland](https://github.com/hyprwm/Hyprland) on Void Linux.
 
