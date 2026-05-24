@@ -27,7 +27,7 @@
 
 This repository contains template files and binaries for building or installing [Hyprland](https://github.com/hyprwm/Hyprland) on Void Linux.
 
-### Installation
+### ▷Installation
 
 The easiest way to install Hyprland on Void Linux is using the [binary repository](https://github.com/sofijacom/hyprland-void/tree/repository-x86_64-glibc) which is built automatically using [GitHub Actions](https://github.com/sofijacom/hyprland-void/blob/master/.github/workflows/build-latest.yml) whenever a new commit is pushed to this repository.
 
