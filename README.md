@@ -27,7 +27,7 @@
 
 This repository contains template files and binaries for building or installing [Hyprland](https://github.com/hyprwm/Hyprland) on Void Linux.
 
-### ▷Installation
+### ▷ Installation
 
 The easiest way to install Hyprland on Void Linux is using the [binary repository](https://github.com/sofijacom/hyprland-void/tree/repository-x86_64-glibc) which is built automatically using [GitHub Actions](https://github.com/sofijacom/hyprland-void/blob/master/.github/workflows/build-latest.yml) whenever a new commit is pushed to this repository.
 
@@ -183,7 +183,7 @@ cd ../void-packages
 sudo xbps-install -R hostdir/binpkgs hyprland
 ```
 
-### Contributing and Forking
+### ► Contributing and Forking
 
 Any contributions are greatly appreciated, but please bear in mind that the build actions run on `x86_64` with `glibc` and you should make sure that it cross-compiles with xbps-src's `-a` flag for both `musl` and `aarch64` - for example with `./xbps-src -a aarch64-musl pkg new-hypr-package`.
 
