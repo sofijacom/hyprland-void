@@ -77,6 +77,7 @@ There are packages in this repository which may be of interest for:
 - hyprpicker
 - hyprcursor
 - hyprshot
+- hyprtoolkit
 - hyprlauncher
 - hyprsunset
 - hyprmoncfg
