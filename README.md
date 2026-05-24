@@ -56,7 +56,7 @@ sudo xbps-install -S hyprland xdg-desktop-portal-hyprland
 Currently this repository provides binary packages for:
 
 | package | in stock |
-|:--------|:-----------------|
+|:--------|:-------------------|
 | `x86_64-glibc`               | ✔️ |
 | `x86_64-musl`                | ✔️ |
 | `aarch64-glibc`              | ✔️ |
