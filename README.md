@@ -126,6 +126,9 @@ There are packages in this repository which may be of interest for:
 | tomlplusplus                | https://github.com/marzer/tomlplusplus                 | ![Version](https://img.shields.io/badge/version-3.4.0-blue) | ![Version](https://img.shields.io/github/v/release/marzer/tomlplusplus?color=purple)|
 | xdg-desktop-portal-hyprland | https://github.com/hyprwm/xdg-desktop-portal-hyprland  | ![Version](https://img.shields.io/badge/version-1.3.12-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/xdg-desktop-portal-hyprland?color=purple)|
 
+### TODO
+
+- [x] Build and package Hyprland-void once a new version is released via GitHub Actions
 
 ### Common Remarks
 #### "Why is this so out of date"?
