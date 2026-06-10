@@ -51,6 +51,16 @@ This can be done with the following command:
 ```
 echo repository=https://raw.githubusercontent.com/sofijacom/hyprland-void/repository-x86_64-glibc | sudo tee /etc/xbps.d/hyprland-void.conf
 ```
+```
+echo repository=https://raw.githubusercontent.com/sofijacom/hyprland-void/repository-x86_64-musl | sudo tee /etc/xbps.d/hyprland-void.conf
+```
+```
+echo repository=https://raw.githubusercontent.com/sofijacom/hyprland-void/repository-aarch64-glibc | sudo tee /etc/xbps.d/hyprland-void.conf
+```
+```
+echo repository=https://raw.githubusercontent.com/sofijacom/hyprland-void/repository-aarch64-musl| sudo tee /etc/xbps.d/hyprland-void.conf
+```
+
 Then you need to refresh your repositories and accept the repository's fingerprint:
 ```
 sudo xbps-install -S
