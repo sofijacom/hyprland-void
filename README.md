@@ -36,6 +36,16 @@ You can add this repository to xbps's repositories by creating a file such as `/
 ```
 repository=https://raw.githubusercontent.com/sofijacom/hyprland-void/repository-x86_64-glibc
 ```
+```
+repository=https://raw.githubusercontent.com/sofijacom/hyprland-void/repository-x86_64-musl
+```
+```
+repository=https://raw.githubusercontent.com/sofijacom/hyprland-void/repository-aarch64-glibc
+```
+```
+repository=https://raw.githubusercontent.com/sofijacom/hyprland-void/repository-aarch64-musl
+```
+
 
 This can be done with the following command:
 ```
