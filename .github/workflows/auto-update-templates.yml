@@ -1,0 +1,74 @@
+name: Auto Update Templates
+
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-templates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Dependencies
+        run: sudo apt-get update && sudo apt-get install -y curl jq
+
+      - name: Update Templates
+        run: |
+          chmod +x .github/scripts/update_templates.sh
+          ./.github/scripts/update_templates.sh
+
+      - name: Commit and Push
+        shell: bash
+        run: |
+          git config user.name "Sofiya"
+          git config user.email "sofiya@v.org"
+          git add 'srcpkgs/*/template'
+          if ! git diff --cached --quiet; then
+            mapfile -t changed_templates < <(git diff --cached --name-only -- 'srcpkgs/*/template')
+            version_updates=()
+            for template in "${changed_templates[@]}"; do
+              [[ -f "$template" ]] || continue
+              pkgname="$(sed -n 's/^pkgname=//p' "$template" | head -n1)"
+              [[ -n "$pkgname" ]] || pkgname="$(basename "$(dirname "$template")")"
+              new_version="$(sed -n 's/^version=//p' "$template" | head -n1)"
+              old_version="$(
+                git show "HEAD:${template}" 2>/dev/null \
+                  | sed -n 's/^version=//p' \
+                  | head -n1
+              )"
+              if [[ -n "$old_version" && -n "$new_version" && "$old_version" != "$new_version" ]]; then
+                version_updates+=("${pkgname}|${old_version}|${new_version}")
+              fi
+            done
+
+            if [[ "${#version_updates[@]}" -eq 1 ]]; then
+              IFS='|' read -r pkgname old_version new_version <<<"${version_updates[0]}"
+              commit_msg="Update ${pkgname} to version ${new_version}"
+            elif [[ "${#version_updates[@]}" -gt 1 && "${#version_updates[@]}" -le 4 ]]; then
+              summary=""
+              for update in "${version_updates[@]}"; do
+                IFS='|' read -r pkgname old_version new_version <<<"$update"
+                if [[ -n "$summary" ]]; then
+                  summary+=", "
+                fi
+                summary+="${pkgname} ${old_version}->${new_version}"
+              done
+              commit_msg="Update templates: ${summary}"
+            elif [[ "${#version_updates[@]}" -gt 4 ]]; then
+              commit_msg="Update ${#version_updates[@]} templates"
+            else
+              commit_msg="Auto-update templates"
+            fi
+
+            echo "Commit message: ${commit_msg}"
+            git commit -m "${commit_msg}"
+            git pull --rebase origin "$(git rev-parse --abbrev-ref HEAD)"
+            git push
+          else
+            echo "No template changes"
+          fi
