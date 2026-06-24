@@ -112,8 +112,8 @@ There are packages in this repository which may be of interest for:
 
 | package | source | version  | new release |
 |:--------|:-------|:---------|:------------|
-| aquamarine                  | https://github.com/hyprwm/aquamarine                   | ![Version](https://img.shields.io/badge/version-0.12.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/aquamarine?color=purple)|
-| glaze                       | https://github.com/stephenberry/glaze                  | ![Version](https://img.shields.io/badge/version-7.8.1-blue) | ![Version](https://img.shields.io/github/v/release/stephenberry/glaze?color=purple)|
+| aquamarine                  | https://github.com/hyprwm/aquamarine                   | ![Version](https://img.shields.io/badge/version-0.12.1-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/aquamarine?color=purple)|
+| glaze                       | https://github.com/stephenberry/glaze                  | ![Version](https://img.shields.io/badge/version-7.8.3-blue) | ![Version](https://img.shields.io/github/v/release/stephenberry/glaze?color=purple)|
 | hyprcursor                  | https://github.com/hyprwm/hyprcursor                   | ![Version](https://img.shields.io/badge/version-0.1.13-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprcursor?color=purple)|
 | hyprgraphics                | https://github.com/hyprwm/hyprgraphics                 | ![Version](https://img.shields.io/badge/version-0.5.1-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprgraphics?color=purple)|
 | hypridle                    | https://github.com/hyprwm/hypridle                     | ![Version](https://img.shields.io/badge/version-0.1.7-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hypridle?color=purple)|
@@ -125,7 +125,7 @@ There are packages in this repository which may be of interest for:
 | hyprlang                    | https://github.com/hyprwm/hyprlang                     | ![Version](https://img.shields.io/badge/version-0.6.8-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprlang?color=purple)|
 | hyprlauncher                | https://github.com/hyprwm/hyprlauncher                 | ![Version](https://img.shields.io/badge/version-0.1.6-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprlauncher?color=purple)|
 | hyprlock                    | https://github.com/hyprwm/hyprlock                     | ![Version](https://img.shields.io/badge/version-0.9.5-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprlock?color=purple)|
-| hyprmoncfg                  | https://github.com/crmne/hyprmoncfg                    | ![Version](https://img.shields.io/badge/version-1.7.0-blue) | ![Version](https://img.shields.io/github/v/release/crmne/hyprmoncfg?color=purple)|
+| hyprmoncfg                  | https://github.com/crmne/hyprmoncfg                    | ![Version](https://img.shields.io/badge/version-1.8.0-blue) | ![Version](https://img.shields.io/github/v/release/crmne/hyprmoncfg?color=purple)|
 | hyprpaper                   | https://github.com/hyprwm/hyprpaper                    | ![Version](https://img.shields.io/badge/version-0.8.4-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpaper?color=purple)|
 | hyprpicker                  | https://github.com/hyprwm/hyprpicker                   | ![Version](https://img.shields.io/badge/version-0.4.7-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpicker?color=purple)|
 | hyprpolkitagent             | https://github.com/hyprwm/hyprpolkitagent              | ![Version](https://img.shields.io/badge/version-0.1.3-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpolkitagent?color=purple)|
