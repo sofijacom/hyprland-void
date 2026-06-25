@@ -51,7 +51,7 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
         token: ${{ secrets.PULL_PUSH }}
-    - uses: dcarbone/install-jq-action@v3.2.0
+    - uses: dcarbone/install-jq-action@v4.0.1
     - run: bash ./srcpkgs/${{ matrix.pkg }}/update.sh
       env:
         GH_TOKEN: ${{ github.token }}
@@ -67,7 +67,7 @@ jobs:
     needs: update-versions
     if: always()
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
       with:
         persist-credentials: false
         fetch-depth: 0
