@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# pattern="lua-\K5.5[\d.]+(?=\.tar)"
+
 set -euo pipefail
 
 printf "Checking latest version\n"
