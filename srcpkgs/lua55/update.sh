@@ -11,6 +11,7 @@ __dir="$(dirname "${BASH_SOURCE[0]}")"
 TPL=${__dir}/template
 REPO="lua/lua"
 
+# LATEST_VERSION=$(curl -Ls "https://gitlab.archlinux.org/archlinux/packaging/packages/lua/-/raw/main/PKGBUILD?ref_type=heads" | grep "^pkgver=" | cut -c 8-)
 LATEST_VERSION=$(gh release list --repo ${REPO} --exclude-drafts --exclude-pre-releases --json name,tagName,isLatest --jq '.[] | select(.isLatest)|.tagName')
 export VERSION=${LATEST_VERSION#"v"}
 CURRENT_VERSION=$(grep -E '^version=' "${TPL}" | cut -d= -f2)
