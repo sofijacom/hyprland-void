@@ -37,7 +37,7 @@ jobs:
           - hyprsunset
           - hyprsysteminfo
           - hyprtoolkit
-          # - hyprutils
+          - hyprutils
           - hyprwayland-scanner
           - hyprwire
           - libspng
