@@ -49,23 +49,23 @@ latest_tag_for_repo() {
 	local repo="$1"
 	local releases_json
 	local tags_json
-	local latest_tag
+	local candidates=""
 
-	if ! releases_json="$(github_api "https://api.github.com/repos/${repo}/releases?per_page=100")"; then
-		return 1
+	# Consider both releases and plain tags: upstreams (e.g. hyprutils
+	# v0.13.1) sometimes cut a tag without a formal GitHub Release. Picking
+	# the newest Release alone silently misses those and can downgrade.
+	if releases_json="$(github_api "https://api.github.com/repos/${repo}/releases?per_page=100")"; then
+		candidates+="$(jq -r '.[] | select((.prerelease | not) and (.draft | not)) | .tag_name' <<<"$releases_json")"$'\n'
 	fi
-	latest_tag="$(
-		jq -r '[.[] | select((.prerelease | not) and (.draft | not))] | sort_by(.published_at) | reverse | .[0].tag_name // empty' <<<"$releases_json"
-	)"
-
-	if [[ -z "$latest_tag" || "$latest_tag" == "null" ]]; then
-		if ! tags_json="$(github_api "https://api.github.com/repos/${repo}/tags?per_page=100")"; then
-			return 1
-		fi
-		latest_tag="$(jq -r '.[0].name // empty' <<<"$tags_json")"
+	if tags_json="$(github_api "https://api.github.com/repos/${repo}/tags?per_page=100")"; then
+		candidates+="$(jq -r '.[].name' <<<"$tags_json")"$'\n'
 	fi
 
-	printf '%s' "$latest_tag"
+	# Highest semver wins; strip leading v and drop non-numeric tags.
+	printf '%s\n' "$candidates" \
+		| sed -e 's/^v//' -e '/^[^0-9]/d' -e '/^$/d' \
+		| sort -V \
+		| tail -n1
 }
 
 checksums_for_urls() {
@@ -227,6 +227,12 @@ process_template() {
 
 	if [[ "$current_version" == "$latest_version" ]]; then
 		echo "${pkgname}: already at ${current_version}"
+		return 0
+	fi
+
+	# Never downgrade: only advance when latest is strictly newer.
+	if [[ "$(printf '%s\n%s\n' "$current_version" "$latest_version" | sort -V | tail -n1)" == "$current_version" ]]; then
+		echo "${pkgname}: current ${current_version} >= latest ${latest_version}, skipping"
 		return 0
 	fi
 

@@ -1,4 +1,4 @@
-name: Auto Update Template
+name: Auto Update Template 2
 
 on:
   schedule:

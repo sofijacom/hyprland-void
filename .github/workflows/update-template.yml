@@ -1,4 +1,4 @@
-name: Auto Update template
+name: Auto Update template 1
 run-name: "Automated update of ${{ github.ref_name }} by @${{ github.actor }}"
 
 on:
