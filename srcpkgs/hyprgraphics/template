@@ -7,7 +7,7 @@ configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_I
 hostmakedepends="cmake pkgconf"
 makedepends="cairo-devel pango-devel file-devel hyprutils
  libdrm-devel libglvnd-devel libjpeg-turbo-devel libjxl-devel libpng-devel
- libspng librsvg-devel libwebp-devel pixman-devel"
+ libspng librsvg-devel libwebp-devel pixman-devel libmagick-devel"
 short_desc="Hyprland graphics resources and utilities"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
