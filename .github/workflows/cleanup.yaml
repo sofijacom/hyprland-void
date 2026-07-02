@@ -14,12 +14,12 @@ jobs:
     - name: List and delete old (>28 days) workflow runs
       run: |
         gh run list --limit 200 --json databaseId,createdAt |
-        jq -r '[. | select((now - (.createdAt | fromdateiso8601)) > (28 * 24 * 60 * 60))] | ..databaseId' |
+        jq -r [. | select((now - (.createdAt | fromdateiso8601)) > (28 * 24 * 60 * 60))] | ..databaseId |
         xargs -I ID gh run delete ID
     - name: List and delete all failed workflow runs
       run: |
         gh run list --limit 200 --json databaseId,status,conclusion |
-        jq -r '[. | select(.status == "completed" and .conclusion == "failure")] | ..databaseId' |
+        jq -r [. | select(.status == "completed" and .conclusion == "failure")] | ..databaseId |
         xargs -I ID gh run delete ID
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
