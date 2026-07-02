@@ -1,26 +1,32 @@
 name: Cleanup old workflow runs
+
 on:
   schedule:
-    - cron: '0 0 * * *' # Запускается ежедневно в полночь по UTC
-  workflow_dispatch: # Позволяет запустить вручную из интерфейса GitHub
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+  workflow_dispatch:    # Allows manual triggering from GitHub UI
+
 jobs:
   cleanup:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout the repository
-      uses: actions/checkout@v7
-    - name: Install jq
-      run: sudo apt-get install jq -y
-    - name: List and delete old (>28 days) workflow runs
-      run: |
-        gh run list --limit 200 --json databaseId,createdAt |
-        jq -r [. | select((now - (.createdAt | fromdateiso8601)) > (28 * 24 * 60 * 60))] | ..databaseId |
-        xargs -I ID gh run delete ID
-    - name: List and delete all failed workflow runs
-      run: |
-        gh run list --limit 200 --json databaseId,status,conclusion |
-        jq -r [. | select(.status == "completed" and .conclusion == "failure")] | ..databaseId |
-        xargs -I ID gh run delete ID
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout the repository
+        uses: actions/checkout@v3
 
+      - name: Install jq
+        run: sudo apt-get install jq
+
+      - name: List and delete old (>28 days) workflow runs
+        run: |
+          gh run list --limit 200 --json databaseId,createdAt |
+          jq -r '[.[] | select((now - (.createdAt | fromdateiso8601)) > (28 * 24 * 60 * 60))] | .[].databaseId' |
+          xargs -I ID gh run delete ID
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: List and delete all failed workflow runs
+        run: |
+          gh run list --limit 200 --json databaseId,status,conclusion |
+          jq -r '[.[] | select(.status == "completed" and .conclusion == "failure")] | .[].databaseId' |
+          xargs -I ID gh run delete ID
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
