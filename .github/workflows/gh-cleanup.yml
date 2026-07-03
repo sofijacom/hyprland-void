@@ -1,0 +1,24 @@
+name: Cleanup Artifacts
+on:
+  schedule:
+    - cron: '0 0 * * *' # Run daily at midnight
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Run Cleanup
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Install the extension
+          gh extension install iloveitaly/gh-clean-artifacts
+
+          # Option 1: Automatic repository detection (recommended)
+          gh clean-artifacts --limit 500 --days 7
+
+          # Option 2: Explicit repository reference
+          # gh clean-artifacts --repo "${{ github.repository }}" --limit 500 --days 7
