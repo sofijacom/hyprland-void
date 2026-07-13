@@ -77,11 +77,11 @@ sudo xbps-install -S hyprland xdg-desktop-portal-hyprland
 Currently this repository provides binary packages for:
 
 | package | in stock |
-|:--------|:-------------------|
-| `x86_64-glibc`               | ✔️ |
-| `x86_64-musl`                | ✔️ |
-| `aarch64-glibc`              | ✔️ |
-| `aarch64-musl`               | ✔️ |
+|:--------|:--------------|
+| `x86_64-glibc`          | ✔️ |
+| `x86_64-musl`           | ✔️ |
+| `aarch64-glibc`         | ✔️ |
+| `aarch64-musl`          | ✔️ |
 
 Change the end of the url in `/etc/xbps.d/hyprland-void.conf` as appropriate with the above options.
 
@@ -114,7 +114,7 @@ There are packages in this repository which may be of interest for:
 | package | source | version  | new release |
 |:--------|:-------|:---------|:------------|
 | aquamarine                  | https://github.com/hyprwm/aquamarine                   | ![Version](https://img.shields.io/badge/version-0.12.1-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/aquamarine?color=purple)|
-| glaze                       | https://github.com/stephenberry/glaze                  | ![Version](https://img.shields.io/badge/version-7.8.3-blue) | ![Version](https://img.shields.io/github/v/release/stephenberry/glaze?color=purple)|
+| glaze                       | https://github.com/stephenberry/glaze                  | ![Version](https://img.shields.io/badge/version-7.9.0-blue) | ![Version](https://img.shields.io/github/v/release/stephenberry/glaze?color=purple)|
 | hyprcursor                  | https://github.com/hyprwm/hyprcursor                   | ![Version](https://img.shields.io/badge/version-0.1.13-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprcursor?color=purple)|
 | hyprgraphics                | https://github.com/hyprwm/hyprgraphics                 | ![Version](https://img.shields.io/badge/version-0.5.1-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprgraphics?color=purple)|
 | hypridle                    | https://github.com/hyprwm/hypridle                     | ![Version](https://img.shields.io/badge/version-0.1.7-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hypridle?color=purple)|
@@ -134,7 +134,7 @@ There are packages in this repository which may be of interest for:
 | hyprshade                   | https://github.com/loqusion/hyprshade                  | ![Version](https://img.shields.io/badge/version-5.0.0-blue) | ![Version](https://img.shields.io/github/v/release/loqusion/hyprshade?color=purple)|
 | hyprshot                    | https://github.com/Gustash/Hyprshot                    | ![Version](https://img.shields.io/badge/version-1.3.0-blue) | ![release](https://img.shields.io/github/v/release/Gustash/hyprshot?color=purple)
 | hyprshutdown                | https://github.com/hyprwm/hyprshutdown                 | ![Version](https://img.shields.io/badge/version-0.1.1-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprshutdown?color=purple)|
-| hyprsunset                  | https://github.com/hyprwm/hyprsunset                   | ![Version](https://img.shields.io/badge/version-0.3.3-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprsunset?color=purple)|
+| hyprsunset                  | https://github.com/hyprwm/hyprsunset                   | ![Version](https://img.shields.io/badge/version-0.4.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprsunset?color=purple)|
 | hyprsysteminfo              | https://github.com/hyprwm/hyprsysteminfo               | ![Version](https://img.shields.io/badge/version-0.2.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprsysteminfo?color=purple)|
 | hyprtoolkit                 | https://github.com/hyprwm/hyprtoolkit                  | ![Version](https://img.shields.io/badge/version-0.5.4-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprtoolkit?color=purple)|
 | hyprutils                   | https://github.com/hyprwm/hyprutils                    | ![Version](https://img.shields.io/badge/version-0.13.1-blue)| ![Version](https://img.shields.io/github/v/release/hyprwm/hyprutils?color=purple)|
