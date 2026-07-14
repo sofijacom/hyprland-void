@@ -92,7 +92,6 @@ In order to run Hyprland you will need to install some additional packages which
 ### Extra
 There are packages in this repository which may be of interest for:
 
-- hyprland-repo
 - hypridle
 - hyprlock
 - hyprpaper
@@ -109,6 +108,7 @@ There are packages in this repository which may be of interest for:
 - hyprsysteminfo
 - hyprpolkitagent
 - xdg-desktop-portal-hyprland
+- hyprland-repo
 
 ### Available packages 
 
