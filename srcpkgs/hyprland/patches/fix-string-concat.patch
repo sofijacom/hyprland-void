@@ -1,0 +1,14 @@
+--- a/hyprctl/src/main.cpp
++++ b/hyprctl/src/main.cpp
+@@ -296,7 +296,9 @@ int requestIPC(std::string_view instanceSignature, std::string_view filename) {
+     if (instanceSignature.empty())
+         instanceSignature = "default";
+
+-    std::string socketPath = getRuntimeDir() + "/" + instanceSignature + "/" + filename;
++    // Explicitly convert string_view to string to avoid operator+ ambiguity
++    std::string sigStr(instanceSignature);
++    std::string fileStr(filename);
++    std::string socketPath = getRuntimeDir() + "/" + sigStr + "/" + fileStr;
+
+     int sockfd = socket(AF_UNIX, SOCK_STREAM, 0);
+     if (sockfd == -1) {
