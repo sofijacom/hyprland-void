@@ -63,6 +63,7 @@ makedepends="
   lcms2-devel
   lua55-devel
   SPIRV-Tools-devel
+  libei-devel
 "
 short_desc="Dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 maintainer="Sofiya <sofiya@v.org>"
