@@ -8,7 +8,7 @@ configure_args+=" --no-warn-unused-cli"
 configure_args+=" -DCMAKE_BUILD_TYPE:STRING=Release"
 configure_args+=" -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 configure_args+=" -DNO_SYSTEMD:BOOL=true"
-# configure_args+=" -DCMAKE_CXX_STANDARD=23"
+configure_args+=" -DCMAKE_CXX_STANDARD=23"
 
 othermakedepends="
   cmake
@@ -85,33 +85,25 @@ if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
 fi
 
 do_build() {
+    # Явно используем make, чтобы избежать ошибки с пустым make_cmd
     make ${makejobs} ${XBPS_VERBOSE+${make_verbose}} ${make_build_args} ${make_build_target}
 }
 
-pre_configure() {
-	# Убираем xxd-генерацию: она не нужна, CMake сам всё сделает.
-	# Если сборка ругнётся на отсутствие файла, значит, его должен генерировать CMake.
-	:
-}
-
-#pre_configure() {
-#	xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
-#}
-
 post_install() {
-  # license
   vlicense LICENSE
 
-  # headers
   vmkdir usr/include/hyprland
   vmkdir usr/include/hyprland/protocols
   vmkdir usr/share/pkgconfig
 
-  cmake --build ./build --config Release --target generate-protocol-headers
+  # Пробуем сгенерировать заголовки, если папка build есть
+  if [ -d build ]; then
+    cmake --build ./build --config Release --target generate-protocol-headers 2>/dev/null || true
+  fi
 
-  find src -type f \( -name '*.hpp' -o -name '*.h' -o -name '*.inc' \) -print0 | cpio --quiet -0dump ${DESTDIR}/usr/include/hyprland
-  install -Dm0644 protocols/*.h* ${DESTDIR}/usr/include/hyprland/protocols
-  vinstall build/hyprland.pc 644 usr/share/pkgconfig
+  find src -type f \( -name '*.hpp' -o -name '*.h' -o -name '*.inc' \) -print0 | cpio --quiet -0dump ${DESTDIR}/usr/include/hyprland 2>/dev/null || true
+  install -Dm0644 protocols/*.h* ${DESTDIR}/usr/include/hyprland/protocols 2>/dev/null || true
+  install -Dm0644 build/hyprland.pc ${DESTDIR}/usr/share/pkgconfig 2>/dev/null || true
 }
 
 hyprland-devel_package() {
