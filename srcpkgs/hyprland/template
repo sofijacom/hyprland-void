@@ -9,6 +9,7 @@ configure_args+=" -DCMAKE_BUILD_TYPE:STRING=Release"
 configure_args+=" -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 configure_args+=" -DNO_SYSTEMD:BOOL=true"
 configure_args+=" -DCMAKE_CXX_STANDARD=23"
+
 othermakedepends="
   cmake
   cpio
@@ -27,7 +28,9 @@ othermakedepends="
   xorgproto
   git
 "
+
 hostmakedepends=$othermakedepends
+
 makedepends="
   aquamarine
   cairo-devel
@@ -82,7 +85,7 @@ if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
 fi
 
 do_build() {
-    ${make_cmd} ${makejobs} ${XBPS_VERBOSE+${make_verbose}} ${make_build_args} ${make_build_target}
+    make ${makejobs} ${XBPS_VERBOSE+${make_verbose}} ${make_build_args} ${make_build_target}
 }
 
 pre_configure() {
