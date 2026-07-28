@@ -9,7 +9,6 @@ configure_args+=" -DCMAKE_BUILD_TYPE:STRING=Release"
 configure_args+=" -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 configure_args+=" -DNO_SYSTEMD:BOOL=true"
 configure_args+=" -DCMAKE_CXX_STANDARD=23"
-# configure_args+=" -Dglaze_DIR:PATH=/usr/share/glaze"
 othermakedepends="
   cmake
   cpio
@@ -75,19 +74,19 @@ changelog="https://github.com/hyprwm/Hyprland/releases"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
 checksum=c5b26eb377360358d01839a1de43fdc004a33e56d6a5d442fdad69b9f3a10549
 make_check=no # cant run in sandbox
-# patches="
-#  01-fix-string-view-conversion.patch
-#  03-fix-xcb-connection-cast.patch
-#  04-replace-embed-with-include.patch
-#  05-fix-musl.patch
-#  06-fix-ranges-starts-with.patch
-#  "
 
 if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
   configure_args+=" -DCMAKE_CXX_FLAGS=\"-lexecinfo\""
   makedepends+=" libexecinfo-devel"
   depends+=" libexecinfo"
 fi
+
+do_build() {
+    # Сначала делаем замену строки через sed — это сработает даже если строки сдвинулись
+    sed -i 's|std::string socketPath = getRuntimeDir() \+ "/" \+ instanceSignature \+ "/" \+ filename;|std::string socketPath = std::string(getRuntimeDir()) \+ "/" \+ std::string(instanceSignature) \+ "/" \+ std::string(filename);|g' src/hyprctl/src/main.cpp
+
+    ${make_cmd} ${makejobs} ${XBPS_VERBOSE+${make_verbose}} ${make_build_args} ${make_build_target}
+}
 
 pre_configure() {
 	xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
