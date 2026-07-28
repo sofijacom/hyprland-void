@@ -81,10 +81,13 @@ if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
   depends+=" libexecinfo"
 fi
 
-do_build() {
-    # Сначала делаем замену строки через sed — это сработает даже если строки сдвинулись
-    sed -i 's|std::string socketPath = getRuntimeDir() \+ "/" \+ instanceSignature \+ "/" \+ filename;|std::string socketPath = std::string(getRuntimeDir()) \+ "/" \+ std::string(instanceSignature) \+ "/" \+ std::string(filename);|g' src/hyprctl/src/main.cpp
+post_patch() {
+    # Исправляем конкатенацию string_view в hyprctl (теперь путь правильный)
+    sed -i 's|^[[:space:]]*std::string socketPath[[:space:]]*=[[:space:]]*getRuntimeDir()[[:space:]]*[+][[:space:]]"[[:space:]]*[+].*filename;|std::string socketPath = std::string(getRuntimeDir()) + "/" + std::string(instanceSignature) + "/" + std::string(filename);|' \
+        src/main.cpp
+}
 
+do_build() {
     ${make_cmd} ${makejobs} ${XBPS_VERBOSE+${make_verbose}} ${make_build_args} ${make_build_target}
 }
 
