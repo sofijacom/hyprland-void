@@ -1,17 +1,9 @@
 --- a/src/helpers/MiscFunctions.cpp
 +++ b/src/helpers/MiscFunctions.cpp
-@@ -338,13 +338,20 @@
-     if (str == "1"sv)
-         return true;
-
-     // clang-format off
-     auto str_view = str | std::views::transform([](unsigned char ch) -> char {
-         return sc<char>(std::tolower(ch));
-     });
-
+@@ -1,3 +1,3 @@
 -    return [&](auto&&... prefixes) -> bool {
 -        return (... || std::ranges::starts_with(str_view, prefixes));
--    }("true"sv, "yes"sv, "on"sv);
+-    }("true"sv, "yes"sv", "on"sv);
 +    auto starts_with_impl = [](std::string_view s, std::string_view p) -> bool {
 +        if (p.size() > s.size())
 +            return false;
@@ -21,5 +13,3 @@
 +    return [&](auto&&... prefixes) -> bool {
 +        return (... || starts_with_impl(str_view, prefixes));
 +    }("true"sv, "yes"sv", "on"sv);
-     // clang-format on
- }
