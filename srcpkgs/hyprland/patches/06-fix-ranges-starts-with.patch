@@ -1,9 +1,6 @@
 --- a/src/helpers/MiscFunctions.cpp
 +++ b/src/helpers/MiscFunctions.cpp
-@@ -890,14 +890,20 @@
- bool truthy(const std::string& str) {
-     using std::operator""sv;
-
+@@ -338,13 +338,20 @@
      if (str == "1"sv)
          return true;
 
