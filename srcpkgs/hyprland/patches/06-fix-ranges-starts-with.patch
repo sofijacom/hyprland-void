@@ -1,11 +1,16 @@
 --- a/src/helpers/MiscFunctions.cpp
 +++ b/src/helpers/MiscFunctions.cpp
+@@ -1,3 +1,3 @@
+-// Этот патч заменяет std::ranges::starts_with на ручную реализацию,
++// FIX: заменяем std::ranges::starts_with на ручной аналог для совместимости с musl/старыми stdlib
+
+ #include "MiscFunctions.hpp"
 @@ -838,7 +838,13 @@ bool startsWithAny(const std::string_view &str_view, const std::vector<std::str
      if (str_view.empty())
          return false;
- 
+
 -    return std::ranges::any_of(prefixes, [&](const auto &p) {
-+    // Fallback implementation for compilers without std::ranges::starts_with
++    // Ручная реализация starts_with для переносимости
 +    auto starts_with_impl = [](std::string_view s, std::string_view p) -> bool {
 +        if (p.size() > s.size()) return false;
 +        return s.compare(0, p.size(), p) == 0;

@@ -74,7 +74,7 @@ changelog="https://github.com/hyprwm/Hyprland/releases"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
 checksum=c5b26eb377360358d01839a1de43fdc004a33e56d6a5d442fdad69b9f3a10549
 make_check=no # cant run in sandbox
-#patches="
+# patches="
 #  01-fix-string-view-conversion.patch
 #  03-fix-xcb-connection-cast.patch
 #  04-replace-embed-with-include.patch
