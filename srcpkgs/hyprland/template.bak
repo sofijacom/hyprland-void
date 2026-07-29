@@ -4,11 +4,11 @@ pkgname=hyprland
 version=0.56.1
 revision=1
 build_style=cmake
-#configure_args="
-#              -DCMAKE_BUILD_TYPE=Release \
-#              -DCMAKE_INSTALL_PREFIX=/usr \
-#              -DNO_SYSTEMD=ON \
-#              -DCMAKE_CXX_STANDARD=23"
+configure_args="
+              -DCMAKE_BUILD_TYPE=Release \
+              -DCMAKE_INSTALL_PREFIX=/usr \
+              -DNO_SYSTEMD=ON \
+              -DCMAKE_CXX_STANDARD=17"
 
 othermakedepends="
   cmake
@@ -83,7 +83,7 @@ if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
 fi
 
 pre_configure() {
-#	xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
+	xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
   export CXXFLAGS="${CXXFLAGS} -Wno-gcc-compat"
 }
 
