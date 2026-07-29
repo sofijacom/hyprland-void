@@ -4,8 +4,8 @@ pkgname=hyprland
 version=0.56.1
 revision=1
 build_style=cmake
-configure_args="
-#configure_args=" -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None"
+configure_args=" -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None"
+#configure_args="
 #              -DCMAKE_BUILD_TYPE=Release \
 #              -DCMAKE_INSTALL_PREFIX=/usr \
 #              -DNO_SYSTEMD=ON \
