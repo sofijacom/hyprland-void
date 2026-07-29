@@ -1,6 +1,6 @@
 # Template file for 'hyprutils'
 pkgname=hyprutils
-version=0.14.0
+version=0.13.1
 revision=1
 build_style=cmake
 configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
@@ -10,11 +10,9 @@ makedepends="pixman-devel"
 short_desc="Hyprland utilities library used across the ecosystem"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
-# provides="hyprutils-${version}_${revision}"
-# conflicts="hyprutils"
 homepage="https://github.com/hyprwm/hyprutils"
 distfiles="https://github.com/hyprwm/hyprutils/archive/refs/tags/v${version}.tar.gz"
-checksum=b4af2177ede4ca3e1bb0ffff10348f82d776b911dd1e64fe693edd8ec9488101
+checksum=480ee026105deea64a24eb96d80cabe54b357594ce36cb05c021ea226c69aede
 
 post_install() {
 	vlicense LICENSE
