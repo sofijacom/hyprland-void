@@ -4,11 +4,12 @@ pkgname=hyprland
 version=0.56.1
 revision=1
 build_style=cmake
-configure_args=" -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None"
-#configure_args="
-#              -DCMAKE_BUILD_TYPE=Release \
-#              -DCMAKE_INSTALL_PREFIX=/usr \
-#              -DNO_SYSTEMD=ON \
+configure_args=" -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_BUILD_TYPE=None"
+
+#configure_args=" --no-warn-unused-cli \
+#              -DCMAKE_BUILD_TYPE:STRING=Release \
+#              -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+#              -DNO_SYSTEMD:BOOL=true \
 #              -DCMAKE_CXX_STANDARD=23"
 
 othermakedepends="
@@ -70,7 +71,6 @@ makedepends="
   SPIRV-Tools-devel
   libei-devel
   readline-devel
-  xorgproto
 "
 short_desc="Dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 maintainer="Sofiya <sofiya@v.org>"
@@ -88,7 +88,7 @@ if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
 fi
 
 pre_configure() {
-#	xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
+	xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
   export CXXFLAGS="${CXXFLAGS} -Wno-gcc-compat"
 }
 
