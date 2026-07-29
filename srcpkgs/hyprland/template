@@ -4,13 +4,11 @@ pkgname=hyprland
 version=0.56.1
 revision=1
 build_style=cmake
-configure_args=" -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_BUILD_TYPE=None"
-
-#configure_args=" --no-warn-unused-cli \
-#              -DCMAKE_BUILD_TYPE:STRING=Release \
-#              -DCMAKE_INSTALL_PREFIX:PATH=/usr \
-#              -DNO_SYSTEMD:BOOL=true \
-#              -DCMAKE_CXX_STANDARD=23"
+configure_args=" --no-warn-unused-cli \
+              -DCMAKE_BUILD_TYPE:STRING=Release \
+              -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+              -DNO_SYSTEMD:BOOL=true \
+              -DCMAKE_CXX_STANDARD=21"
 
 othermakedepends="
   cmake
