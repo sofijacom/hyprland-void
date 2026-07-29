@@ -26,6 +26,7 @@ othermakedepends="
   xorgproto
   clang
   git
+  clang
 "
 hostmakedepends=$othermakedepends
 makedepends="
