@@ -8,7 +8,8 @@ configure_args=" --no-warn-unused-cli \
               -DCMAKE_BUILD_TYPE:STRING=Release \
               -DCMAKE_INSTALL_PREFIX:PATH=/usr \
               -DNO_SYSTEMD:BOOL=true \
-              -DCMAKE_CXX_STANDARD=21"
+              -DCMAKE_CXX_COMPILER=clang++ \
+              -DCMAKE_C_COMPILER=clang"
 
 othermakedepends="
   cmake
@@ -28,6 +29,7 @@ othermakedepends="
   xorgproto
   git
   pango
+  clang
 "
 hostmakedepends=$othermakedepends
 makedepends="
