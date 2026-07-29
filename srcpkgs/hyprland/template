@@ -4,7 +4,8 @@ pkgname=hyprland
 version=0.56.1
 revision=1
 build_style=cmake
-#configure_args="
+configure_args="
+#configure_args=" -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None"
 #              -DCMAKE_BUILD_TYPE=Release \
 #              -DCMAKE_INSTALL_PREFIX=/usr \
 #              -DNO_SYSTEMD=ON \
@@ -27,12 +28,14 @@ othermakedepends="
   xxd
   xorgproto
   git
+  pango
 "
 hostmakedepends=$othermakedepends
 makedepends="
   aquamarine
   cairo-devel
   glaze
+  ninja
   hwids
   hyprcursor
   hyprgraphics
@@ -60,12 +63,14 @@ makedepends="
   xcb-util-wm-devel
   xorg-server-xwayland
   hyprland-protocols
+  hyprwayland-scanner
   glslang-devel
   lcms2-devel
   lua55-devel
   SPIRV-Tools-devel
   libei-devel
   readline-devel
+  xorgproto
 "
 short_desc="Dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 maintainer="Sofiya <sofiya@v.org>"
