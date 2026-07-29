@@ -86,6 +86,10 @@ pre_configure() {
   export CXXFLAGS="${CXXFLAGS} -Wno-gcc-compat"
 }
 
+post_patch() {
+	vsed -i 's/std::ranges::starts_with(str_view, prefixes)/std::ranges::equal(str_view | std::views::take(std::string_view(prefixes).size()), std::string_view(prefixes))/g' src/helpers/MiscFunctions.cpp || true
+}
+
 post_install() {
   # license
 	vlicense LICENSE
