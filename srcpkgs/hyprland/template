@@ -74,50 +74,56 @@ homepage="https://hyprland.org/"
 changelog="https://github.com/hyprwm/Hyprland/releases"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
 checksum="c5b26eb377360358d01839a1de43fdc004a33e56d6a5d442fdad69b9f3a10549"
-make_check=no # cant run in sandbox
+make_check=no
 
 if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
-  configure_args+=" -DCMAKE_CXX_FLAGS=\"-lexecinfo\""
-  makedepends+=" libexecinfo-devel"
-  depends+=" libexecinfo"
+	configure_args+=" -DCMAKE_CXX_FLAGS=\"-lexecinfo\""
+	makedepends+=" libexecinfo-devel"
+	depends+=" libexecinfo"
 fi
 
 pre_configure() {
 	# xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
-    xxd -i example/hyprland.lua > src/config/example_config_data.h
-      export CC=clang
-      export CXX=clang++
+	xxd -i example/hyprland.lua > src/config/example_config_data.h
+
+	# 2. УБИРАЕМ -march=armv8-a из флагов
+	export CFLAGS="${CFLAGS/-march=armv8-a/}"
+	export CXXFLAGS="${CXXFLAGS/-march=armv8-a/}"
+
+	export CC=clang
+	export CXX=clang++
 }
 
 post_patch() {
-    vsed -i 's,instanceSignature + "/" + filename,std::string(instanceSignature) + "/" + std::string(filename),' hyprctl/src/main.cpp
+	vsed -i 's,instanceSignature + "/" + filename,std::string(instanceSignature) + "/" + std::string(filename),' hyprctl/src/main.cpp
 
-    vsed -i 's/std::string{"0x"} + value/std::string{"0x"} + std::string(value)/' src/config/shared/parserUtils/ParserUtils.cpp
+	vsed -i 's/std::string{"0x"} + value/std::string{"0x"} + std::string(value)/' src/config/shared/parserUtils/ParserUtils.cpp
 
-    vsed -i 's/insert_range(requestedModes.end(), sortedModes | std::views::reverse)/insert(requestedModes.end(), sortedModes.rbegin(), sortedModes.rend())/' src/output/Monitor.cpp
+	vsed -i 's/insert_range(requestedModes.end(), sortedModes | std::views::reverse)/insert(requestedModes.end(), sortedModes.rbegin(), sortedModes.rend())/' src/output/Monitor.cpp
 
-    vsed -i 's/std::ranges::starts_with(str_view, prefixes)/std::ranges::equal(str_view | std::views::take(std::string_view(prefixes).size()), std::string_view(prefixes))/g' src/helpers/MiscFunctions.cpp
+	vsed -i 's/std::ranges::starts_with(str_view, prefixes)/std::ranges::equal(str_view | std::views::take(std::string_view(prefixes).size()), std::string_view(prefixes))/g' src/helpers/MiscFunctions.cpp
 }
+
 post_install() {
   # license
-  vlicense LICENSE
+	vlicense LICENSE
 
   # headers
-  vmkdir usr/include/hyprland
-  vmkdir usr/include/hyprland/protocols
-  vmkdir usr/share/pkgconfig
+	vmkdir usr/include/hyprland
+	vmkdir usr/include/hyprland/protocols
+	vmkdir usr/share/pkgconfig
 
-  cmake --build ./build --config Release --target generate-protocol-headers
+	cmake --build ./build --config Release --target generate-protocol-headers
 
-  find src -type f \( -name '*.hpp' -o -name '*.h' -o -name '*.inc' \) -print0 | cpio --quiet -0dump ${DESTDIR}/usr/include/hyprland
-  install -Dm0644 protocols/*.h* ${DESTDIR}/usr/include/hyprland/protocols
-  vinstall build/hyprland.pc 644 usr/share/pkgconfig
+	find src -type f \( -name '*.hpp' -o -name '*.h' -o -name '*.inc' \) -print0 | cpio --quiet -0dump ${DESTDIR}/usr/include/hyprland
+	install -Dm0644 protocols/*.h* ${DESTDIR}/usr/include/hyprland/protocols
+	vinstall build/hyprland.pc 644 usr/share/pkgconfig
 }
 
 hyprland-devel_package() {
-  depends="${sourcepkg}>=${version}_${revision} ${othermakedepends} ${makedepends}"
-  short_desc="Dynamic tiling Wayland compositor - development files"
-  pkg_install() {
+	depends="${sourcepkg}>=${version}_${revision} ${othermakedepends} ${makedepends}"
+	short_desc="Dynamic tiling Wayland compositor - development files"
+	pkg_install() {
     vmove usr/include
     vmove usr/share/pkgconfig
   }
