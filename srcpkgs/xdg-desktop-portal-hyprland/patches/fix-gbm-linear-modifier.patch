@@ -1,0 +1,63 @@
+--- a/src/portals/Screencopy.cpp	2026-05-10 21:18:10.506247076 -0400
++++ b/src/portals/Screencopy.cpp	2026-05-10 21:18:10.507488540 -0400
+@@ -794,24 +794,46 @@
+             uint32_t         n_params;
+             spa_pod_builder* builder[2] = {&dynBuilder[0].b, &dynBuilder[1].b};
+ 
+-            gbm_bo*          bo =
+-                gbm_bo_create_with_modifiers2(g_pPortalManager->m_sWaylandConnection.gbmDevice, PSTREAM->pSession->sharingData.frameInfoDMA.w,
+-                                              PSTREAM->pSession->sharingData.frameInfoDMA.h, PSTREAM->pSession->sharingData.frameInfoDMA.fmt, modifiers, n_modifiers, flags);
+-            if (bo) {
+-                modifier = gbm_bo_get_modifier(bo);
+-                gbm_bo_destroy(bo);
+-                goto fixate_format;
++            // Attempt 1: let GBM pick from the full modifier list (may choose AMD DCC tiling).
++            // Attempt 2+: skip — the consumer rejected the DCC fixation, so fall through to
++            // the unconditional LINEAR path which is universally importable.
++            gbm_bo*          bo = nullptr;
++            if (false) { // skip DCC tiled path; consumers (chromium webrtc) reject AMD DCC modifiers, force LINEAR below
++                bo = gbm_bo_create_with_modifiers2(g_pPortalManager->m_sWaylandConnection.gbmDevice, PSTREAM->pSession->sharingData.frameInfoDMA.w,
++                                                   PSTREAM->pSession->sharingData.frameInfoDMA.h, PSTREAM->pSession->sharingData.frameInfoDMA.fmt, modifiers, n_modifiers, flags);
++                if (bo) {
++                    modifier = gbm_bo_get_modifier(bo);
++                    gbm_bo_destroy(bo);
++                    goto fixate_format;
++                }
+             }
+ 
+             Debug::log(TRACE, "[pw] unable to allocate a dmabuf with modifiers. Falling back to the old api");
++
++            // Use create_with_modifiers2({LINEAR}) so AMD GBM returns DRM_FORMAT_MOD_LINEAR
++            // correctly. gbm_bo_create(USE_LINEAR) returns DRM_FORMAT_MOD_INVALID on AMD,
++            // causing the consumer to reject fixation. Try LINEAR unconditionally regardless
++            // of the consumer's modifier list — LINEAR is always safe to fixate with.
++            {
++                uint64_t linear = DRM_FORMAT_MOD_LINEAR;
++                bo = gbm_bo_create_with_modifiers2(g_pPortalManager->m_sWaylandConnection.gbmDevice, PSTREAM->pSession->sharingData.frameInfoDMA.w,
++                                                   PSTREAM->pSession->sharingData.frameInfoDMA.h, PSTREAM->pSession->sharingData.frameInfoDMA.fmt, &linear, 1,
++                                                   GBM_BO_USE_RENDERING);
++                if (bo) {
++                    modifier = gbm_bo_get_modifier(bo);
++                    gbm_bo_destroy(bo);
++                    goto fixate_format;
++                }
++            }
++
+             for (uint32_t i = 0; i < n_modifiers; i++) {
+-                switch (modifiers[i]) {
+-                    case DRM_FORMAT_MOD_INVALID:
+-                        flags =
+-                            GBM_BO_USE_RENDERING; // ;cast->ctx->state->config->screencast_conf.force_mod_linear ? GBM_BO_USE_RENDERING | GBM_BO_USE_LINEAR : GBM_BO_USE_RENDERING;
+-                        break;
+-                    case DRM_FORMAT_MOD_LINEAR: flags = GBM_BO_USE_RENDERING | GBM_BO_USE_LINEAR; break;
+-                    default: continue;
++                if (modifiers[i] == DRM_FORMAT_MOD_LINEAR) {
++                    flags = GBM_BO_USE_RENDERING | GBM_BO_USE_LINEAR;
++                } else if (modifiers[i] == DRM_FORMAT_MOD_INVALID) {
++                    flags =
++                        GBM_BO_USE_RENDERING; // ;cast->ctx->state->config->screencast_conf.force_mod_linear ? GBM_BO_USE_RENDERING | GBM_BO_USE_LINEAR : GBM_BO_USE_RENDERING;
++                } else {
++                    continue;
+                 }
+                 bo = gbm_bo_create(g_pPortalManager->m_sWaylandConnection.gbmDevice, PSTREAM->pSession->sharingData.frameInfoDMA.w, PSTREAM->pSession->sharingData.frameInfoDMA.h,
+                                    PSTREAM->pSession->sharingData.frameInfoDMA.fmt, flags);
