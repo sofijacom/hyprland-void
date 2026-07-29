@@ -8,6 +8,7 @@ configure_args+=" --no-warn-unused-cli"
 configure_args+=" -DCMAKE_BUILD_TYPE:STRING=Release"
 configure_args+=" -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 configure_args+=" -DNO_SYSTEMD:BOOL=true"
+configure_args=" -Dglaze_DIR:PATH=/usr/share/glaze"
 othermakedepends="
   cmake
   cpio
@@ -25,7 +26,6 @@ othermakedepends="
   xxd
   xorgproto
   git
-  clang
 "
 hostmakedepends=$othermakedepends
 makedepends="
@@ -82,15 +82,9 @@ if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
 fi
 
 pre_configure() {
-	# xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
-	xxd -i example/hyprland.lua > src/config/example_config_data.h
-
-	# 2. УБИРАЕМ -march=armv8-a из флагов
-	export CFLAGS="${CFLAGS/-march=armv8-a/}"
-	export CXXFLAGS="${CXXFLAGS/-march=armv8-a/}"
-
-	export CC=clang
-	export CXX=clang++
+	xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
+	#xxd -i example/hyprland.lua > src/config/example_config_data.h
+  export CXXFLAGS="${CXXFLAGS} -Wno-gcc-compat"
 }
 
 post_patch() {
