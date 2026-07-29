@@ -88,6 +88,8 @@ pre_configure() {
 
 post_patch() {
 	vsed -i 's/std::ranges::starts_with(str_view, prefixes)/std::ranges::equal(str_view | std::views::take(std::string_view(prefixes).size()), std::string_view(prefixes))/g' src/helpers/MiscFunctions.cpp || true
+
+	vsed -i 's/insert_range(requestedModes.end(), sortedModes \| std::views::reverse)/insert(requestedModes.end(), sortedModes.rbegin(), sortedModes.rend())/' src/output/Monitor.cpp || true
 }
 
 post_install() {
