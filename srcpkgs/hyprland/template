@@ -1,15 +1,14 @@
 # Template file for 'hyprland'
 
 pkgname=hyprland
-version=0.56.1
-revision=1
+version=0.55.4
+revision=2
 build_style=cmake
 configure_args+=" --no-warn-unused-cli"
 configure_args+=" -DCMAKE_BUILD_TYPE:STRING=Release"
 configure_args+=" -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 configure_args+=" -DNO_SYSTEMD:BOOL=true"
-configure_args+=" -DCMAKE_CXX_STANDARD=23"
-
+configure_args+=" -Dglaze_DIR:PATH=/usr/share/glaze"
 othermakedepends="
   cmake
   cpio
@@ -28,9 +27,7 @@ othermakedepends="
   xorgproto
   git
 "
-
 hostmakedepends=$othermakedepends
-
 makedepends="
   aquamarine
   cairo-devel
@@ -72,13 +69,11 @@ makedepends="
 short_desc="Dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
-patches="fix-string-concat.patch"
 homepage="https://hyprland.org/"
 changelog="https://github.com/hyprwm/Hyprland/releases"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
-checksum=c5b26eb377360358d01839a1de43fdc004a33e56d6a5d442fdad69b9f3a10549
-make_check=no # cant run in sandbox
-
+checksum="10cdda47e6a42e603a646ffda89c9fca0628c3a8211e2fbbee02f6282effe30b"
+make_check=no
 
 if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
   configure_args+=" -DCMAKE_CXX_FLAGS=\"-lexecinfo\""
@@ -86,26 +81,24 @@ if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
   depends+=" libexecinfo"
 fi
 
-do_build() {
-    # Явно используем make, чтобы избежать ошибки с пустым make_cmd
-    make ${makejobs} ${XBPS_VERBOSE+${make_verbose}} ${make_build_args} ${make_build_target}
+pre_configure() {
+	xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
 }
 
 post_install() {
+  # license
   vlicense LICENSE
 
+  # headers
   vmkdir usr/include/hyprland
   vmkdir usr/include/hyprland/protocols
   vmkdir usr/share/pkgconfig
 
-  # Пробуем сгенерировать заголовки, если папка build есть
-  if [ -d build ]; then
-    cmake --build ./build --config Release --target generate-protocol-headers 2>/dev/null || true
-  fi
+  cmake --build ./build --config Release --target generate-protocol-headers
 
-  find src -type f \( -name '*.hpp' -o -name '*.h' -o -name '*.inc' \) -print0 | cpio --quiet -0dump ${DESTDIR}/usr/include/hyprland 2>/dev/null || true
-  install -Dm0644 protocols/*.h* ${DESTDIR}/usr/include/hyprland/protocols 2>/dev/null || true
-  install -Dm0644 build/hyprland.pc ${DESTDIR}/usr/share/pkgconfig 2>/dev/null || true
+  find src -type f \( -name '*.hpp' -o -name '*.h' -o -name '*.inc' \) -print0 | cpio --quiet -0dump ${DESTDIR}/usr/include/hyprland
+  install -Dm0644 protocols/*.h* ${DESTDIR}/usr/include/hyprland/protocols
+  vinstall build/hyprland.pc 644 usr/share/pkgconfig
 }
 
 hyprland-devel_package() {
