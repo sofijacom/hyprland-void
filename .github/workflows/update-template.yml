@@ -9,7 +9,7 @@ on:
 jobs:
   find-autoupdates:
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/master' }}
     outputs:
       matrix: ${{ steps.collect.outputs.matrix }}
       pkgs: ${{ steps.collect.outputs.pkgs }}
