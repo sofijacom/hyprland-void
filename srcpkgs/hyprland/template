@@ -1,14 +1,13 @@
 # Template file for 'hyprland'
 
 pkgname=hyprland
-version=0.55.4
+version=0.56.1
 revision=1
 build_style=cmake
 configure_args+=" --no-warn-unused-cli"
 configure_args+=" -DCMAKE_BUILD_TYPE:STRING=Release"
 configure_args+=" -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 configure_args+=" -DNO_SYSTEMD:BOOL=true"
-configure_args+=" -Dglaze_DIR:PATH=/usr/share/glaze"
 othermakedepends="
   cmake
   cpio
@@ -25,6 +24,7 @@ othermakedepends="
   python3
   xxd
   xorgproto
+  clang
   git
 "
 hostmakedepends=$othermakedepends
@@ -63,6 +63,8 @@ makedepends="
   lcms2-devel
   lua55-devel
   SPIRV-Tools-devel
+  libei-devel
+  readline-devel
 "
 short_desc="Dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 maintainer="Sofiya <sofiya@v.org>"
@@ -70,7 +72,7 @@ license="BSD-3-Clause"
 homepage="https://hyprland.org/"
 changelog="https://github.com/hyprwm/Hyprland/releases"
 distfiles="https://github.com/hyprwm/Hyprland/releases/download/v${version}/source-v${version}.tar.gz"
-checksum="10cdda47e6a42e603a646ffda89c9fca0628c3a8211e2fbbee02f6282effe30b"
+checksum="c5b26eb377360358d01839a1de43fdc004a33e56d6a5d442fdad69b9f3a10549"
 make_check=no # cant run in sandbox
 
 if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
@@ -80,9 +82,21 @@ if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
 fi
 
 pre_configure() {
-	xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
+	# xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
+    xxd -i example/hyprland.lua > src/config/example_config_data.h
+      export CC=clang
+      export CXX=clang++
 }
 
+post_patch() {
+    vsed -i 's,instanceSignature + "/" + filename,std::string(instanceSignature) + "/" + std::string(filename),' hyprctl/src/main.cpp
+
+    vsed -i 's/std::string{"0x"} + value/std::string{"0x"} + std::string(value)/' src/config/shared/parserUtils/ParserUtils.cpp
+
+    vsed -i 's/insert_range(requestedModes.end(), sortedModes | std::views::reverse)/insert(requestedModes.end(), sortedModes.rbegin(), sortedModes.rend())/' src/output/Monitor.cpp
+
+    vsed -i 's/std::ranges::starts_with(str_view, prefixes)/std::ranges::equal(str_view | std::views::take(std::string_view(prefixes).size()), std::string_view(prefixes))/g' src/helpers/MiscFunctions.cpp
+}
 post_install() {
   # license
   vlicense LICENSE
