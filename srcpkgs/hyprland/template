@@ -24,7 +24,6 @@ othermakedepends="
   python3
   xxd
   xorgproto
-  clang
   git
   clang
 "
