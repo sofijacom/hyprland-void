@@ -5,7 +5,7 @@ version=0.56.1
 revision=1
 build_style=cmake
 configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
- -DCMAKE_INSTALL_PREFIX:PATH=/usr -DNO_SYSTEMD:BOOL=true -DCMAKE_CXX_STANDARD=23"
+ -DCMAKE_INSTALL_PREFIX:PATH=/usr -DNO_SYSTEMD:BOOL=true -DCMAKE_CXX_STANDARD=23 -DCXX_STANDARD_REQUIRED=OFF"
 othermakedepends="
   cmake
   cpio
