@@ -29,16 +29,13 @@ hostmakedepends="
   gcc
   glslang
   hyprwayland-scanner
+  wayland-protocols
   hyprwire
-  jq
-  make
-  meson
   ninja
   pkgconf
   wayland-devel
   python3
   xxd
-  xorgproto
   git
   zstd
   scdoc
