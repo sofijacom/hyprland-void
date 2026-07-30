@@ -4,14 +4,16 @@ pkgname=hyprland
 version=0.56.1
 revision=1
 build_style=cmake
-#configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
-# -DCMAKE_INSTALL_PREFIX:PATH=/usr -DNO_SYSTEMD:BOOL=true -DCMAKE_CXX_STANDARD=23 -DCXX_STANDARD_REQUIRED=OFF"
+# configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
+# -DCMAKE_INSTALL_PREFIX:PATH=/usr -DNO_SYSTEMD:BOOL=true -DCMAKE_CXX_STANDARD=23"
 configure_args="
     -DCMAKE_BUILD_TYPE=Release
     -DCMAKE_INSTALL_PREFIX=/usr
     -DCMAKE_INSTALL_LIBDIR=lib
     -DCMAKE_INSTALL_SYSCONFDIR=/etc
     -DCMAKE_INSTALL_DATAROOTDIR=/usr/share
+    -DCMAKE_C_COMPILER=gcc
+    -DCMAKE_CXX_COMPILER=g++
     -DBUILD_TESTING=OFF
     -DNO_HYPRPM=ON
     -DNO_XWAYLAND=OFF
@@ -83,6 +85,8 @@ makedepends="
   readline-devel
   pixman-devel
   yaml-cpp-devel
+  libstdc++-devel
+  glibc-devel
 "
 short_desc="Dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 maintainer="Sofiya <sofiya@v.org>"
