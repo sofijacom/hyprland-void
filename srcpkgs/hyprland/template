@@ -98,7 +98,7 @@ if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
 fi
 
 pre_configure() {
-	  xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
+    xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
     export CXXFLAGS="${CXXFLAGS} -Wno-gcc-compat"
 }
 
@@ -111,7 +111,7 @@ post_patch() {
 
 post_install() {
     # license
-	  vlicense LICENSE
+    vlicense LICENSE
 
     # headers
 	  vmkdir usr/include/hyprland
