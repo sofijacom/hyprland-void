@@ -118,7 +118,7 @@ post_install() {
     vmkdir usr/include/hyprland/protocols
     vmkdir usr/share/pkgconfig
 
-    cmake --build ./build --config Release --target generate-protocol-headers
+    # cmake --build ./build --config Release --target generate-protocol-headers
 
     find src -type f \( -name '*.hpp' -o -name '*.h' -o -name '*.inc' \) -print0 | cpio --quiet -0dump ${DESTDIR}/usr/include/hyprland
     install -Dm0644 protocols/*.h* ${DESTDIR}/usr/include/hyprland/protocols
