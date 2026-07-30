@@ -23,7 +23,7 @@ configure_args="
     -DUSE_TRACY=OFF
     -DWITH_ASAN=OFF
 "
-othermakedepends="
+hostmakedepends="
   cmake
   cpio
   gcc
@@ -43,7 +43,6 @@ othermakedepends="
   zstd
   scdoc
 "
-hostmakedepends=$othermakedepends
 makedepends="
   aquamarine
   cairo-devel
@@ -134,7 +133,7 @@ post_install() {
 }
 
 hyprland-devel_package() {
-	depends="${sourcepkg}>=${version}_${revision} ${othermakedepends} ${makedepends}"
+	depends="${sourcepkg}>=${version}_${revision} ${hostmakedepends=} ${makedepends}"
 	short_desc="Dynamic tiling Wayland compositor - development files"
 	pkg_install() {
     vmove usr/include
