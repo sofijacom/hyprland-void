@@ -23,7 +23,8 @@ othermakedepends="
   xxd
   xorgproto
   git
-  pango
+  zstd
+  scdoc
 "
 hostmakedepends=$othermakedepends
 makedepends="
@@ -65,6 +66,8 @@ makedepends="
   SPIRV-Tools-devel
   libei-devel
   readline-devel
+  pixman-devel
+  yaml-cpp-devel
 "
 short_desc="Dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 maintainer="Sofiya <sofiya@v.org>"
