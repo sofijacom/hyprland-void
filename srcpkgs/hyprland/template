@@ -22,65 +22,65 @@ configure_args="
     -DWITH_ASAN=OFF
 "
 hostmakedepends="
-  cmake
-  cpio
-  gcc
-  glslang
-  hyprwayland-scanner
-  wayland-protocols
-  hyprwire
-  ninja
-  pkgconf
-  wayland-devel
-  python3
-  xxd
-  git
-  zstd
-  scdoc
+    cmake
+    cpio
+    gcc
+    glslang
+    hyprwayland-scanner
+    wayland-protocols
+    hyprwire
+    ninja
+    pkgconf
+    wayland-devel
+    python3
+    xxd
+    git
+    zstd
+    scdoc
 "
 makedepends="
-  aquamarine
-  cairo-devel
-  glaze
-  ninja
-  hwids
-  hyprcursor
-  hyprgraphics
-  hyprlang
-  hyprutils
-  hyprwire
-  libdisplay-info-devel
-  libdrm-devel
-  libgbm-devel
-  libglvnd-devel
-  libinput-devel
-  libliftoff-devel
-  libseat-devel
-  libxcb-devel
-  libXcursor-devel
-  libxkbcommon-devel
-  muparser-devel
-  pango-devel
-  re2-devel
-  tomlplusplus
-  wayland-devel
-  wayland-protocols
-  xcb-util-errors-devel
-  xcb-util-renderutil-devel
-  xcb-util-wm-devel
-  xorg-server-xwayland
-  hyprland-protocols
-  hyprwayland-scanner
-  glslang-devel
-  lcms2-devel
-  lua55-devel
-  SPIRV-Tools-devel
-  libei-devel
-  readline-devel
-  pixman-devel
-  yaml-cpp-devel
-  libstdc++-devel
-  glibc-devel
+    aquamarine
+    cairo-devel
+    glaze
+    ninja
+    hwids
+    hyprcursor
+    hyprgraphics
+    hyprlang
+    hyprutils
+    hyprwire
+    libdisplay-info-devel
+    libdrm-devel
+    libgbm-devel
+    libglvnd-devel
+    libinput-devel
+    libliftoff-devel
+    libseat-devel
+    libxcb-devel
+    libXcursor-devel
+    libxkbcommon-devel
+    muparser-devel
+    pango-devel
+    re2-devel
+    tomlplusplus
+    wayland-devel
+    wayland-protocols
+    xcb-util-errors-devel
+    xcb-util-renderutil-devel
+    xcb-util-wm-devel
+    xorg-server-xwayland
+    hyprland-protocols
+    hyprwayland-scanner
+    glslang-devel
+    lcms2-devel
+    lua55-devel
+    SPIRV-Tools-devel
+    libei-devel
+    readline-devel
+    pixman-devel
+    yaml-cpp-devel
+    libstdc++-devel
+    glibc-devel
 "
 short_desc="Dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 maintainer="Sofiya <sofiya@v.org>"
@@ -92,39 +92,39 @@ checksum="c5b26eb377360358d01839a1de43fdc004a33e56d6a5d442fdad69b9f3a10549"
 make_check=no
 
 if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
-	configure_args+=" -DCMAKE_CXX_FLAGS=\"-lexecinfo\""
-	makedepends+=" libexecinfo-devel"
-	depends+=" libexecinfo"
+    configure_args+=" -DCMAKE_CXX_FLAGS=\"-lexecinfo\""
+    makedepends+=" libexecinfo-devel"
+    depends+=" libexecinfo"
 fi
 
 pre_configure() {
-	xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
-  export CXXFLAGS="${CXXFLAGS} -Wno-gcc-compat"
+	  xxd -i -n EXAMPLE_CONFIG_BYTES_LUA example/hyprland.lua > src/config/lua/example_config_lua_data.h
+    export CXXFLAGS="${CXXFLAGS} -Wno-gcc-compat"
 }
 
 post_patch() {
-  vsed -i 's,instanceSignature + "/" + filename,std::string(instanceSignature) + "/" + std::string(filename),' hyprctl/src/main.cpp
-  vsed -i 's/std::string{"0x"} + value/std::string{"0x"} + std::string(value)/' src/config/shared/parserUtils/ParserUtils.cpp
-  vsed -i 's/insert_range(requestedModes.end(), sortedModes | std::views::reverse)/insert(requestedModes.end(), sortedModes.rbegin(), sortedModes.rend())/' src/output/Monitor.cpp
-  vsed -i 's/std::ranges::starts_with(str_view, prefixes)/std::ranges::equal(str_view | std::views::take(std::string_view(prefixes).size()), std::string_view(prefixes))/g' src/helpers/MiscFunctions.cpp
+    vsed -i 's,instanceSignature + "/" + filename,std::string(instanceSignature) + "/" + std::string(filename),' hyprctl/src/main.cpp
+    vsed -i 's/std::string{"0x"} + value/std::string{"0x"} + std::string(value)/' src/config/shared/parserUtils/ParserUtils.cpp
+    vsed -i 's/insert_range(requestedModes.end(), sortedModes | std::views::reverse)/insert(requestedModes.end(), sortedModes.rbegin(), sortedModes.rend())/' src/output/Monitor.cpp
+    vsed -i 's/std::ranges::starts_with(str_view, prefixes)/std::ranges::equal(str_view | std::views::take(std::string_view(prefixes).size()), std::string_view(prefixes))/g' src/helpers/MiscFunctions.cpp
 }
 
 post_install() {
-  # license
-	vlicense LICENSE
+    # license
+	  vlicense LICENSE
 
-  # headers
-	vmkdir usr/include/hyprland
-	vmkdir usr/include/hyprland/protocols
-	vmkdir usr/share/pkgconfig
+    # headers
+	  vmkdir usr/include/hyprland
+	  vmkdir usr/include/hyprland/protocols
+	  vmkdir usr/share/pkgconfig
 
-	cmake --build ./build --config Release --target generate-protocol-headers
+	  cmake --build ./build --config Release --target generate-protocol-headers
 
-	find src -type f \( -name '*.hpp' -o -name '*.h' -o -name '*.inc' \) -print0 | cpio --quiet -0dump ${DESTDIR}/usr/include/hyprland
-	install -Dm0644 protocols/*.h* ${DESTDIR}/usr/include/hyprland/protocols
-	vinstall build/hyprland.pc 644 usr/share/pkgconfig
+	  find src -type f \( -name '*.hpp' -o -name '*.h' -o -name '*.inc' \) -print0 | cpio --quiet -0dump ${DESTDIR}/usr/include/hyprland
+	  install -Dm0644 protocols/*.h* ${DESTDIR}/usr/include/hyprland/protocols
+	  vinstall build/hyprland.pc 644 usr/share/pkgconfig
 
-  rm -rf "${DESTDIR}/usr/lib/systemd"
+    rm -rf "${DESTDIR}/usr/lib/systemd"
 }
 
 hyprland-devel_package() {
