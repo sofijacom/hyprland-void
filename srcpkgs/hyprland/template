@@ -109,6 +109,8 @@ post_install() {
     vmkdir usr/include/hyprland/protocols
     vmkdir usr/share/pkgconfig
 
+    # cmake --build ./build --config Release --target generate-protocol-headers
+
     find build -type f \( -name '*.hpp' -o -name '*.h' -o -name '*.inc' \) -print0 \
         | while IFS= read -r -d '' h; do
             install -Dm0644 "$h" "${DESTDIR}/usr/include/hyprland/${h##*/}" 2>/dev/null || true
