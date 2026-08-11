@@ -7,8 +7,9 @@ maintainer="Sofiya <sofiya@v.org>"
 license="MIT"
 homepage="https://www.lua.org"
 changelog="https://github.com/lua/lua"
+# distfiles="https://github.com/lua/lua/archive/refs/tags/v${version}.tar.gz"
 distfiles="https://www.lua.org/ftp/lua-${version}.tar.gz"
-checksum=ffed0b0e2987e66b0142491b26c63170ffd2d86e425ff3703799f4933fd91810
+checksum=1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce
 
 alternatives="
  lua:lua:/usr/bin/lua5.5
