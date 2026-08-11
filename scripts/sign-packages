@@ -18,4 +18,3 @@ COMMAND="
 
 echo "Running command: $COMMAND"
 sh -c "$COMMAND"
-
