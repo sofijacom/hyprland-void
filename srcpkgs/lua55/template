@@ -1,6 +1,6 @@
 # Template file for 'lua55'
 pkgname=lua55
-version=5.5.0
+version=5.5.1
 revision=1
 short_desc="Powerful, fast, lightweight, embeddable scripting language (5.5.x)"
 maintainer="Sofiya <sofiya@v.org>"
@@ -8,7 +8,7 @@ license="MIT"
 homepage="https://www.lua.org"
 changelog="https://github.com/lua/lua"
 distfiles="https://www.lua.org/ftp/lua-${version}.tar.gz"
-checksum=57ccc32bbbd005cab75bcc52444052535af691789dba2b9016d5c50640d68b3d
+checksum=ffed0b0e2987e66b0142491b26c63170ffd2d86e425ff3703799f4933fd91810
 
 alternatives="
  lua:lua:/usr/bin/lua5.5
