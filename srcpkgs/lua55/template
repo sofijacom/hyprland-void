@@ -1,6 +1,6 @@
 # Template file for 'lua55'
 pkgname=lua55
-version=5.5.1
+version=5.5.0
 revision=1
 short_desc="Powerful, fast, lightweight, embeddable scripting language (5.5.x)"
 maintainer="Sofiya <sofiya@v.org>"

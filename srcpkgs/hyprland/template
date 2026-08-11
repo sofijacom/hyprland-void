@@ -21,6 +21,7 @@ hostmakedepends="
 	pkgconf 
 	python3 
 	xxd
+	git
 "
 makedepends="
 	aquamarine 
