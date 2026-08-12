@@ -13,7 +13,7 @@ configure_args="
 "
 hostmakedepends="
 	cmake
-  ninja
+	ninja
 	cpio 
 	glslang 
 	hyprwayland-scanner 
