@@ -14,6 +14,7 @@ configure_args="
 hostmakedepends="
 	cmake
 	ninja
+	meson
 	cpio 
 	glslang 
 	hyprwayland-scanner 
