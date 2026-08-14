@@ -2,7 +2,7 @@
 
 pkgname=hyprland
 version=0.56.2
-revision=1
+revision=2
 build_style=cmake
 configure_args="
 	--no-warn-unused-cli
