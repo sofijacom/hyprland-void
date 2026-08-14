@@ -1,0 +1,40 @@
+--- a/CMakeLists.txt	2026-08-13 12:35:57.627926646 -0400
++++ b/CMakeLists.txt	2026-08-13 12:35:57.703315582 -0400
+@@ -290,6 +290,17 @@
+ 
+ pkg_search_module(LUA REQUIRED IMPORTED_TARGET GLOBAL lua55 lua5.5 lua-55 lua-5.5 lua>=5.5 lua<5.6)
+ 
++# Lua 5.5 must not leak into the process-global symbol table: libinput links
++# Lua 5.4 for its plugin system, and since Hyprland is built with
++# CMAKE_EXECUTABLE_ENABLE_EXPORTS its lua_* symbols interpose libinput's,
++# segfaulting in libinput_plugin_system_load_plugins(). Link Lua statically and
++# hide it behind a version script.
++find_library(LUA_STATIC_LIBRARY NAMES liblua5.5.a lua5.5 REQUIRED
++             HINTS ${LUA_STATIC_LIBRARY_DIRS} ${LUA_LIBRARY_DIRS})
++set(LUA_SYMBOL_HIDE_SCRIPT ${CMAKE_BINARY_DIR}/lua-hidden.map)
++file(WRITE ${LUA_SYMBOL_HIDE_SCRIPT}
++     "{ global: *; local: lua_*; luaL_*; luaopen_*; lua_ident; };\n")
++
+ find_package(hyprwayland-scanner 0.3.10 REQUIRED)
+ 
+ file(GLOB_RECURSE SRCFILES "src/*.cpp")
+@@ -442,13 +453,18 @@
+   PkgConfig::hyprcursor_dep
+   PkgConfig::hyprgraphics_dep
+   PkgConfig::deps
+-  PkgConfig::LUA
++  ${LUA_STATIC_LIBRARY}
++  m
++  ${CMAKE_DL_LIBS}
+ )
+ 
+ target_link_libraries(
+   Hyprland
+   ${LIBRT}
+   hyprland_lib)
++
++target_link_options(Hyprland PRIVATE
++                    -Wl,--version-script=${LUA_SYMBOL_HIDE_SCRIPT})
+ if(udis_dep_FOUND)
+   target_link_libraries(hyprland_lib PUBLIC PkgConfig::udis_dep)
+ elseif(NOT("${udis_nopc}" MATCHES "udis_nopc-NOTFOUND"))
