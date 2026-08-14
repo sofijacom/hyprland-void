@@ -15,7 +15,7 @@ jobs:
       matrix:
         pkg:
           - aquamarine
-          - glaze
+          #- glaze
           - hyprcursor
           - hyprgraphics
           - hypridle
@@ -41,9 +41,9 @@ jobs:
           - hyprwayland-scanner
           - hyprwire
           - libspng
-          - lua55
+          #- lua55
           - sdbus-cpp
-          - tomlplusplus
+          #- tomlplusplus
           - xdg-desktop-portal-hyprland
     steps:
     - uses: actions/checkout@v7
