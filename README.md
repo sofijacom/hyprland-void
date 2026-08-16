@@ -20,7 +20,7 @@
 &nbsp;
 [![x86_64-musl](https://img.shields.io/badge/aarch64-musl-478061?style=plastic&colorA=363a4f&colorB)](#)
 
-### 【 `Unofficial package repository` 】
+### ⮞⮞【 `Unofficial package repository` 】⮜⮜
 
 </div>
 
