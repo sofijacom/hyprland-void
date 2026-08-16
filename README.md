@@ -24,6 +24,14 @@
 
 </div>
 
+<details>
+<summary><b>🦋 Image</b></summary>
+
+<img width="1200" height="675" alt="Hyprland-image-2" src="https://github.com/user-attachments/assets/befd06ca-e917-462e-b193-4804578bd71c" />
+
+
+</details>
+
 <br>
 
 This repository contains template files and binaries for building or installing [Hyprland](https://github.com/hyprwm/Hyprland) on Void Linux.
