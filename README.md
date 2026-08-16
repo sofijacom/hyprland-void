@@ -29,6 +29,9 @@
 
 <img width="1200" height="675" alt="Hyprland-image-2" src="https://github.com/user-attachments/assets/befd06ca-e917-462e-b193-4804578bd71c" />
 
+<img width="1200" height="675" alt="Hyprland-image-2" src="https://github.com/user-attachments/assets/6b34f6c9-53b3-4f9a-ac7e-bab820ec1579" />
+
+<img width="1200" height="675" alt="Hyprland-image-3" src="https://github.com/user-attachments/assets/f0b4d801-027e-4722-8528-92f4826691b5" />
 
 </details>
 
