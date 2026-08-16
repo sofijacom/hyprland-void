@@ -27,6 +27,8 @@
 <details>
 <summary><b>🦋 Image</b></summary>
 
+<img width="1200" height="675" alt="Hyprland-image-4" src="https://github.com/user-attachments/assets/4b3951d4-0409-4850-85f5-eec0b01fb305" />
+
 <img width="1200" height="675" alt="Hyprland-image-2" src="https://github.com/user-attachments/assets/befd06ca-e917-462e-b193-4804578bd71c" />
 
 <img width="1200" height="675" alt="Hyprland-image-2" src="https://github.com/user-attachments/assets/6b34f6c9-53b3-4f9a-ac7e-bab820ec1579" />
