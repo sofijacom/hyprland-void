@@ -1,0 +1,63 @@
+name: 🗑️ Cleanup Void Package Branch Runs
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Every Sunday at midnight
+  workflow_dispatch:
+    inputs:
+      min_age_days:
+        description: 'Minimum age (in days) of runs to delete'
+        required: false
+        default: '7'
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+
+    steps:
+      - name: Delete old workflow runs on void-package branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          BRANCH: 'main'
+        run: |
+          # Safe default value if input is empty
+          MIN_AGE_DAYS="${{ github.event.inputs.min_age_days }}"
+          if [ -z "$MIN_AGE_DAYS" ]; then
+            MIN_AGE_DAYS=7
+          fi
+
+          echo "Fetching runs for branch: $BRANCH older than $MIN_AGE_DAYS day(s)"
+
+          # Compute cutoff timestamp (epoch seconds)
+          CUTOFF_EPOCH=$(date -d "-${MIN_AGE_DAYS} days" +%s)
+
+          # Fetch up to 250 runs with id + createdAt, filter by age, then delete
+          gh run list \
+            --repo "$OWNER/$REPO" \
+            --branch "$BRANCH" \
+            --limit 250 \
+            --json databaseId,createdAt \
+            --jq '.[] | [.databaseId, .createdAt] | @tsv' | while IFS=$'\t' read -r run_id created_at; do
+            if [ -z "$run_id" ]; then
+              continue
+            fi
+
+            # Safe time conversion
+            RUN_EPOCH=$(date -d "$created_at" +%s 2>/dev/null)
+            if [ -z "$RUN_EPOCH" ]; then
+              echo "Warning: could not parse date for run $run_id, skipping"
+              continue
+            fi
+
+            if [ "$RUN_EPOCH" -lt "$CUTOFF_EPOCH" ]; then
+              echo "Deleting run ID: $run_id (created: $created_at)"
+              gh api repos/"$OWNER"/"$REPO"/actions/runs/"$run_id" -X DELETE --silent \
+                || echo "Failed to delete run $run_id"
+            else
+              echo "Skipping run ID: $run_id (created: $created_at, younger than $MIN_AGE_DAYS days)"
+            fi
+          done
