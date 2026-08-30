@@ -22,7 +22,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
-          BRANCH: 'main'
+          BRANCH: 'master'
         run: |
           # Safe default value if input is empty
           MIN_AGE_DAYS="${{ github.event.inputs.min_age_days }}"
