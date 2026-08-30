@@ -1,0 +1,9 @@
+--- a/src/utils/HyprlandIPC.cpp
++++ b/src/utils/HyprlandIPC.cpp
+@@ -10,6 +10,7 @@
+ #include <unistd.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
++#include <cstring>
+ 
+ #include <hyprutils/memory/Casts.hpp>
