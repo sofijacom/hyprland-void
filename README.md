@@ -232,4 +232,23 @@ If you would like to create your own fork of this repository and use the build a
 For information on signing your repository, see the [Void Linux documentation](https://docs.voidlinux.org/xbps/repositories/signing.html) and `xbps-rindex`'s [man page](https://man.voidlinux.org/xbps-rindex.1).
 
 
+<details>
+<summary><b>repo-key ► Click to expand</b></summary>
+<br />
+  
+> repo-key `b3:21:c4:43:d9:38:6f:ec:36:64:0d:65:37:13:c1:fe.plist`
 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>public-key</key>
+	<data>LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFqNWxheUVFWEVKVk00dXpLcGdaNwpmNUN6UHNLTlJUVXlJVzVuRWV3TDg0UUFOZTdIeEViUno1RFNtTkMxWFlwemRJZ1hXcnA0L21mcnY1aTJoV1VzCmVTSXFPNGY5bDE4a2xoMlZBRUdJVW40ckZIRnNHUHllc3Zhd21mdkFUUEZTYU4rbld5SExLTFUycVQyTzdtYnUKTEsyTU4yZGsra3RIV29kZCt2aFprbUxxb0Z5cTEyYWY0WXhud1BOYy8vbFpaR2ZqQkNMcStrQmNjOVFPaHQySQpxb0xsUmpvUVhCZXdhM1dNMHkwTGk1WGx2YUs3WVhEOXR1MEVJWmErYlRNVkZJVUl4dUxIVHVwWHpBOUNoQ2szClcxUDlINVJnNnNIZ1pNc0h3aHgvMEFkQlVXQmhtWG80SnFOcnZ0SG1RaFNkMURxdEU4eGNKdng3T2YwdnJGSjIKRHdJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==</data>
+	<key>public-key-size</key>
+	<integer>2048</integer>
+	<key>signature-by</key>
+	<string>hyprland-void-github-action</string>
+</dict>
+</plist>
+```
