@@ -237,7 +237,7 @@ For information on signing your repository, see the [Void Linux documentation](h
 <summary><b>repo-key ► Click to expand</b></summary>
 <br />
   
-> repo-key `b3:21:c4:43:d9:38:6f:ec:36:64:0d:65:37:13:c1:fe.plist`
+> repo-key `/var/db/xbps/keys/b3:21:c4:43:d9:38:6f:ec:36:64:0d:65:37:13:c1:fe.plist`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
