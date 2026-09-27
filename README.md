@@ -233,9 +233,8 @@ For information on signing your repository, see the [Void Linux documentation](h
 
 <br />
 
-<details>
-<summary><b>repo-key ► Click to expand</b></summary>
-<br />
+
+### Public repo-key
   
 > repo-key `/var/db/xbps/keys/b3:21:c4:43:d9:38:6f:ec:36:64:0d:65:37:13:c1:fe.plist`
 
