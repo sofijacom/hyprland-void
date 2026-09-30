@@ -25,7 +25,7 @@ jobs:
       - name: Cleanup workflow runs (with Dry-Run support)
         env:
           GH_TOKEN: ${{ github.token }}
-          BRANCH: 'main'
+          BRANCH: 'master'
           MIN_AGE_DAYS: ${{ github.event.inputs.min_age_days }}
           DRY_RUN_INPUT: ${{ github.event.inputs.dry_run }}
         run: |
