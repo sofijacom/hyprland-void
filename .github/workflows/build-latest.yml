@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build Hyprland
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04 # ubuntu-latest
 
     container:
       image: ghcr.io/void-linux/void-glibc-full # :20260501r1
