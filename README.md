@@ -125,7 +125,7 @@ There are packages in this repository which may be of interest for:
 
 ### Available packages 
 
-| package | source | version  | new release |
+| Package | Source | Old version  | New release |
 |:--------|:-------|:---------|:------------|
 | aquamarine                  | https://github.com/hyprwm/aquamarine                   | ![Version](https://img.shields.io/badge/version-0.15.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/aquamarine?color=purple)|
 | glaze                       | https://github.com/stephenberry/glaze                  | ![Version](https://img.shields.io/badge/version-7.9.1-blue) | ![Version](https://img.shields.io/github/v/release/stephenberry/glaze?color=purple)|
