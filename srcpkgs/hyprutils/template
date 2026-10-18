@@ -7,6 +7,7 @@ configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
  -DCMAKE_INSTALL_PREFIX:PATH=/usr -DBUILD_TESTING=OFF"
 hostmakedepends="pkg-config"
 makedepends="pixman-devel"
+depends="pixman-devel"
 short_desc="Hyprland utilities library used across the ecosystem"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
