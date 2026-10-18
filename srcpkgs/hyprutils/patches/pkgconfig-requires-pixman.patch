@@ -1,0 +1,14 @@
+math/Region.hpp is a public header and includes <pixman.h>, which lives in
+/usr/include/pixman-1. hyprutils.pc declares no Requires, so consumers never
+get pixman's include path and fail with "pixman.h: No such file or directory"
+even when they depend on pixman-devel themselves.
+
+--- a/hyprutils.pc.in
++++ b/hyprutils.pc.in
+@@ -6,5 +6,6 @@
+ URL: https://github.com/hyprwm/hyprutils
+ Description: Hyprland utilities library used across the ecosystem 
+ Version: @HYPRUTILS_VERSION@
++Requires: pixman-1
+ Cflags: -I${includedir}
+ Libs: -L${libdir} -lhyprutils
