@@ -1,8 +1,10 @@
 --- a/src/system/Icons.cpp
 +++ b/src/system/Icons.cpp
-@@ -29,3 +29,12 @@ static std::optional<std::string> readFileAsString(const std::string& path) {
+@@ -36,6 +36,17 @@
+     return trim(std::string((std::istreambuf_iterator<char>(file)), (std::istreambuf_iterator<char>())));
  }
--
+ 
++// std::format cannot format a std::vector; flatten it for the log calls below.
 +static std::string joinThemeDirs(const std::vector<std::string>& themeDirs) {
 +    std::string result;
 +
@@ -13,10 +15,24 @@
 +    return result;
 +}
 +
- static const std::array<const char*, 4> ICON_THEME_DIRS = {"/usr/share/icons", "/usr/local/share/icons", "~/.icons", "~/.local/share/icons"};
-@@ -102 +112 @@ static std::optional<std::vector<std::string>> findAnyTheme() {
+ static std::vector<std::string> getXDGIconThemeDirsFromEnv() {
+     auto dataDirs    = Env::getEnv("XDG_DATA_DIRS").value_or("/usr/local/share/:/usr/share/");
+     auto dataHomeDir = std::string(Env::getEnv("XDG_DATA_HOME").value_or("~/.local/share/"));
+@@ -120,7 +131,7 @@
+             // try to find it
+             auto themeDir = getThemeDir(iconTheme);
+             if (themeDir && !themeDir->empty()) {
 -                g_logger->log(HT_LOG_TRACE, "CSystemIconFactory: Found {} as default fallback", themeDir.value());
 +                g_logger->log(HT_LOG_TRACE, "CSystemIconFactory: Found {} as default fallback", joinThemeDirs(*themeDir));
-@@ -217 +227 @@ void CSystemIconFactory::parseTheme(const std::string& themeDir) {
+                 return themeDir;
+             }
+ 
+@@ -240,7 +251,7 @@
+ 
+             auto inheritTheme = getThemeDir(trim(std::string{inheritName}));
+             if (inheritTheme) {
 -                g_logger->log(HT_LOG_TRACE, "CSystemIconFactory: parsing inherited theme {}", *inheritTheme);
 +                g_logger->log(HT_LOG_TRACE, "CSystemIconFactory: parsing inherited theme {}", joinThemeDirs(*inheritTheme));
+                 parseThemes(*inheritTheme);
+             } else
+                 g_logger->log(HT_LOG_WARNING, "CSystemIconFactory: inherited theme {} not found", std::string{inheritName});
