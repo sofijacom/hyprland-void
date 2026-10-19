@@ -115,6 +115,7 @@ There are packages in this repository which may be of interest for:
 - hyprlauncher
 - hyprsunset
 - hyprmoncfg
+- hyprpwcenter
 - hyprshade
 - hyprshutdown
 - hyprsysteminfo
@@ -143,6 +144,7 @@ There are packages in this repository which may be of interest for:
 | hyprpaper                   | https://github.com/hyprwm/hyprpaper                    | ![Version](https://img.shields.io/badge/version-0.8.4-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpaper?color=purple)|
 | hyprpicker                  | https://github.com/hyprwm/hyprpicker                   | ![Version](https://img.shields.io/badge/version-0.4.7-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpicker?color=purple)|
 | hyprpolkitagent             | https://github.com/hyprwm/hyprpolkitagent              | ![Version](https://img.shields.io/badge/version-0.2.0-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpolkitagent?color=purple)|
+| hyprpwcenter                | https://github.com/hyprwm/hyprpwcenter                 | ![Version](https://img.shields.io/badge/version-0.1.2-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpwcenter?color=purple)|
 | hyprpwcenter                | https://github.com/hyprwm/hyprpwcenter                 | ![Version](https://img.shields.io/badge/version-0.1.2-blue) | ![Version](https://img.shields.io/github/v/release/hyprwm/hyprpwcenter?color=purple)|
 | hyprshade                   | https://github.com/loqusion/hyprshade                  | ![Version](https://img.shields.io/badge/version-5.0.0-blue) | ![Version](https://img.shields.io/github/v/release/loqusion/hyprshade?color=purple)|
 | hyprshot                    | https://github.com/Gustash/Hyprshot                    | ![Version](https://img.shields.io/badge/version-1.3.0-blue) | ![release](https://img.shields.io/github/v/release/Gustash/hyprshot?color=purple)
