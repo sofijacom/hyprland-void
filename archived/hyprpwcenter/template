@@ -6,7 +6,7 @@ revision=1
 build_style=cmake
 hostmakedepends="pkgconf"
 makedepends="hyprtoolkit hyprutils cairo-devel libdrm-devel pipewire-devel libxkbcommon-devel pango-devel pixman-devel
- wayland-protocols MesaLib-devel iniparser-devel abseil-cpp-devel"
+ wayland-protocols wayland-devel MesaLib-devel iniparser-devel abseil-cpp-devel"
 short_desc="GUI Pipewire control center"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
