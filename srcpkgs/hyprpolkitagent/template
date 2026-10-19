@@ -5,7 +5,7 @@ revision=2
 build_style=cmake
 configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
  -DCMAKE_INSTALL_PREFIX:PATH=/usr"
-hostmakedepends="cmake pkgconf qt6-base qt6-declarative-devel"
+hostmakedepends="cmake pkgconf libstdc++ qt6-base qt6-declarative-devel"
 makedepends="hyprutils hyprtoolkit hyprgraphics hyprlang pixman-devel libdrm-devel sdbus-c++-devel
  polkit-qt6-devel qt6-base-devel qt6-declarative-devel iniparser-devel"
 depends="hyprland-qt-support"
