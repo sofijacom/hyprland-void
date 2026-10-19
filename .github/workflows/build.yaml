@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Build ${{ matrix.config.arch }}
+    name: Build ${{ matrix.config.repo_suffix }} # ${{ matrix.repo_suffix }}
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/void-linux/void-${{ matrix.config.libc }}-full:20250616R1
@@ -25,13 +25,14 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - { arch: x86_64,       host: x86_64,      libc: glibc, platform: linux/amd64, test: 1 }
+          - { arch: x86_64,       host: x86_64,      libc: glibc, platform: linux/amd64, test: 1, repo_suffix: x86_64-glibc }
           # - { arch: i686,         host: i686,        libc: glibc, platform: linux/386,   test: 1 }
-          - { arch: aarch64,      host: x86_64,      libc: glibc, platform: linux/amd64, test: 0 }
+          - { arch: aarch64,      host: x86_64,      libc: glibc, platform: linux/amd64, test: 0, repo_suffix: aarch64-glibc }
           # - { arch: armv7l,       host: x86_64,      libc: glibc, platform: linux/amd64, test: 0 }
-          - { arch: x86_64-musl,  host: x86_64-musl, libc: musl,  platform: linux/amd64, test: 1 }
+          - { arch: x86_64-musl,  host: x86_64-musl, libc: musl,  platform: linux/amd64, test: 1, repo_suffix: x86_64-musl }
           # - { arch: armv6l-musl,  host: x86_64-musl, libc: musl,  platform: linux/amd64, test: 0 }
-          - { arch: aarch64-musl, host: x86_64-musl, libc: musl,  platform: linux/amd64, test: 0 }
+          - { arch: aarch64-musl, host: x86_64-musl, libc: musl,  platform: linux/amd64, test: 0, repo_suffix: aarch64-musl }
+        # repo_suffix: ${{ matrix.config.arch }}-${{ matrix.config.libc }}
 
     permissions:
       contents: write
@@ -195,7 +196,7 @@ jobs:
           ACCESS_GIT: ${{ secrets.ACCESS_GIT }}
           REPO_OWNER: ${{ github.repository_owner }}
           REPO_NAME: ${{ github.event.repository.name }}
-          RESULT_NAME: ${{ matrix.config.arch }}
+          RESULT_NAME: ${{ matrix.config.repo_suffix }} # ${{ matrix.config.arch }}
         run: |
             set -e
             cd extra
@@ -231,7 +232,7 @@ jobs:
           ACCESS_GIT: ${{ secrets.ACCESS_GIT }}
           REPO_OWNER: ${{ github.repository_owner }}
           REPO_NAME: ${{ github.event.repository.name }}
-          RESULT_NAME: ${{ matrix.config.arch }}
+          RESULT_NAME: ${{ matrix.config.repo_suffix }} # ${{ matrix.config.arch }}
         working-directory: void-packages/hostdir/binpkgs/
         run: |
             set -e
@@ -299,7 +300,7 @@ jobs:
             REPO_OWNER: ${{ github.repository_owner }}
             REPO_NAME: ${{ github.event.repository.name }}
             ACCESS_GIT: ${{ secrets.ACCESS_GIT }}
-            RESULT_NAME: ${{ matrix.config.arch }}
+            RESULT_NAME: ${{ matrix.config.repo_suffix }} # ${{ matrix.config.arch }}
         run: |
             set -e
             cd extra
