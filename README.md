@@ -115,7 +115,6 @@ There are packages in this repository which may be of interest for:
 - hyprlauncher
 - hyprsunset
 - hyprmoncfg
-- hyprpwcenter
 - hyprshade
 - hyprshutdown
 - hyprsysteminfo
