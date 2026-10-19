@@ -9,16 +9,15 @@ on:
 jobs:
   build:
     name: Build Hyprland
-    runs-on: ubuntu-latest # ubuntu-latest ubuntu-26.04
+    runs-on: ubuntu-26.04 # ubuntu-latest ubuntu-26.04
 
     container:
-      image: ghcr.io/void-linux/void-glibc-full # :20260501r1
+      image: ghcr.io/void-linux/void-glibc-full:20260501r1
       options: --platform linux/amd64 --privileged
 
     strategy:
       matrix:
-        # arch: [ x86_64, x86_64-musl, aarch64, aarch64-musl ]
-        arch: [ x86_64-musl, aarch64, aarch64-musl ]
+        arch: [ x86_64, x86_64-musl, aarch64, aarch64-musl ]
     env:
       REPO_OWNER: "${{ github.repository_owner }}"
       REPO_NAME: "${{ github.event.repository.name }}"
@@ -31,7 +30,7 @@ jobs:
         run: |
           mkdir -p /etc/xbps.d && cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
           sed -i 's|repo-default|repo-ci|g' /etc/xbps.d/*-repository-*.conf
-          xbps-install -Syu xbps && xbps-install -yu && xbps-install -y sudo bash grep curl git nodejs kotlin-bin
+          xbps-install -Syu xbps && xbps-install -yu && xbps-install -y sudo bash grep curl git kotlin-bin
           useradd -G xbuilder -M builder
  
       - name: Clone hyprland-void repo
