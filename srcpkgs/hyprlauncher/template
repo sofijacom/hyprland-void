@@ -2,12 +2,12 @@
 
 pkgname=hyprlauncher
 version=0.1.6
-revision=1
+revision=2
 build_style=cmake
 hostmakedepends="hyprwire pkgconf"
 makedepends="hyprutils hyprwire hyprlang hyprtoolkit wayland-devel pixman-devel libdrm-devel
  icu-devel fontconfig-devel libqalculate-devel cairo-devel libxkbcommon-devel pango-devel
- wayland-protocols mesa-devel iniparser-devel abseil-cpp-devel"
+ wayland-protocols MesaLib-devel iniparser-devel abseil-cpp-devel"
 depends="wl-clipboard"
 short_desc="Multipurpose and versatile launcher / picker for Hyprland"
 maintainer="Sofiya <sofiya@v.org>"
