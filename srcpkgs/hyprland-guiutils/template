@@ -3,11 +3,13 @@ pkgname=hyprland-guiutils
 version=0.2.2
 revision=2
 build_style=cmake
+CXXFLAGS="-I${XBPS_CROSS_BASE}/usr/include/pixman-1 -I${XBPS_CROSS_BASE}/usr/include/libdrm"
 configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
  -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 hostmakedepends="cmake ninja pkgconf"
 makedepends="aquamarine cairo-devel hyprgraphics hyprlang
- hyprtoolkit hyprutils libdrm-devel pixman-devel libxkbcommon-devel"
+ hyprtoolkit hyprutils libdrm-devel pixman-devel libxkbcommon-devel abseil-cpp-devel iniparser-devel
+ libgbm-devel libglvnd-devel pango-devel wayland-devel wayland-protocols"
 depends="hyprland-qt-support"
 short_desc="Hyprland GUI utilities (successor to hyprland-qtutils)"
 maintainer="Sofiya <sofiya@v.org>"
