@@ -1,12 +1,14 @@
 # Template file for 'hyprpaper'
 pkgname=hyprpaper
 version=0.8.4
-revision=1
+revision=2
 build_style=cmake
 configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr"
 hostmakedepends="cmake pkgconf hyprwayland-scanner hyprwire hyprland-protocols wayland-protocols"
 makedepends="cairo-devel file-devel libjpeg-turbo-devel libwebp-devel
- hyprgraphics hyprutils hyprlang hyprtoolkit hyprwire pango-devel wlroots-devel"
+ hyprgraphics hyprutils hyprlang hyprtoolkit hyprwire pango-devel pixman-devel
+ wlroots-devel abseil-cpp-devel iniparser-devel libdrm-devel libgbm-devel
+ libglvnd-devel libxkbcommon-devel wayland-devel wayland-protocols"
 short_desc="Fast wallpaper utility for wlroots compositors with IPC controls"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"

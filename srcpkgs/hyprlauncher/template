@@ -6,7 +6,8 @@ revision=1
 build_style=cmake
 hostmakedepends="hyprwire pkgconf"
 makedepends="hyprutils hyprwire hyprlang hyprtoolkit wayland-devel pixman-devel libdrm-devel
- icu-devel fontconfig-devel libqalculate-devel cairo-devel libxkbcommon-devel pango-devel"
+ icu-devel fontconfig-devel libqalculate-devel cairo-devel libxkbcommon-devel pango-devel
+ wayland-protocols mesa-devel iniparser-devel abseil-cpp-devel"
 depends="wl-clipboard"
 short_desc="Multipurpose and versatile launcher / picker for Hyprland"
 maintainer="Sofiya <sofiya@v.org>"

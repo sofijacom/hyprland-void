@@ -6,7 +6,7 @@ build_style=cmake
 hostmakedepends="pkgconf qt6-base qt6-declarative-devel xxd"
 makedepends="hyprland-qt-support hyprutils qt6-base-devel qt6-base-private-devel
  qt6-declarative-devel qt6-declarative-private-devel qt6-tools-devel
- qt6-wayland-devel qt6-wayland-private-devel glaze hyprtoolkit pciutils-devel"
+ qt6-wayland-devel qt6-wayland-private-devel glaze hyprtoolkit pciutils-devel abseil-cpp-devel iniparser-devel"
 short_desc="Tiny application to display information about the running system"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
