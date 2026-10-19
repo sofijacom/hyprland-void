@@ -1,4 +1,4 @@
-name: Build Hyprland
+name: 🏗️ Build Hyprland
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Build packages
+    name: Build ${{ matrix.config.arch }}
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/void-linux/void-${{ matrix.config.libc }}-full:20250616R1
