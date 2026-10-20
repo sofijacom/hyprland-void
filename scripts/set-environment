@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 
-# Используем оператор =~ для проверки суффикса
-if [[ "$TARGET_ARCH" =~ -musl$ ]]; then
+if [ "${TARGET_ARCH%-musl}" != "$TARGET_ARCH" ]; then
   echo "RESULT_NAME=${TARGET_ARCH%-musl}-glibc" >> "$GITHUB_ENV"
 else
   echo "RESULT_NAME=$TARGET_ARCH" >> "$GITHUB_ENV"
-fi
-
-# Добавляем аргумент для архитектуры, если это не x86_64
-if [[ "$TARGET_ARCH" != "x86_64" && "$TARGET_ARCH" != "x86_64-musl" ]]; then
-  echo "BUILD_ARGS=$BUILD_ARGS -a $TARGET_ARCH" >> "$GITHUB_ENV"
 fi
