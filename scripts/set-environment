@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 COMMAND="
   [ \"${TARGET_ARCH##*-musl}\" ] \
@@ -11,4 +11,4 @@ COMMAND="
 "
 
 echo "Running command: $COMMAND"
-bash -c "$COMMAND"
+sh -c "$COMMAND"
