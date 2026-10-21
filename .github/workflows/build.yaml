@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     name: Build ${{ matrix.config.repo_suffix }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04 # The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026.
     container:
       image: ghcr.io/void-linux/void-${{ matrix.config.libc }}-full:20250616R1
       options: --platform ${{ matrix.config.platform }} --privileged
