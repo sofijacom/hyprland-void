@@ -8,7 +8,7 @@
 <!--[![Hyprland Linux](https://img.shields.io/badge/Hyprland-blueviolet?style=badge&logo=hyprland&logoColor=white)](#)-->
 [![GitHub release (with filter)](https://img.shields.io/github/v/release/sofijacom/hyprland-void?style=badge&logo=hyprland&label=Hyprland&colorA=363a4f&colorB=purple)](#)
 [![Void Linux](https://img.shields.io/badge/Void_Linux-%23458161.svg?style=badge&logo=voidlinux&logoColor=white)](#)
-[![Auto Assign](https://github.com/sofijacom/hyprland-void/actions/workflows/build.yaml/badge.svg)](https://github.com/sofijacom/hyprland-void/actions/workflows/build-latest.yml)
+[![Auto Assign](https://github.com/sofijacom/hyprland-void/actions/workflows/build.yaml/badge.svg)](https://github.com/sofijacom/hyprland-void/actions/workflows/build.yaml)
 [![Updates](https://img.shields.io/github/actions/workflow/status/sofijacom/hyprland-void/update.yml?style=badge&label=AUTO-UPDATE&logo=github&logoColor=white&colorA=363a4f)](https://github.com/sofijacom/hyprland-void/actions)
 [![Repo size](https://img.shields.io/github/repo-size/sofijacom/hyprland-void?style=badge&logo=protondrive&logoColor=fff&colorA=363a4f&colorB=blue)](#)
 
