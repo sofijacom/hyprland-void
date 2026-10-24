@@ -60,6 +60,11 @@ repository=https://raw.githubusercontent.com/sofijacom/hyprland-void/repository-
 repository=https://raw.githubusercontent.com/sofijacom/hyprland-void/repository-aarch64-musl
 ```
 
+### Make sure xbps.d directory exists:
+
+```
+sudo mkdir -p /etc/xbps.d
+```
 
 This can be done with the following command:
 ```sh
