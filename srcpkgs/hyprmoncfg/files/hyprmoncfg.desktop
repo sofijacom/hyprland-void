@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=hyprmoncfg
+GenericName=Monitor Profile Manager
+Comment=Configure Hyprland monitor layouts from a terminal UI
+Exec=hyprmoncfg
+Terminal=true
+Categories=Settings;
+Keywords=Hyprland;monitor;display;screen;layout;profiles;
+Icon=hyprmoncfg
+StartupNotify=false

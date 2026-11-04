@@ -1,0 +1,3 @@
+
+lua55
+xdg-desktop-portal-hyprland
