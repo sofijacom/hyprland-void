@@ -1,0 +1,18 @@
+# Template file for 'hyprshutdown'
+pkgname=hyprshutdown
+version=0.1.2
+revision=1
+build_style=cmake
+hostmakedepends="pkgconf"
+makedepends="hyprtoolkit hyprutils cairo-devel glaze libdrm-devel libxkbcommon-devel pango-devel pixman-devel
+ wayland-devel wayland-protocols MesaLib-devel libgbm-devel iniparser-devel abseil-cpp-devel"
+short_desc="Graceful shutdown/logout utility for Hyprland"
+maintainer="Sofiya <sofiya@v.org>"
+license="BSD-3-Clause"
+homepage="https://github.com/hyprwm/hyprshutdown"
+distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
+checksum=c4f1d52830e3d1865b496453094ac74174fc8914b699510892947d8fd3fbdad0
+
+post_install() {
+	vlicense LICENSE
+}
