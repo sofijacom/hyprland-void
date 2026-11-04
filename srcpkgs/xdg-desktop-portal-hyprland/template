@@ -6,11 +6,10 @@ revision=2
 build_style=cmake
 configure_args=" --no-warn-unused-cli -DCMAKE_INSTALL_PREFIX:PATH=/usr \
  -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_LIBEXECDIR:PATH=/usr/libexec"
-hostmakedepends="cmake git hyprwayland-scanner pkgconf
- qt6-base-devel scdoc wayland-protocols"
-makedepends="abseil-cpp-devel elogind-devel hyprland-protocols wayland-protocols hyprlang hyprutils
- hyprwayland-scanner libgbm-devel libdrm-devel pipewire-devel
- qt6-base-devel qt6-wayland-devel sdbus-cpp wayland-devel hyprlang hyprtoolkit hyprutils hyprgraphics aquamarine cairo-devel"
+hostmakedepends="cmake git hyprwayland-scanner pkgconf scdoc wayland-protocols"
+makedepends="iniparser-devel cairo-devel elogind-devel hyprland-protocols hyprlang hyprtoolkit hyprutils
+ libdrm-devel libgbm-devel libxkbcommon-devel pango-devel pipewire-devel pixman-devel
+ qt6-base-devel qt6-wayland-devel sdbus-cpp wayland-devel"
 depends="xdg-desktop-portal"
 short_desc="Backend of xdg-desktop-portal for Hyprland"
 maintainer="Sofiya <sofiya@v.org>"
