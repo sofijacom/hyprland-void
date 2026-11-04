@@ -8,7 +8,8 @@ configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
 hostmakedepends="cmake hyprwayland-scanner pkgconf"
 makedepends="iniparser-devel abseil-cpp-devel MesaLib-devel aquamarine cairo-devel gtest-devel hyprgraphics hyprlang hyprutils
  iniparser-devel libdrm-devel libgbm-devel libglvnd-devel libxkbcommon-devel
- pango-devel pixman-devel wayland-devel wayland-protocols"
+ pango-devel pixman-devel wayland-devel wayland-protocols
+ libjpeg-turbo-devel libwebp-devel librsvg-devel file-devel libjxl-devel"
 short_desc="Modern C++ Wayland-native GUI toolkit"
 maintainer="Sofiya <sofiya@v.org>"
 license="BSD-3-Clause"
