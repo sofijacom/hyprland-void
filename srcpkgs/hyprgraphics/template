@@ -19,4 +19,8 @@ make_check=no # cant run in sandbox
 
 post_install() {
 	vlicense LICENSE
+	# 0.6.0 lists its image codecs (libjpeg, libwebp, librsvg, libmagic,
+	# libjxl) in Requires.private; pkg-config then demands all their -devel
+	# packages from every consumer, though they only matter for static links
+	vsed -i '/^Requires.private:/d' ${DESTDIR}/usr/lib/pkgconfig/hyprgraphics.pc
 }
