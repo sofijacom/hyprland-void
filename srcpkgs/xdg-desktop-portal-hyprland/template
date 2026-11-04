@@ -1,5 +1,4 @@
 # Template file for 'xdg-desktop-portal-hyprland'
-
 pkgname=xdg-desktop-portal-hyprland
 version=1.5.0
 revision=2
