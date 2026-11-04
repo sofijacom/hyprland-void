@@ -48,7 +48,8 @@ makedepends="
 	libseat-devel
 	libxcb-devel 
 	libXcursor-devel 
-	libxkbcommon-devel 
+	libxkbcommon-devel
+	libcanberra-devel
 	lua55-devel 
 	muparser-devel
 	pango-devel 
