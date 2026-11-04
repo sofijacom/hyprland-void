@@ -1,0 +1,13 @@
+--- a/src/output/Monitor.cpp
++++ b/src/output/Monitor.cpp
+@@ -761,7 +761,9 @@
+         std::ranges::sort(sortedModes, sortFunc);
+         if (sortedModes.size() > 3)
+             sortedModes.erase(sortedModes.begin() + 3, sortedModes.end());
+-        requestedModes.insert_range(requestedModes.end(), sortedModes | std::views::reverse);
++        auto reversedModes = sortedModes | std::views::reverse;
++        for (auto& mode : reversedModes)
++            requestedModes.push_back(mode);
+     };
+ 
+     // last fallback is always preferred mode

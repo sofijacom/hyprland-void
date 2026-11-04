@@ -1,0 +1,23 @@
+# Template file for 'hyprtoolkit'
+pkgname=hyprtoolkit
+version=0.6.0
+revision=1
+build_style=cmake
+configure_args="--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release \
+ -DCMAKE_INSTALL_PREFIX:PATH=/usr -DDISABLE_TESTS=ON"
+hostmakedepends="cmake hyprwayland-scanner pkgconf"
+makedepends="iniparser-devel abseil-cpp-devel MesaLib-devel aquamarine cairo-devel gtest-devel hyprgraphics hyprlang hyprutils
+ iniparser-devel libdrm-devel libgbm-devel libglvnd-devel libxkbcommon-devel
+ pango-devel pixman-devel wayland-devel wayland-protocols
+ libjpeg-turbo-devel libwebp-devel librsvg-devel file-devel libjxl-devel"
+short_desc="Modern C++ Wayland-native GUI toolkit"
+maintainer="Sofiya <sofiya@v.org>"
+license="BSD-3-Clause"
+homepage="https://github.com/hyprwm/hyprtoolkit"
+distfiles="https://github.com/hyprwm/hyprtoolkit/archive/refs/tags/v${version}.tar.gz"
+checksum=53c41be72af97d9ede274a63c9c1034c58726d862905763ed6e5a564ae42ba6b
+make_check=no # cant run in sandbox
+
+post_install() {
+	vlicense LICENSE
+}
