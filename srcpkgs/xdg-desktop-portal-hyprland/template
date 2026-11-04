@@ -1,4 +1,5 @@
 # Template file for 'xdg-desktop-portal-hyprland'
+
 pkgname=xdg-desktop-portal-hyprland
 version=1.5.0
 revision=2
@@ -9,7 +10,7 @@ hostmakedepends="cmake git hyprwayland-scanner pkgconf
  qt6-base-devel scdoc wayland-protocols"
 makedepends="abseil-cpp-devel elogind-devel hyprland-protocols hyprlang hyprutils
  hyprwayland-scanner libgbm-devel libdrm-devel pipewire-devel
- qt6-base-devel qt6-wayland-devel sdbus-cpp wayland-devel"
+ qt6-base-devel qt6-wayland-devel sdbus-cpp wayland-devel hyprlang hyprtoolkit hyprutils aquamarine cairo-devel"
 depends="xdg-desktop-portal"
 short_desc="Backend of xdg-desktop-portal for Hyprland"
 maintainer="Sofiya <sofiya@v.org>"

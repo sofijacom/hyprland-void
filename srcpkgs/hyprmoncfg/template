@@ -1,5 +1,4 @@
 # Template file for 'hyprmoncfg'
-
 pkgname=hyprmoncfg
 version=1.28.0
 revision=1

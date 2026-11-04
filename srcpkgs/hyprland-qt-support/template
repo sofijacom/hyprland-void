@@ -1,4 +1,5 @@
 # Template file for 'hyprland-qt-support'
+
 pkgname=hyprland-qt-support
 version=0.1.0
 revision=1
