@@ -1,0 +1,10 @@
+diff --git a/src/utils/SystemInfo.cpp b/src/utils/SystemInfo.cpp
+index abc1234..def5678 100644
+--- a/src/utils/SystemInfo.cpp
++++ b/src/utils/SystemInfo.cpp
+@@ -18,7 +18,6 @@
+ #include <sys/types.h>
+ #include <sys/sysinfo.h>
+-#include <linux/sysinfo.h>
+ #include <unistd.h>
+ #include <glob.h>

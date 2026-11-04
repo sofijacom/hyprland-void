@@ -1,0 +1,10 @@
+--- a/src/utils/HyprlandIPC.cpp
++++ b/src/utils/HyprlandIPC.cpp
+@@ -12,6 +12,7 @@
+ #include <sys/un.h>
+ #include <unistd.h>
+ 
++#include <cstring>
+ #include <format>
+ 
+ #include <hyprutils/memory/Casts.hpp>

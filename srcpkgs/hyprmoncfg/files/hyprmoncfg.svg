@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">hyprmoncfg icon</title>
+  <desc id="desc">Layout panels with a subtle terminal prompt and inspector split.</desc>
+
+  <rect width="256" height="256" rx="32" fill="#14171f"/>
+
+  <g opacity="0.1" stroke="#7fa1d8" stroke-width="1.25">
+    <path d="M0 64H256"/>
+    <path d="M0 128H256"/>
+    <path d="M0 192H256"/>
+    <path d="M64 0V256"/>
+    <path d="M128 0V256"/>
+    <path d="M192 0V256"/>
+  </g>
+
+  <rect x="24" y="32" width="144" height="120" rx="12" fill="#274664"/>
+  <rect x="172" y="68" width="60" height="84" rx="10" fill="#353b4d"/>
+  <rect x="24" y="156" width="92" height="48" rx="10" fill="#416891"/>
+
+  <rect x="31" y="39" width="130" height="106" rx="9" fill="none" stroke="#8ab8ee" stroke-width="2"/>
+  <rect x="179" y="75" width="46" height="70" rx="8" fill="none" stroke="#8c97af" stroke-width="2" opacity="0.85"/>
+  <rect x="31" y="163" width="78" height="34" rx="8" fill="none" stroke="#a6d2ff" stroke-width="2" opacity="0.8"/>
+
+  <g fill="#e7f2ff">
+    <path d="M58 83 72 96 58 109" fill="none" stroke="#e7f2ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+    <rect x="82" y="104" width="34" height="6" rx="3"/>
+    <rect x="190" y="100" width="24" height="5" rx="2.5" opacity="0.8"/>
+    <rect x="46" y="176" width="48" height="5" rx="2.5" opacity="0.9"/>
+  </g>
+</svg>
