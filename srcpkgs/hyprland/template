@@ -50,6 +50,7 @@ makedepends="
 	libXcursor-devel 
 	libxkbcommon-devel
 	libcanberra-devel
+	sdbus-c++-devel
 	lua55-devel 
 	muparser-devel
 	pango-devel 
