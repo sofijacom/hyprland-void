@@ -23,5 +23,5 @@ post_install() {
 	# Requires.private lists every internal dependency (iniparser, abseil,
 	# wayland-protocols, ...); pkg-config then demands all their -devel
 	# packages from every consumer, though they only matter for static links
-	vsed -i '/^Requires.private:/d' ${DESTDIR}/usr/lib/pkgconfig/hyprtoolkit.pc
+	# vsed -i '/^Requires.private:/d' ${DESTDIR}/usr/lib/pkgconfig/hyprtoolkit.pc
 }
